@@ -1,7 +1,24 @@
 {
-  "name": "wrightstream-frontend",
+  "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "description": "Front-end for https://github.com/wrightstream/landing",
+  "main": "./public/index.html",
+  "keywords": [
+    "html",
+    "css",
+    "sass",
+    "javascript",
+    "react",
+    "redux",
+    "bulma",
+    "axios"
+  ],
+  "author": [
+    "Claudia Ligidakis <claudialigidakis@gmail.com>",
+    "Vikanda Gonzales <vikanda.gonzales@gmail.com>"
+  ],
+  "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
     "axios": "^0.18.0",
