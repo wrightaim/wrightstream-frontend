@@ -21,6 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
+    "autoprefixer": "^9.3.1",
     "axios": "^0.18.0",
     "bulma": "^0.7.2",
     "bulma-extensions": "^4.0.0",
@@ -38,9 +39,13 @@
     "shortid": "^2.2.14"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "css-deploy": "npm run css-build && npm run css-postcss",
+    "css-build": "node-sass src/stylesheets/sass/main.scss src/stylesheets/css/main.css",
+    "css-postcss": "postcss --use autoprefixer --output src/stylesheets/css/main.css src/stylesheets/css/main.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch | npm run js-watch | react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
