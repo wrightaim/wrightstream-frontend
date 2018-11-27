@@ -1,0 +1,912 @@
+body {
+  background-color: $slate;
+  min-height: 100vh;
+  padding-top: $navbar-height;
+}
+
+nav {
+  border-bottom: solid 2px transparentize($mist, .7);
+
+  .navbar-main {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-item, .navbar-link, .navbar-dropdown .navbar-item {
+    font-size: .9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $quartz;
+    }
+
+    &.is-active {
+      color: $indigo;
+    }
+
+    &.is-active:hover {
+      background-color: $slate;
+    }
+
+    .navbar-dropdown {
+      box-shadow: none;
+      border: solid 1px transparentize($mist, .7)
+    }
+  }
+
+  .navbar-item, .navbar-dropdown .navbar-link {
+    margin: 0 .5rem;
+  }
+
+  .navbar-main .navbar-item {
+    height: 2.5rem;
+    margin: 0 .5rem;
+
+    &.is-active {
+      background-color: $periwinkle;
+      color: $white;
+    }
+  }
+}
+
+.bar {
+  background-color: $koamaru;
+  padding: 3rem;
+
+  .menu {
+    margin-bottom: 3rem;
+  }
+
+  .menu-label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: .3rem;
+  }
+}
+
+.profile {
+  width: $navbar-item-img-max-height;
+  height: 100%;
+  margin-right: .6rem;
+  border: 2px solid $slate;
+  border-radius: 50%;
+}
+
+.products-content {
+  padding: 2rem;
+  position: relative;
+
+  .columns {
+    flex-wrap: wrap;
+  }
+
+  .column {
+    padding: 1.25rem;
+  }
+
+  .products-container {
+    padding: 1rem 0;
+  }
+}
+
+.products-control {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+
+  >div:not(:last-child) {
+    margin-right: .5rem;
+  }
+
+  .dropdown-menu {
+    min-width: 0;
+    padding-top: 0;
+  }
+
+  .dropdown-item {
+    padding-right: 2rem;
+  }
+}
+
+.products-tabs ul, .inventory-tabs ul {
+  border-bottom-color: $slate;
+
+  a {
+    padding: 0.5em 2em;
+  }
+}
+
+.products .card {
+  border-bottom: solid 2px $mist;
+  box-shadow: none;
+
+  &:hover {
+    transform: scale(1.025);
+  }
+
+  .card-content {
+    padding: .7rem;
+  }
+
+  .card-image img {
+    object-fit: cover;
+  }
+
+  .card-footer {
+    border-color: $slate;
+  }
+
+  .card-footer-item {
+    color: $quartz;
+    padding: .5rem;
+    border-color: $slate;
+
+    &:hover {
+      background-color: lighten($slate, 3%);
+    }
+  }
+
+  .card-footer-category {
+    font-size: .75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: .5rem .7rem;
+    justify-content: flex-start;
+    flex-grow: 5;
+  }
+}
+
+.modal-content {
+  background-color: $white;
+  border-bottom: 2px solid $periwinkle;
+
+  img {
+    object-fit: cover;
+  }
+
+  .product-control, .supply-control, .source-control {
+    padding: 1.5rem 2rem;
+
+    div {
+      color: $periwinkle;
+      text-align: right;
+      display: block;
+    }
+
+    a {
+      color: $periwinkle;
+      font-size: 1.25rem;
+    }
+
+    a:hover {
+      color: $indigo;
+    }
+
+    div:not(:last-child) {
+      margin-bottom: .5rem;
+    }
+  }
+
+  .product-control {
+    margin-top: -10rem;
+  }
+
+  .supply-control, .source-control {
+    margin-top: -7rem;
+  }
+}
+
+.modal-container {
+  padding: 2.5rem 3rem;
+
+  .title {
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+
+  .subtitle {
+    color: $quartz;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+  }
+
+  small {
+    color: $quartz;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    .product-bullet {
+      color: $periwinkle;
+    }
+  }
+
+  em {
+    color: $quartz;
+    font-size: .8rem;
+    margin-right: .5rem;
+  }
+
+  >div:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  ul, ol {
+    color: $stone;
+  }
+
+  ol {
+    margin-left: 2.75rem;
+
+    li {
+      padding-left: .25rem;
+    }
+  }
+}
+
+.supply-qty {
+  text-align: right;
+  margin-right: .25rem;
+  min-width: 40px;
+  display: inline-block;
+}
+
+.supply-unit {
+  color: lighten($stone, 20%);
+  font-size: .9rem;
+  margin-right: .5rem;
+}
+
+.modal-purchase {
+  width: 900px;
+  height: calc(100vh - 40px);
+  overflow-y: hidden;
+
+  >.columns {
+    height: 100%;
+  }
+
+  >.columns>.column {
+    padding: 0;
+    overflow-y: auto;
+  }
+
+  .modal-sidebar {
+    background-color: $koamaru;
+    color: $white;
+  }
+
+  .purchase-status {
+    background-color: $periwinkle;
+    color: $text;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: .25rem;
+
+    &.status-green {
+      background-color: $green;
+    }
+
+    &.status-yellow {
+      background-color: $yellow;
+    }
+
+    &.status-red {
+      background-color: $red;
+    }
+  }
+
+  .level {
+    margin-bottom: 0;
+  }
+
+  .purchase-header {
+    padding: 1.5rem;
+
+    .title {
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+  }
+
+  .purchase-row {
+    border-top: 1px solid lighten($koamaru, 3%);
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+
+    .title {
+      color: $slate;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    i {
+      margin-left: .75rem;
+    }
+
+    .progress {
+      width: 100px;
+      height: .4rem;
+    }
+
+    .purchase-profile img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .purchase-row-child {
+    background-color: lighten($koamaru, 3%);
+    color: $quartz;
+    font-size: .9rem;
+    padding: .5rem 1.5rem .5rem 2.5rem;
+
+    ul li {
+      margin: .4rem 0;
+    }
+
+    ul li ul {
+      margin-left: 2rem;
+      transform: scale(0.9);
+    }
+
+    ul li ul span.bullet {
+      color: darken($quartz, 20%);
+      margin-right: .5rem;
+    }
+
+    .purchase-profile img {
+      width: 20px;
+      height: 20px;
+    }
+
+    span {
+      margin-right: .75rem;
+    }
+
+    label {
+      padding-right: .5rem;
+    }
+
+    .lnr-check {
+      color: $green;
+    }
+
+    .lnr-cross2 {
+      color: $red;
+    }
+
+    .lnr-label {
+      color: darken($quartz, 20%);
+      cursor: pointer;
+    }
+
+    .lnr-label:hover {
+      color: $quartz;
+    }
+
+    label {
+      font-size: .9rem;
+      margin: 0;
+    }
+
+    .is-checkradio[type="radio"] + label,
+    .is-checkradio[type="checkbox"] + label {
+      padding-top: .1rem;
+    }
+
+    .is-checkradio[type="radio"] + label::before,
+    .is-checkradio[type="radio"]:checked + label::before,
+    .is-checkradio[type="checkbox"] + label::before,
+    .is-checkradio[type="checkbox"]:checked + label::before {
+      background-color: lighten($koamaru, 10%);
+      border: none;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .is-checkradio[type="checkbox"] + label::after,
+    .is-checkradio[type="checkbox"]:checked + label::after {
+      border-color: $quartz;
+      top: .25rem;
+      left: .45rem;
+    }
+
+    .is-checkradio[type="radio"] + label::after,
+    .is-checkradio[type="radio"]:checked + label::after {
+      background-color: $quartz;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+
+  .purchase-profile {
+
+    img, .empty-photo {
+      cursor: pointer;
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+
+.purchase-assign {
+  width: 250px;
+  border-radius: 5px;
+
+  li {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: .6rem;
+  }
+
+  li:nth-child(2n) {
+    background-color: lighten($slate, 1%);
+  }
+
+  li:hover {
+    background-color: $mist;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: .5rem;
+  }
+}
+
+.products-table, .inventory-table {
+  border-bottom: 2px solid $lavender;
+
+  thead {
+    background-color: $periwinkle;
+
+    th {
+      color: $white;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: none;
+    }
+  }
+
+  td {
+    border: none;
+    vertical-align: middle;
+  }
+}
+
+.products-table {
+
+  th {
+    padding: 1rem 1.25rem;
+  }
+
+  td {
+    cursor: pointer;
+    padding: .75rem 1.25rem;
+  }
+
+  td:first-child {
+    min-width: 40%;
+  }
+
+  td:last-child {
+    min-width: 35%;
+  }
+}
+
+.inventory-table {
+  font-size: .8rem;
+
+  th {
+    padding: .75rem 1.25rem;
+  }
+
+  td {
+    padding: .5rem 1.25rem;
+  }
+
+  td:first-child {
+    min-width: 40%;
+  }
+
+  td:last-child {
+    min-width: 30%;
+  }
+
+  input {
+    font-size: .8rem;
+  }
+}
+
+.inventory {
+  padding: 1rem;
+
+  .title {
+    color: lighten($quartz, 20%);
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .inventory-content {
+    padding: 2rem 1rem;
+
+    .column {
+      padding: 1rem 2rem;
+    }
+
+    .column:first-child {
+      border-right: 1px solid $mist;
+      padding-right: 4rem;
+    }
+
+    .column:nth-child(2) {
+      border-left: 1px solid $mist;
+      padding-left: 4rem;
+    }
+  }
+
+  .estimator-content {
+    padding: 2rem 5rem;
+
+    .column {
+      padding: 1rem 3rem;
+    }
+
+    .estimator-supplies {
+      background-color: $white;
+      padding: 2rem 2.5rem;
+    }
+  }
+}
+
+.workstream {
+  min-height: calc(100vh - #{$navbar-height});
+  overflow-x: auto;
+
+  .title {
+    color: $quartz;
+    font-weight: 500;
+    margin-bottom: .75rem;
+
+    a {
+      color: $periwinkle;
+      font-size: 1.25rem;
+      padding-left: .5rem;
+    }
+
+    a:hover {
+      color: $indigo;
+    }
+  }
+
+  > .columns > .column {
+    padding: 1.5rem;
+
+    &:not(:first-child) {
+      padding-left: 0;
+    }
+  }
+
+  .column-container {
+    background-color: $mist;
+    padding: .75rem;
+    min-height: 175px;
+    max-height: 65vh;
+    overflow-y: auto;
+    width: 272px;
+  }
+
+  .column-button {
+    background-color: $periwinkle;
+    color: $white;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: .5rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $indigo;
+    }
+  }
+
+  .store-logo {
+    background-color: $indigo;
+    color: $white;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .store-logo-img {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .purchase-profile {
+
+    img, .empty-photo {
+      background-color: $slate;
+      border-radius: 50%;
+      object-fit: cover;
+
+      &:hover {
+        background-color: $mist;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.workstream .card {
+  background-color: transparent;
+  box-shadow: none;
+
+  &:not(:last-child) {
+    margin-bottom: .75rem;
+  }
+
+  .card-header {
+    background-color: $slate;
+    height: 5px;
+
+    &.status-green {
+      background-color: $green;
+    }
+
+    &.status-yellow {
+      background-color: $yellow;
+    }
+
+    &.status-red {
+      background-color: $red;
+    }
+  }
+
+  .card-content {
+    background-color: $white;
+    padding: 1rem .3rem;
+    cursor: pointer;
+  }
+
+  .column {
+    padding: 0 .2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .purchase-drag {
+    color: $periwinkle;
+    font-size: 1.3rem;
+    cursor: pointer;
+
+    &:hover {
+      color: $indigo;
+    }
+  }
+
+  .purchase-progress {
+    margin-top: -.5rem;
+
+    a {
+      color: $quartz;
+      font-size: .8rem;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    a:hover {
+      color: lighten($quartz, 20%);
+    }
+
+    .progress {
+      height: .4rem;
+    }
+  }
+
+  .purchase-profile {
+    justify-content: flex-end;
+
+    img, .empty-photo {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  .card-footer {
+    background-color: $slate;
+    color: lighten($quartz,10%);
+    font-size: .9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    justify-content: center;
+    border: none;
+    border-radius: 0 0 6px 6px;
+    padding: .25rem .7rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $indigo;
+      color: $mist;
+    }
+  }
+}
+
+.modal-content.modal-form {
+  width: 600px;
+}
+
+.missing-products {
+  color: $quartz;
+  background-color: lighten($koamaru, 10%);
+  box-shadow: none;
+  margin-bottom: 3rem;
+
+  .title {
+    color: $quartz;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: .75rem;
+  }
+
+  ul {
+    font-size: .8rem;
+    margin-left: .5rem;
+  }
+}
+
+.inventory-list {
+
+  li {
+    background-color: $mist;
+    margin: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 300ms ease;
+
+    .is-checkradio[type="checkbox"] + label span {
+      color: $stone;
+      font-size: 1.2rem;
+      margin-left: 1rem;
+    }
+
+    &:hover {
+      background-color: darken($mist, 3%);
+    }
+  }
+
+  li:first-child {
+    background-color: $periwinkle;
+
+    .is-checkradio[type="checkbox"] + label span {
+      color: $white;
+    }
+
+    &:hover {
+      background-color: darken($periwinkle, 8%);
+    }
+  }
+}
+
+
+.inventory-orders {
+
+  li {
+    background-color: $mist;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: all 300ms ease;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      background-color: darken($mist, 3%);
+    }
+
+    .status {
+      background-color: $yellow;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+    }
+
+    span {
+      color: $quartz;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-left: 1rem;
+    }
+  }
+}
+
+.purchase-sayings {
+  color: $periwinkle;
+  height: calc(100vh - 50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lnr {
+    font-size: 4rem;
+  }
+
+  .saying {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+}
+
+.settings {
+  padding: 3rem;
+
+  figure {
+    margin: 1rem auto;
+  }
+
+  img {
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    object-fit: cover;
+
+    &.shop-img {
+      width: 175px;
+      height: 175px;
+      border: 5px solid darken($slate, 5%);
+    }
+
+    &.profile-img {
+      width: 125px;
+      height: 125px;
+    }
+  }
+
+  .menu-label {
+    color: $quartz;
+  }
+
+  li {
+    line-height: 1.8rem;
+  }
+
+  .fa-icon {
+    color: $grey-light;
+    display: inline-block;
+    margin: 0 5px;
+    text-align: center;
+    width: 20px;
+  }
+
+  .profile-bio {
+    font-size: .85rem;
+    margin-top: .5rem;
+    text-align: justify;
+  }
+}
