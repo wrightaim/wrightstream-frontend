@@ -14,6 +14,7 @@ import Header from './components/Header';
 
 // CONTAINERS
 import Login from './containers/Login';
+import Signup from './containers/Signup';
 
 // ==========
 
@@ -26,6 +27,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={() => <Redirect to="/login" />} />
             <Route path="/login" component={Login} />
+            <Route path="/signup" component={Signup} />
           </Switch>
         </div>
       </BrowserRouter>  
