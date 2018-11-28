@@ -1,0 +1,47 @@
+.settings {
+  padding: 3rem;
+
+  figure {
+    margin: 1rem auto;
+  }
+
+  img {
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    object-fit: cover;
+
+    &.shop-img {
+      width: 175px;
+      height: 175px;
+      border: 5px solid darken($slate, 5%);
+    }
+
+    &.profile-img {
+      width: 125px;
+      height: 125px;
+    }
+  }
+
+  .menu-label {
+    color: $quartz;
+  }
+
+  li {
+    line-height: 1.8rem;
+  }
+
+  .fa-icon {
+    color: $grey-light;
+    display: inline-block;
+    margin: 0 5px;
+    text-align: center;
+    width: 20px;
+  }
+
+  .profile-bio {
+    font-size: .85rem;
+    margin-top: .5rem;
+    text-align: justify;
+  }
+}

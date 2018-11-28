@@ -1,0 +1,406 @@
+.workstream {
+  min-height: calc(100vh - #{$navbar-height});
+  overflow-x: auto;
+
+  .title {
+    color: $quartz;
+    font-weight: 500;
+    margin-bottom: .75rem;
+
+    a {
+      color: $periwinkle;
+      font-size: 1.25rem;
+      padding-left: .5rem;
+    }
+
+    a:hover {
+      color: $indigo;
+    }
+  }
+
+  > .columns > .column {
+    padding: 1.5rem;
+
+    &:not(:first-child) {
+      padding-left: 0;
+    }
+  }
+
+  .column-container {
+    background-color: $mist;
+    padding: .75rem;
+    min-height: 175px;
+    max-height: 65vh;
+    overflow-y: auto;
+    width: 272px;
+  }
+
+  .column-button {
+    background-color: $periwinkle;
+    color: $white;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: .5rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $indigo;
+    }
+  }
+
+  .store-logo {
+    background-color: $indigo;
+    color: $white;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .store-logo-img {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .purchase-profile {
+
+    img, .empty-photo {
+      background-color: $slate;
+      border-radius: 50%;
+      object-fit: cover;
+
+      &:hover {
+        background-color: $mist;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.workstream .card {
+  background-color: transparent;
+  box-shadow: none;
+
+  &:not(:last-child) {
+    margin-bottom: .75rem;
+  }
+
+  .card-header {
+    background-color: $slate;
+    height: 5px;
+
+    &.status-green {
+      background-color: $green;
+    }
+
+    &.status-yellow {
+      background-color: $yellow;
+    }
+
+    &.status-red {
+      background-color: $red;
+    }
+  }
+
+  .card-content {
+    background-color: $white;
+    padding: 1rem .3rem;
+    cursor: pointer;
+  }
+
+  .column {
+    padding: 0 .2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .purchase-drag {
+    color: $periwinkle;
+    font-size: 1.3rem;
+    cursor: pointer;
+
+    &:hover {
+      color: $indigo;
+    }
+  }
+
+  .purchase-progress {
+    margin-top: -.5rem;
+
+    a {
+      color: $quartz;
+      font-size: .8rem;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    a:hover {
+      color: lighten($quartz, 20%);
+    }
+
+    .progress {
+      height: .4rem;
+    }
+  }
+
+  .purchase-profile {
+    justify-content: flex-end;
+
+    img, .empty-photo {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  .card-footer {
+    background-color: $slate;
+    color: lighten($quartz,10%);
+    font-size: .9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    justify-content: center;
+    border: none;
+    border-radius: 0 0 6px 6px;
+    padding: .25rem .7rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $indigo;
+      color: $mist;
+    }
+  }
+}
+
+.modal-purchase {
+  width: 900px;
+  height: calc(100vh - 40px);
+  overflow-y: hidden;
+
+  >.columns {
+    height: 100%;
+  }
+
+  >.columns>.column {
+    padding: 0;
+    overflow-y: auto;
+  }
+
+  .modal-sidebar {
+    background-color: $koamaru;
+    color: $white;
+  }
+
+  .purchase-status {
+    background-color: $periwinkle;
+    color: $text;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: .25rem;
+
+    &.status-green {
+      background-color: $green;
+    }
+
+    &.status-yellow {
+      background-color: $yellow;
+    }
+
+    &.status-red {
+      background-color: $red;
+    }
+  }
+
+  .level {
+    margin-bottom: 0;
+  }
+
+  .purchase-header {
+    padding: 1.5rem;
+
+    .title {
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+  }
+
+  .purchase-row {
+    border-top: 1px solid lighten($koamaru, 3%);
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+
+    .title {
+      color: $slate;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    i {
+      margin-left: .75rem;
+    }
+
+    .progress {
+      width: 100px;
+      height: .4rem;
+    }
+
+    .purchase-profile img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .purchase-row-child {
+    background-color: lighten($koamaru, 3%);
+    color: $quartz;
+    font-size: .9rem;
+    padding: .5rem 1.5rem .5rem 2.5rem;
+
+    ul li {
+      margin: .4rem 0;
+    }
+
+    ul li ul {
+      margin-left: 2rem;
+      transform: scale(0.9);
+    }
+
+    ul li ul span.bullet {
+      color: darken($quartz, 20%);
+      margin-right: .5rem;
+    }
+
+    .purchase-profile img {
+      width: 20px;
+      height: 20px;
+    }
+
+    span {
+      margin-right: .75rem;
+    }
+
+    label {
+      padding-right: .5rem;
+    }
+
+    .lnr-check {
+      color: $green;
+    }
+
+    .lnr-cross2 {
+      color: $red;
+    }
+
+    .lnr-label {
+      color: darken($quartz, 20%);
+      cursor: pointer;
+    }
+
+    .lnr-label:hover {
+      color: $quartz;
+    }
+
+    label {
+      font-size: .9rem;
+      margin: 0;
+    }
+
+    .is-checkradio[type="radio"] + label,
+    .is-checkradio[type="checkbox"] + label {
+      padding-top: .1rem;
+    }
+
+    .is-checkradio[type="radio"] + label::before,
+    .is-checkradio[type="radio"]:checked + label::before,
+    .is-checkradio[type="checkbox"] + label::before,
+    .is-checkradio[type="checkbox"]:checked + label::before {
+      background-color: lighten($koamaru, 10%);
+      border: none;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .is-checkradio[type="checkbox"] + label::after,
+    .is-checkradio[type="checkbox"]:checked + label::after {
+      border-color: $quartz;
+      top: .25rem;
+      left: .45rem;
+    }
+
+    .is-checkradio[type="radio"] + label::after,
+    .is-checkradio[type="radio"]:checked + label::after {
+      background-color: $quartz;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+
+  .purchase-profile {
+
+    img, .empty-photo {
+      cursor: pointer;
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+
+.purchase-assign {
+  width: 250px;
+  border-radius: 5px;
+
+  li {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: .6rem;
+  }
+
+  li:nth-child(2n) {
+    background-color: lighten($slate, 1%);
+  }
+
+  li:hover {
+    background-color: $mist;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: .5rem;
+  }
+}
+
+.purchase-sayings {
+  color: $periwinkle;
+  height: calc(100vh - 50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lnr {
+    font-size: 4rem;
+  }
+
+  .saying {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+}

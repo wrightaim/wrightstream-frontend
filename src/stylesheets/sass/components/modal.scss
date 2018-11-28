@@ -1,0 +1,92 @@
+.modal-content {
+  background-color: $white;
+  border-bottom: 2px solid $periwinkle;
+
+  img {
+    object-fit: cover;
+  }
+
+  .product-control, .supply-control, .source-control {
+    padding: 1.5rem 2rem;
+
+    div {
+      color: $periwinkle;
+      text-align: right;
+      display: block;
+    }
+
+    a {
+      color: $periwinkle;
+      font-size: 1.25rem;
+    }
+
+    a:hover {
+      color: $indigo;
+    }
+
+    div:not(:last-child) {
+      margin-bottom: .5rem;
+    }
+  }
+
+  .product-control {
+    margin-top: -10rem;
+  }
+
+  .supply-control, .source-control {
+    margin-top: -7rem;
+  }
+}
+
+.modal-container {
+  padding: 2.5rem 3rem;
+
+  .title {
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+
+  .subtitle {
+    color: $quartz;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+  }
+
+  small {
+    color: $quartz;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    .product-bullet {
+      color: $periwinkle;
+    }
+  }
+
+  em {
+    color: $quartz;
+    font-size: .8rem;
+    margin-right: .5rem;
+  }
+
+  >div:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  ul, ol {
+    color: $stone;
+  }
+
+  ol {
+    margin-left: 2.75rem;
+
+    li {
+      padding-left: .25rem;
+    }
+  }
+}
+
+.modal-content.modal-form {
+  width: 600px;
+}
