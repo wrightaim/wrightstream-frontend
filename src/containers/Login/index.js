@@ -25,7 +25,7 @@ class Login extends React.Component {
 
   render () {
     return (
-      <section className="hero is-medium is-dark is-bold">
+      <section className="hero is-medium">
         <div className="hero-body">
           <div className="container">
             <div className="columns">
