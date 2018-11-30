@@ -3522,7 +3522,7 @@ a.tag:hover {
 
 .card {
   background-color: white;
-  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  box-shadow: none;
   color: #4a4a4a;
   max-width: 100%;
   position: relative; }
@@ -7533,6 +7533,38 @@ label.panel-block {
 
 .select, select {
   width: 100%; }
+
+.input,
+.textarea {
+  background-color: #f0f1f6;
+  color: #9295a5;
+  border-color: #f0f1f6;
+  box-shadow: none;
+  height: 2rem;
+  font-size: .85rem; }
+  .input::placeholder, .textarea::placeholder {
+    color: #bcbec8; }
+  .input:hover, .textarea:hover {
+    border-color: #d9def1; }
+  .input:focus, .textarea:focus {
+    border-color: #636fa6; }
+
+.button {
+  text-transform: uppercase;
+  font-weight: 500; }
+  .button.is-main-button {
+    color: #9295a5;
+    border: 2px solid #9295a5;
+    margin-top: 1.5rem;
+    padding: .5rem 2rem;
+    height: inherit; }
+    .button.is-main-button:hover {
+      color: #bcbec8;
+      border-color: #bcbec8; }
+
+.card-content {
+  padding: 2.5rem;
+  border-bottom: 2px solid #e2e4f0; }
 
 .hide {
   display: none; }
