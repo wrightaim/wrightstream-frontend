@@ -42,7 +42,7 @@ class Signup extends React.Component {
 
   render () {
     return (
-      <section className="hero is-medium is-dark is-bold">
+      <section className="hero is-medium">
         <div className="hero-body">
           <div className="container">
             <div className="columns">
@@ -162,8 +162,8 @@ class Signup extends React.Component {
                           </div>
                         </div>
                       </div>
-                      <div className="control">
-                        <button className="button is-primary is-fullwidth">Sign Up</button>
+                      <div className="control has-text-centered">
+                        <button className="button is-main-button">Sign Up</button>
                       </div>
                       {!this.state.isValid ? (
                         <p id="error" className="help is-danger">
