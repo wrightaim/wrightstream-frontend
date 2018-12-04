@@ -73,16 +73,16 @@ class Login extends React.Component {
                             />
                           </p>
                         </div>
-                        <div className="control has-text-centered">
-                          <button className="button is-main">Log In</button>
-                        </div>
                         {
-                          this.props.showLoginError ? (
+                          this.props.loginError ? (
                             <p id="error" className="help is-danger">
                               Email or password is incorrect.
                             </p>
                           ) : null
                         }
+                        <div className="control has-text-centered">
+                          <button className="button is-main">Log In</button>
+                        </div>   
                       </form>
                     </div>
                   </div>
