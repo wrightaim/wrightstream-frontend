@@ -4,7 +4,7 @@ import React from 'react';
 // REDUX
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-//import { userLogin } from '../../state/actions/auth';
+import { login } from '../../state/actions/auth';
 
 // ==========
 
@@ -18,10 +18,10 @@ class Login extends React.Component {
     };
   };
 
-  // handleLogin = event => {
-  //   event.preventDefault();
-  //   this.props.userLogin(this.state, this.props.history);
-  // };
+  login = event => {
+    event.preventDefault();
+    this.props.login(this.state, this.props.history);
+  };
 
   render () {
     return (
@@ -33,7 +33,7 @@ class Login extends React.Component {
                 <div className="column is-4-desktop is-offset-4-desktop">
                   <div className="card">
                     <div className="card-content">
-                      <form onSubmit={this.handleLogin}>
+                      <form onSubmit={this.login}>
                         <div className="field">
                           <p className="control">
                             <input
@@ -96,14 +96,12 @@ class Login extends React.Component {
   };
 };
 
-// const mapStateToProps = state => ({
-//   showLoginError: state.auth.showLoginError
-// });
+const mapStateToProps = state => ({
+  loginError: state.auth.loginError
+});
 
-// const mapDispatchToProps = dispatch => bindActionCreators({
-//   userLogin
-// }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({
+  login
+}, dispatch);
 
-// export default connect(mapStateToProps, mapDispatchToProps)(Login);
-
-export default Login;
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
