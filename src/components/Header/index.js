@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 // REDUX
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-//import { userLogout } from '../../state/actions/auth';
+import { logout } from '../../state/actions/auth';
 
 // ==========
 
@@ -152,8 +152,8 @@ class Header extends React.Component {
                 </div>
                 <div className="navbar-item has-dropdown is-hoverable">
                   <a className="navbar-link is-hidden-touch">
-                    {/* <img className="profile" src={this.props.user.photo} alt={`${this.props.user.first_name} ${this.props.user.last_name}`} />
-                    <span>{this.props.user.first_name}</span> */}
+                    <img className="profile" src={this.props.user.photo} alt={`${this.props.user.first_name} ${this.props.user.last_name}`} />
+                    <span>{this.props.user.first_name}</span>
                   </a>
                   <div className="navbar-dropdown is-right">
                     <Link className="navbar-item" to="/profile">
@@ -166,9 +166,9 @@ class Header extends React.Component {
                       Help
                     </Link>
                     <hr className="navbar-divider" />
-                    {/* <Link className="navbar-item is-active" to="/" onClick={() => {this.props.userLogout()}}>
+                    <Link className="navbar-item is-active" to="/" onClick={() => {this.props.logout()}}>
                       Log Out
-                    </Link> */}
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -191,15 +191,13 @@ class Header extends React.Component {
   };
 };
 
-// const mapStateToProps = state => ({
-//   user: state.auth.user,
-//   authorized: state.auth.authorized
-// });
+const mapStateToProps = state => ({
+  user: state.auth.user,
+  authorized: state.auth.authorized
+});
 
-// const mapDispatchToProps = dispatch => bindActionCreators({
-//   userLogout
-// }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({
+  logout
+}, dispatch);
 
-// export default connect(mapStateToProps, mapDispatchToProps)(Header);
-
-export default Header;
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

@@ -1,6 +1,7 @@
 import {
   LOGIN_SUCCESS,
-  LOGIN_FAILURE
+  LOGIN_FAILURE,
+  LOGOUT
 } from '../actions/auth';
 
 let initial = {
@@ -15,6 +16,8 @@ export default (state = initial, action) => {
       return {...state, user: action.payload, authorized: true};
     case LOGIN_FAILURE:
       return {...state, loginError: true};
+    case LOGOUT:
+      return {...state, user: {}, authorized: false};
     default:
       return state;
   }

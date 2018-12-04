@@ -2,6 +2,7 @@ import Auth from '../models/auth';
 
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
+export const LOGOUT = 'LOGOUT';
 
 export const login = ({shop_username, email, password}, history) => {
   return async dispatch => {
@@ -13,5 +14,12 @@ export const login = ({shop_username, email, password}, history) => {
       dispatch({type: LOGIN_FAILURE, payload: err});
       history.push('/login');
     }
+  };
+};
+
+export const logout = () => {
+  return dispatch => {
+    localStorage.removeItem('token');
+    dispatch({type: LOGOUT});
   };
 };
