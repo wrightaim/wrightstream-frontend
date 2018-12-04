@@ -1,0 +1,7 @@
+.hero {
+  @include min-full-height;
+}
+
+.hero-body {
+  @include vertical-align-center;
+}

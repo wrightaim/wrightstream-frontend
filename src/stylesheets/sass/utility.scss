@@ -9,3 +9,12 @@
 .pointer {
   cursor: pointer;
 }
+
+@mixin min-full-height {
+  min-height: calc(100vh - 5rem);
+}
+
+@mixin vertical-align-center {
+  display: flex;
+  align-items: center;
+}

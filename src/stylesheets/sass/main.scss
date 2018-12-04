@@ -22,6 +22,16 @@
 // CONTAINERS
 @import "containers/admin";
 @import "containers/inventory";
+
+#login {
+  @import "containers/login";
+}
+
 @import "containers/products";
 @import "containers/settings";
+
+#signup {
+  @import "containers/signup";
+}
+
 @import "containers/workstream";

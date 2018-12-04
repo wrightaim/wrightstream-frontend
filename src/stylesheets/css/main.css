@@ -7804,6 +7804,13 @@ nav {
     font-weight: 500;
     margin-left: 1rem; }
 
+#login .hero {
+  min-height: calc(100vh - 5rem); }
+
+#login .hero-body {
+  display: flex;
+  align-items: center; }
+
 .supply-qty {
   text-align: right;
   margin-right: .25rem;
@@ -7977,6 +7984,13 @@ nav {
     font-size: .85rem;
     margin-top: .5rem;
     text-align: justify; }
+
+#signup .hero {
+  min-height: calc(100vh - 5rem); }
+
+#signup .hero-body {
+  display: flex;
+  align-items: center; }
 
 .workstream {
   min-height: calc(100vh - 5rem);
