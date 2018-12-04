@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 // REDUX
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { logout } from '../../state/actions/auth';
+import { getUser, logout } from '../../state/actions/auth';
 
 // ==========
 
@@ -83,6 +83,7 @@ class Header extends React.Component {
   };
 
   componentDidMount () {
+    this.props.getUser();
     if (window.location.pathname.includes('/products')) {
       this.setState({
         productsClasses: 'navbar-item is-active',
@@ -197,6 +198,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
+  getUser,
   logout
 }, dispatch);
 

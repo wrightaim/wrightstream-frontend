@@ -1,4 +1,6 @@
 import {
+  GET_USER,
+  NOT_LOGGED_IN,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
   LOGOUT
@@ -12,6 +14,10 @@ let initial = {
 
 export default (state = initial, action) => {
   switch (action.type) {
+    case GET_USER:
+      return {...state, user: action.payload, authorized: true};
+    case NOT_LOGGED_IN:
+      return {...state, authorized: false};
     case LOGIN_SUCCESS:
       return {...state, user: action.payload, authorized: true};
     case LOGIN_FAILURE:

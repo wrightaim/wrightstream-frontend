@@ -5,6 +5,11 @@ class Auth {
     const authToken = await request('/auth/token');
     return authToken.data.shop_id;
   };
+  
+  static getUser = async () => {
+    const token = await request('/auth/token');
+    return token.data;
+  };
 
   static login = async ({shop_username, email, password}) => {
     const login = await request('/auth/token', 'post', {shop_username, email, password});
