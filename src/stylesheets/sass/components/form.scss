@@ -1,0 +1,24 @@
+.input, .textarea {
+  background-color: $slate;
+  color: $quartz;
+  border-color: $slate;
+  box-shadow: none;
+  height: 2rem;
+  font-size: .85rem;
+
+  &::placeholder {
+    color: lighten($quartz, 15%);
+  }
+
+  &:hover {
+    border-color: $lavender;
+  }
+
+  &:focus {
+    border-color: $indigo;
+  }
+}
+
+.select, select {
+  width: 100%;
+}

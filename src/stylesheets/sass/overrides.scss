@@ -1,68 +1,31 @@
-.columns.is-fullheight {
-  min-height: calc(100vh - #{$navbar-height});
-  max-height: calc(100vh - #{$navbar-height});
-  height: calc(100vh - #{$navbar-height});
-  display: flex;
-  flex-direction: row;
-  justify-content: stretch;
+// HEADER
+$navbar-height: 5rem;
+$navbar-item-img-max-height: 2.75rem;
+$navbar-item-color: $quartz;
+$navbar-dropdown-arrow: $periwinkle;
+$navbar-dropdown-border-top: 2px solid $mist;
 
-  .column {
-    overflow-y: auto;
-  }
-}
+// BAR
+$menu-label-color: $slate;
+$menu-item-color: $quartz;
+$menu-item-hover-color: $quartz;
+$menu-item-hover-background-color: lighten($koamaru, 5);
 
-.navbar-link::after,
-.select:not(.is-multiple):not(.is-loading)::after {
-  height: .5rem;
-  width: .5rem;
-  border-width: 1px;
-  border-radius: 0;
-}
+// TABS
+$tabs-border-bottom-color: $mist;
+$tabs-link-color: $quartz;
+$tabs-link-hover-color: $quartz;
+$tabs-link-hover-border-bottom-color: $periwinkle;
+$tabs-link-active-color: $indigo;
+$tabs-link-active-border-bottom-color: $indigo;
+$tabs-border-bottom-width: 2px;
 
-.select, select {
-  width: 100%;
-}
+// PROGRESS
+$progress-bar-background-color: $mist;
+$progress-value-background-color: $periwinkle;
 
-.input, .textarea {
-  background-color: $slate;
-  color: $quartz;
-  border-color: $slate;
-  box-shadow: none;
-  height: 2rem;
-  font-size: .85rem;
+// FORM
+$control-radius: 0;
 
-  &::placeholder {
-    color: lighten($quartz, 15%);
-  }
-
-  &:hover {
-    border-color: $lavender;
-  }
-
-  &:focus {
-    border-color: $indigo;
-  }
-}
-
-.button {
-  text-transform: uppercase;
-  font-weight: 500;
-
-  &.is-main-button {
-    color: $quartz;
-    border: 2px solid $quartz;
-    margin-top: 1.5rem;
-    padding: .5rem 2rem;
-    height: inherit;
-
-    &:hover {
-      color: lighten($quartz, 15%);
-      border-color: lighten($quartz, 15%);
-    }
-  }
-}
-
-.card-content {
-  padding: 2.5rem;
-  border-bottom: 2px solid $mist;
-}
+// CARD
+$card-shadow: none;

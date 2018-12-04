@@ -163,7 +163,7 @@ class Signup extends React.Component {
                         </div>
                       </div>
                       <div className="control has-text-centered">
-                        <button className="button is-main-button">Sign Up</button>
+                        <button className="button is-main">Sign Up</button>
                       </div>
                       {!this.state.isValid ? (
                         <p id="error" className="help is-danger">

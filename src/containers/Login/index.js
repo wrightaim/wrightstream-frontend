@@ -73,7 +73,7 @@ class Login extends React.Component {
                         </p>
                       </div>
                       <div className="control has-text-centered">
-                        <button className="button is-main-button">Log In</button>
+                        <button className="button is-main">Log In</button>
                       </div>
                       {
                         this.props.showLoginError ? (

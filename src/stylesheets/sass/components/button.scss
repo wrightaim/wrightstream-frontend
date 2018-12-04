@@ -1,0 +1,17 @@
+.button {
+  text-transform: uppercase;
+  font-weight: 500;
+
+  &.is-main {
+    color: $quartz;
+    border: 2px solid $quartz;
+    margin-top: 1.5rem;
+    padding: .5rem 2rem;
+    height: inherit;
+
+    &:hover {
+      color: lighten($quartz, 15%);
+      border-color: lighten($quartz, 15%);
+    }
+  }
+}
