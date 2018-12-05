@@ -61,9 +61,12 @@ class Signup extends React.Component {
                   <div className="card">
                     <div className="card-content">
                       {
-                        !this.props.signupUserStep ? (
+                        this.props.signupUserStep ? (
                           <form onSubmit={this.signupShop}>
-                            <h1 className="title">Step 1: Tell us more about your shop</h1>
+                            <div>
+                              <span className="subtitle-alt">Step 1</span>
+                              <span className="subtitle is-6">Tell us more about your shop</span>
+                            </div>
                             <div className="field">
                               <p className="control">
                                 <input
@@ -116,7 +119,10 @@ class Signup extends React.Component {
                           </form>
                         ) : (
                           <form onSubmit={this.signupUser}>
-                            <h1>Step 2: Tell us more about you</h1>
+                            <div>
+                              <span className="subtitle-alt">Step 2</span>
+                              <span className="subtitle is-6">Tell us more about you</span>
+                            </div>
                             <div className="field is-horizontal">
                               <div className="field-body">
                                 <div className="field">
