@@ -1,37 +1,37 @@
-@charset "utf-8";
+@charset 'utf-8';
 
 // BULMA
-@import "../../../node_modules/bulma/sass/utilities/initial-variables";
-@import "variables";
-@import "overrides";
-@import "../../../node_modules/bulma/bulma";
-@import "../../../node_modules/bulma-extensions/bulma-checkradio/dist/css/bulma-checkradio";
+@import '../../../node_modules/bulma/sass/utilities/initial-variables';
+@import 'variables';
+@import 'overrides';
+@import '../../../node_modules/bulma/bulma';
+@import '../../../node_modules/bulma-extensions/bulma-checkradio/dist/css/bulma-checkradio';
 
 // THEME
-@import "theme";
-@import "utility";
+@import 'theme';
+@import 'utility';
 
 // COMPONENTS
-@import "components/button";
-@import "components/card";
-@import "components/form";
-@import "components/header";
-@import "components/modal";
-@import "components/photo";
+@import 'components/button';
+@import 'components/card';
+@import 'components/form';
+@import 'components/header';
+@import 'components/modal';
+@import 'components/photo';
 
 // CONTAINERS
-@import "containers/admin";
-@import "containers/inventory";
+@import 'containers/admin';
+@import 'containers/inventory';
 
 #login {
-  @import "containers/login";
+  @import 'containers/login';
 }
 
-@import "containers/products";
-@import "containers/settings";
+@import 'containers/products';
+@import 'containers/settings';
 
 #signup {
-  @import "containers/signup";
+  @import 'containers/signup';
 }
 
-@import "containers/workstream";
+@import 'containers/workstream';
