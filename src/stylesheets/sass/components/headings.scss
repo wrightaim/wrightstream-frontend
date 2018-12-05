@@ -1,0 +1,22 @@
+.title {
+  font-weight: 400;
+}
+
+.title-alt {
+  @extend .title;
+  color: $quartz;
+  font-weight: 500;
+}
+
+.subtitle {
+  color: $quartz;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.subtitle-alt {
+  @extend .subtitle;
+  color: $white;
+  background-color: $periwinkle;
+  padding: .25rem .5rem;
+}

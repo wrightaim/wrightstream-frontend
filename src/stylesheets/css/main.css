@@ -31,8 +31,8 @@
   transform-origin: center;
   width: 0.625em; }
 
-.box:not(:last-child), .content:not(:last-child), .notification:not(:last-child), .progress:not(:last-child), .table:not(:last-child), .table-container:not(:last-child), .title:not(:last-child),
-.subtitle:not(:last-child), .block:not(:last-child), .highlight:not(:last-child), .breadcrumb:not(:last-child), .level:not(:last-child), .list:not(:last-child), .message:not(:last-child), .tabs:not(:last-child) {
+.box:not(:last-child), .content:not(:last-child), .notification:not(:last-child), .progress:not(:last-child), .table:not(:last-child), .table-container:not(:last-child), .title:not(:last-child), .title-alt:not(:last-child),
+.subtitle:not(:last-child), .subtitle-alt:not(:last-child), .block:not(:last-child), .highlight:not(:last-child), .breadcrumb:not(:last-child), .level:not(:last-child), .list:not(:last-child), .message:not(:last-child), .tabs:not(:last-child) {
   margin-bottom: 1.5rem; }
 
 .delete, .modal-close {
@@ -3001,8 +3001,9 @@ a.box:active {
     position: absolute;
     right: 0.5rem;
     top: 0.5rem; }
-  .notification .title,
+  .notification .title, .notification .title-alt,
   .notification .subtitle,
+  .notification .subtitle-alt,
   .notification .content {
     color: currentColor; }
   .notification.is-white {
@@ -3366,74 +3367,83 @@ a.box:active {
 a.tag:hover {
   text-decoration: underline; }
 
-.title,
-.subtitle {
+.title, .title-alt,
+.subtitle,
+.subtitle-alt {
   word-break: break-word; }
-  .title em,
+  .title em, .title-alt em,
   .title span,
+  .title-alt span,
   .subtitle em,
-  .subtitle span {
+  .subtitle-alt em,
+  .subtitle span,
+  .subtitle-alt span {
     font-weight: inherit; }
-  .title sub,
-  .subtitle sub {
+  .title sub, .title-alt sub,
+  .subtitle sub,
+  .subtitle-alt sub {
     font-size: 0.75em; }
-  .title sup,
-  .subtitle sup {
+  .title sup, .title-alt sup,
+  .subtitle sup,
+  .subtitle-alt sup {
     font-size: 0.75em; }
-  .title .tag,
-  .subtitle .tag {
+  .title .tag, .title-alt .tag,
+  .subtitle .tag,
+  .subtitle-alt .tag {
     vertical-align: middle; }
 
-.title {
+.title, .title-alt {
   color: #363636;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.125; }
-  .title strong {
+  .title strong, .title-alt strong {
     color: inherit;
     font-weight: inherit; }
-  .title + .highlight {
+  .title + .highlight, .title-alt + .highlight {
     margin-top: -0.75rem; }
-  .title:not(.is-spaced) + .subtitle {
+  .title:not(.is-spaced) + .subtitle, .title-alt:not(.is-spaced) + .subtitle, .title:not(.is-spaced) + .subtitle-alt, .title-alt:not(.is-spaced) + .subtitle-alt {
     margin-top: -1.25rem; }
-  .title.is-1 {
+  .title.is-1, .is-1.title-alt {
     font-size: 3rem; }
-  .title.is-2 {
+  .title.is-2, .is-2.title-alt {
     font-size: 2.5rem; }
-  .title.is-3 {
+  .title.is-3, .is-3.title-alt {
     font-size: 2rem; }
-  .title.is-4 {
+  .title.is-4, .is-4.title-alt {
     font-size: 1.5rem; }
-  .title.is-5 {
+  .title.is-5, .is-5.title-alt {
     font-size: 1.25rem; }
-  .title.is-6 {
+  .title.is-6, .is-6.title-alt {
     font-size: 1rem; }
-  .title.is-7 {
+  .title.is-7, .is-7.title-alt {
     font-size: 0.75rem; }
 
-.subtitle {
+
+.subtitle,
+.subtitle-alt {
   color: #4a4a4a;
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.25; }
-  .subtitle strong {
+  .subtitle strong, .subtitle-alt strong {
     color: #363636;
     font-weight: 600; }
-  .subtitle:not(.is-spaced) + .title {
+  .subtitle:not(.is-spaced) + .title, .subtitle-alt:not(.is-spaced) + .title, .subtitle:not(.is-spaced) + .title-alt, .subtitle-alt:not(.is-spaced) + .title-alt {
     margin-top: -1.25rem; }
-  .subtitle.is-1 {
+  .subtitle.is-1, .is-1.subtitle-alt {
     font-size: 3rem; }
-  .subtitle.is-2 {
+  .subtitle.is-2, .is-2.subtitle-alt {
     font-size: 2.5rem; }
-  .subtitle.is-3 {
+  .subtitle.is-3, .is-3.subtitle-alt {
     font-size: 2rem; }
-  .subtitle.is-4 {
+  .subtitle.is-4, .is-4.subtitle-alt {
     font-size: 1.5rem; }
-  .subtitle.is-5 {
+  .subtitle.is-5, .is-5.subtitle-alt {
     font-size: 1.25rem; }
-  .subtitle.is-6 {
+  .subtitle.is-6, .is-6.subtitle-alt {
     font-size: 1rem; }
-  .subtitle.is-7 {
+  .subtitle.is-7, .is-7.subtitle-alt {
     font-size: 0.75rem; }
 
 .heading {
@@ -3672,8 +3682,9 @@ button.dropdown-item {
   flex-grow: 0;
   flex-shrink: 0;
   justify-content: center; }
-  .level-item .title,
-  .level-item .subtitle {
+  .level-item .title, .level-item .title-alt,
+  .level-item .subtitle,
+  .level-item .subtitle-alt {
     margin-bottom: 0; }
   @media screen and (max-width: 768px) {
     .level-item:not(:last-child) {
@@ -6237,12 +6248,13 @@ label.panel-block {
     .hero.is-white a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-white strong {
       color: inherit; }
-    .hero.is-white .title {
+    .hero.is-white .title, .hero.is-white .title-alt {
       color: #0a0a0a; }
-    .hero.is-white .subtitle {
+    .hero.is-white .subtitle, .hero.is-white .subtitle-alt {
       color: rgba(10, 10, 10, 0.9); }
-      .hero.is-white .subtitle a:not(.button),
-      .hero.is-white .subtitle strong {
+      .hero.is-white .subtitle a:not(.button), .hero.is-white .subtitle-alt a:not(.button),
+      .hero.is-white .subtitle strong,
+      .hero.is-white .subtitle-alt strong {
         color: #0a0a0a; }
     @media screen and (max-width: 1087px) {
       .hero.is-white .navbar-menu {
@@ -6281,12 +6293,13 @@ label.panel-block {
     .hero.is-black a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-black strong {
       color: inherit; }
-    .hero.is-black .title {
+    .hero.is-black .title, .hero.is-black .title-alt {
       color: white; }
-    .hero.is-black .subtitle {
+    .hero.is-black .subtitle, .hero.is-black .subtitle-alt {
       color: rgba(255, 255, 255, 0.9); }
-      .hero.is-black .subtitle a:not(.button),
-      .hero.is-black .subtitle strong {
+      .hero.is-black .subtitle a:not(.button), .hero.is-black .subtitle-alt a:not(.button),
+      .hero.is-black .subtitle strong,
+      .hero.is-black .subtitle-alt strong {
         color: white; }
     @media screen and (max-width: 1087px) {
       .hero.is-black .navbar-menu {
@@ -6325,12 +6338,13 @@ label.panel-block {
     .hero.is-light a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-light strong {
       color: inherit; }
-    .hero.is-light .title {
+    .hero.is-light .title, .hero.is-light .title-alt {
       color: #363636; }
-    .hero.is-light .subtitle {
+    .hero.is-light .subtitle, .hero.is-light .subtitle-alt {
       color: rgba(54, 54, 54, 0.9); }
-      .hero.is-light .subtitle a:not(.button),
-      .hero.is-light .subtitle strong {
+      .hero.is-light .subtitle a:not(.button), .hero.is-light .subtitle-alt a:not(.button),
+      .hero.is-light .subtitle strong,
+      .hero.is-light .subtitle-alt strong {
         color: #363636; }
     @media screen and (max-width: 1087px) {
       .hero.is-light .navbar-menu {
@@ -6369,12 +6383,13 @@ label.panel-block {
     .hero.is-dark a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-dark strong {
       color: inherit; }
-    .hero.is-dark .title {
+    .hero.is-dark .title, .hero.is-dark .title-alt {
       color: whitesmoke; }
-    .hero.is-dark .subtitle {
+    .hero.is-dark .subtitle, .hero.is-dark .subtitle-alt {
       color: rgba(245, 245, 245, 0.9); }
-      .hero.is-dark .subtitle a:not(.button),
-      .hero.is-dark .subtitle strong {
+      .hero.is-dark .subtitle a:not(.button), .hero.is-dark .subtitle-alt a:not(.button),
+      .hero.is-dark .subtitle strong,
+      .hero.is-dark .subtitle-alt strong {
         color: whitesmoke; }
     @media screen and (max-width: 1087px) {
       .hero.is-dark .navbar-menu {
@@ -6413,12 +6428,13 @@ label.panel-block {
     .hero.is-primary a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-primary strong {
       color: inherit; }
-    .hero.is-primary .title {
+    .hero.is-primary .title, .hero.is-primary .title-alt {
       color: #fff; }
-    .hero.is-primary .subtitle {
+    .hero.is-primary .subtitle, .hero.is-primary .subtitle-alt {
       color: rgba(255, 255, 255, 0.9); }
-      .hero.is-primary .subtitle a:not(.button),
-      .hero.is-primary .subtitle strong {
+      .hero.is-primary .subtitle a:not(.button), .hero.is-primary .subtitle-alt a:not(.button),
+      .hero.is-primary .subtitle strong,
+      .hero.is-primary .subtitle-alt strong {
         color: #fff; }
     @media screen and (max-width: 1087px) {
       .hero.is-primary .navbar-menu {
@@ -6457,12 +6473,13 @@ label.panel-block {
     .hero.is-link a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-link strong {
       color: inherit; }
-    .hero.is-link .title {
+    .hero.is-link .title, .hero.is-link .title-alt {
       color: #fff; }
-    .hero.is-link .subtitle {
+    .hero.is-link .subtitle, .hero.is-link .subtitle-alt {
       color: rgba(255, 255, 255, 0.9); }
-      .hero.is-link .subtitle a:not(.button),
-      .hero.is-link .subtitle strong {
+      .hero.is-link .subtitle a:not(.button), .hero.is-link .subtitle-alt a:not(.button),
+      .hero.is-link .subtitle strong,
+      .hero.is-link .subtitle-alt strong {
         color: #fff; }
     @media screen and (max-width: 1087px) {
       .hero.is-link .navbar-menu {
@@ -6501,12 +6518,13 @@ label.panel-block {
     .hero.is-info a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-info strong {
       color: inherit; }
-    .hero.is-info .title {
+    .hero.is-info .title, .hero.is-info .title-alt {
       color: #fff; }
-    .hero.is-info .subtitle {
+    .hero.is-info .subtitle, .hero.is-info .subtitle-alt {
       color: rgba(255, 255, 255, 0.9); }
-      .hero.is-info .subtitle a:not(.button),
-      .hero.is-info .subtitle strong {
+      .hero.is-info .subtitle a:not(.button), .hero.is-info .subtitle-alt a:not(.button),
+      .hero.is-info .subtitle strong,
+      .hero.is-info .subtitle-alt strong {
         color: #fff; }
     @media screen and (max-width: 1087px) {
       .hero.is-info .navbar-menu {
@@ -6545,12 +6563,13 @@ label.panel-block {
     .hero.is-success a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-success strong {
       color: inherit; }
-    .hero.is-success .title {
+    .hero.is-success .title, .hero.is-success .title-alt {
       color: #fff; }
-    .hero.is-success .subtitle {
+    .hero.is-success .subtitle, .hero.is-success .subtitle-alt {
       color: rgba(255, 255, 255, 0.9); }
-      .hero.is-success .subtitle a:not(.button),
-      .hero.is-success .subtitle strong {
+      .hero.is-success .subtitle a:not(.button), .hero.is-success .subtitle-alt a:not(.button),
+      .hero.is-success .subtitle strong,
+      .hero.is-success .subtitle-alt strong {
         color: #fff; }
     @media screen and (max-width: 1087px) {
       .hero.is-success .navbar-menu {
@@ -6589,12 +6608,13 @@ label.panel-block {
     .hero.is-warning a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-warning strong {
       color: inherit; }
-    .hero.is-warning .title {
+    .hero.is-warning .title, .hero.is-warning .title-alt {
       color: rgba(0, 0, 0, 0.7); }
-    .hero.is-warning .subtitle {
+    .hero.is-warning .subtitle, .hero.is-warning .subtitle-alt {
       color: rgba(0, 0, 0, 0.9); }
-      .hero.is-warning .subtitle a:not(.button),
-      .hero.is-warning .subtitle strong {
+      .hero.is-warning .subtitle a:not(.button), .hero.is-warning .subtitle-alt a:not(.button),
+      .hero.is-warning .subtitle strong,
+      .hero.is-warning .subtitle-alt strong {
         color: rgba(0, 0, 0, 0.7); }
     @media screen and (max-width: 1087px) {
       .hero.is-warning .navbar-menu {
@@ -6633,12 +6653,13 @@ label.panel-block {
     .hero.is-danger a:not(.button):not(.dropdown-item):not(.tag),
     .hero.is-danger strong {
       color: inherit; }
-    .hero.is-danger .title {
+    .hero.is-danger .title, .hero.is-danger .title-alt {
       color: #fff; }
-    .hero.is-danger .subtitle {
+    .hero.is-danger .subtitle, .hero.is-danger .subtitle-alt {
       color: rgba(255, 255, 255, 0.9); }
-      .hero.is-danger .subtitle a:not(.button),
-      .hero.is-danger .subtitle strong {
+      .hero.is-danger .subtitle a:not(.button), .hero.is-danger .subtitle-alt a:not(.button),
+      .hero.is-danger .subtitle strong,
+      .hero.is-danger .subtitle-alt strong {
         color: #fff; }
     @media screen and (max-width: 1087px) {
       .hero.is-danger .navbar-menu {
@@ -7619,6 +7640,25 @@ nav {
     font-weight: 500;
     margin-bottom: .3rem; }
 
+.title, .title-alt {
+  font-weight: 400; }
+
+.title-alt {
+  color: #9295a5;
+  font-weight: 500; }
+
+
+.subtitle,
+.subtitle-alt {
+  color: #9295a5;
+  text-transform: uppercase;
+  display: inline-block; }
+
+.subtitle-alt {
+  color: white;
+  background-color: #bbc3dd;
+  padding: .25rem .5rem; }
+
 .modal-content {
   background-color: white;
   border-bottom: 2px solid #bbc3dd; }
@@ -7644,10 +7684,10 @@ nav {
 
 .modal-container {
   padding: 2.5rem 3rem; }
-  .modal-container .title {
+  .modal-container .title, .modal-container .title-alt {
     font-weight: 400;
     margin-bottom: 0; }
-  .modal-container .subtitle {
+  .modal-container .subtitle, .modal-container .subtitle-alt {
     color: #9295a5;
     font-weight: 500;
     letter-spacing: 1px;
@@ -7720,7 +7760,7 @@ nav {
     font-size: 3rem;
     display: inline-block;
     width: 50%; }
-  .admin-container .title {
+  .admin-container .title, .admin-container .title-alt {
     color: #9295a5;
     font-weight: 500;
     text-transform: uppercase;
@@ -7879,7 +7919,7 @@ nav {
   background-color: #373c4a;
   box-shadow: none;
   margin-bottom: 3rem; }
-  .missing-products .title {
+  .missing-products .title, .missing-products .title-alt {
     color: #9295a5;
     font-weight: 500;
     text-transform: uppercase;
@@ -7930,7 +7970,7 @@ nav {
 
 .inventory {
   padding: 1rem; }
-  .inventory .title {
+  .inventory .title, .inventory .title-alt {
     color: #cacbd3;
     font-weight: 500;
     letter-spacing: 1px;
@@ -7995,15 +8035,15 @@ nav {
 .workstream {
   min-height: calc(100vh - 5rem);
   overflow-x: auto; }
-  .workstream .title {
+  .workstream .title, .workstream .title-alt {
     color: #9295a5;
     font-weight: 500;
     margin-bottom: .75rem; }
-    .workstream .title a {
+    .workstream .title a, .workstream .title-alt a {
       color: #bbc3dd;
       font-size: 1.25rem;
       padding-left: .5rem; }
-    .workstream .title a:hover {
+    .workstream .title a:hover, .workstream .title-alt a:hover {
       color: #636fa6; }
   .workstream > .columns > .column {
     padding: 1.5rem; }
@@ -8140,14 +8180,14 @@ nav {
     margin-bottom: 0; }
   .modal-purchase .purchase-header {
     padding: 1.5rem; }
-    .modal-purchase .purchase-header .title {
+    .modal-purchase .purchase-header .title, .modal-purchase .purchase-header .title-alt {
       font-weight: 400;
       text-transform: uppercase; }
   .modal-purchase .purchase-row {
     border-top: 1px solid #272b36;
     padding: 1rem 1.5rem;
     cursor: pointer; }
-    .modal-purchase .purchase-row .title {
+    .modal-purchase .purchase-row .title, .modal-purchase .purchase-row .title-alt {
       color: #f0f1f6;
       letter-spacing: 1px;
       text-transform: uppercase; }

@@ -63,7 +63,7 @@ class Signup extends React.Component {
                       {
                         !this.props.signupUserStep ? (
                           <form onSubmit={this.signupShop}>
-                            <h1>Step 1: Tell us more about your shop</h1>
+                            <h1 className="title">Step 1: Tell us more about your shop</h1>
                             <div className="field">
                               <p className="control">
                                 <input
