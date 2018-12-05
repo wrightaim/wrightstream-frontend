@@ -5,6 +5,8 @@ export const NOT_LOGGED_IN = 'NOT_LOGGED_IN';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 export const LOGOUT = 'LOGOUT';
+export const SIGNUP_SHOP_SUCCESS = 'SIGNUP_SHOP_SUCCESS';
+export const SIGNUP_SHOP_FAILURE = 'SIGNUP_SHOP_FAILURE';
 
 export const getUser = () => {
   return async dispatch => {
@@ -34,5 +36,16 @@ export const logout = () => {
   return dispatch => {
     localStorage.removeItem('token');
     dispatch({type: LOGOUT});
+  };
+};
+
+export const signupShop = shop => {
+  return async dispatch => {
+    try {
+      const payload = await Auth.signupShop(shop);
+      dispatch({type: SIGNUP_SHOP_SUCCESS, payload});
+    } catch (err) {
+      dispatch({type: SIGNUP_SHOP_FAILURE, payload: err});
+    }
   };
 };
