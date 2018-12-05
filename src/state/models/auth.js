@@ -11,8 +11,8 @@ class Auth {
     return token.data;
   };
 
-  static login = async ({shop_username, email, password}) => {
-    const login = await request('/auth/token', 'post', {shop_username, email, password});
+  static login = async credentials => {
+    const login = await request('/auth/token', 'post', credentials);
     await localStorage.setItem('token', login.data.token);
     const token = await request('/auth/token');
     return token.data;

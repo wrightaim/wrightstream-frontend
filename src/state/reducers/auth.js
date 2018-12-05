@@ -28,7 +28,7 @@ export default (state = initial, action) => {
     case NOT_LOGGED_IN:
       return {...state, authorized: false};
     case LOGIN_SUCCESS:
-      return {...state};
+      return {...state, user: action.payload, authorized: true};
     case LOGIN_FAILURE:
       return {...state, loginError: true};
     case LOGOUT:
