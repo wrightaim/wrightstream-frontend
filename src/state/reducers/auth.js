@@ -5,7 +5,10 @@ import {
   LOGIN_FAILURE,
   LOGOUT,
   SIGNUP_SHOP_SUCCESS,
-  SIGNUP_SHOP_FAILURE
+  SIGNUP_SHOP_FAILURE,
+  SIGNUP_USER_SUCCESS,
+  SIGNUP_USER_FAILURE,
+  SIGNUP_RESET
 } from '../actions/auth';
 
 let initial = {
@@ -14,7 +17,7 @@ let initial = {
   loginError: false,
   shop_id: null,
   signupShopError: false,
-  signupUser: false,
+  signupUserStep: false,
   signupUserError: false
 };
 
@@ -25,15 +28,21 @@ export default (state = initial, action) => {
     case NOT_LOGGED_IN:
       return {...state, authorized: false};
     case LOGIN_SUCCESS:
-      return {...state, user: action.payload, authorized: true};
+      return {...state};
     case LOGIN_FAILURE:
       return {...state, loginError: true};
     case LOGOUT:
       return {...state, user: {}, authorized: false};
     case SIGNUP_SHOP_SUCCESS:
-      return {...state, shop_id: action.payload, signupUser: true};
+      return {...state, shop_id: action.payload, signupUserStep: true};
     case SIGNUP_SHOP_FAILURE:
       return {...state, signupShopError: true};
+    case SIGNUP_USER_SUCCESS:
+      return {...state};
+    case SIGNUP_USER_FAILURE:
+      return {...state, signupUserError: true};
+    case SIGNUP_RESET:
+      return {...state, signupUserStep: false};
     default:
       return state;
   }

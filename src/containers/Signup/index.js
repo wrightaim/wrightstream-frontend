@@ -4,7 +4,7 @@ import React from 'react';
 // REDUX
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { signupShop } from '../../state/actions/auth';
+import { signupShop, signupUser, signupReset } from '../../state/actions/auth';
 
 // ==========
 
@@ -32,20 +32,23 @@ class Signup extends React.Component {
     this.props.signupShop(shop);
   };
 
-  // handleSignup = event => {
-  //   event.preventDefault();
-  //   let { shop_name, first_name, last_name, email, password, verify_password } = this.state;
-  //   if (!password || password !== verify_password || !verify_password) {
-  //     this.setState({
-  //       passwordClasses: this.state.passwordClasses + ' is-danger',
-  //       isValid: false
-  //     });
-  //   } else {
-  //     let newShop = {shop_name};
-  //     let newUser = {first_name, last_name, email, password};
-  //     this.props.userSignup(newShop, newUser, this.props.history);
-  //   }
-  // };
+  signupUser = event => {
+    event.preventDefault();
+    const { first_name, last_name, email, password, verify_password } = this.state;
+    if (password !== verify_password) {
+      this.setState({
+        passwordClasses: this.state.passwordClasses + ' is-danger',
+        passwordError: true
+      });
+    } else {
+      const user = { first_name, last_name, email, password };
+      this.props.signupUser(user, this.props.shop_id, this.props.history);
+    }
+  };
+
+  componentDidMount () {
+    this.props.signupReset();
+  };
 
   render () {
     return (
@@ -58,7 +61,7 @@ class Signup extends React.Component {
                   <div className="card">
                     <div className="card-content">
                       {
-                        !this.props.signupUser ? (
+                        !this.props.signupUserStep ? (
                           <form onSubmit={this.signupShop}>
                             <h1>Step 1: Tell us more about your shop</h1>
                             <div className="field">
@@ -112,7 +115,7 @@ class Signup extends React.Component {
                             </div>
                           </form>
                         ) : (
-                          <form onSubmit={this.handleSignup}>
+                          <form onSubmit={this.signupUser}>
                             <h1>Step 2: Tell us more about you</h1>
                             <div className="field is-horizontal">
                               <div className="field-body">
@@ -222,12 +225,14 @@ class Signup extends React.Component {
 const mapStateToProps = state => ({
   shop_id: state.auth.shop_id,
   signupShopError: state.auth.signupShopError,
-  signupUser: state.auth.signupUser,
+  signupUserStep: state.auth.signupUserStep,
   signupUserError: state.auth.signupUserError
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  signupShop
+  signupShop,
+  signupUser,
+  signupReset
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Signup);

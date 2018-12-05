@@ -7,6 +7,9 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 export const LOGOUT = 'LOGOUT';
 export const SIGNUP_SHOP_SUCCESS = 'SIGNUP_SHOP_SUCCESS';
 export const SIGNUP_SHOP_FAILURE = 'SIGNUP_SHOP_FAILURE';
+export const SIGNUP_USER_SUCCESS = 'SIGNUP_USER_SUCCESS';
+export const SIGNUP_USER_FAILURE = 'SIGNUP_USER_FAILURE';
+export const SIGNUP_RESET = 'SIGNUP_RESET';
 
 export const getUser = () => {
   return async dispatch => {
@@ -19,10 +22,10 @@ export const getUser = () => {
   };
 };
 
-export const login = ({shop_username, email, password}, history) => {
+export const login = (credentials, history) => {
   return async dispatch => {
     try {
-      const payload = await Auth.login({shop_username, email, password});
+      const payload = await Auth.login(credentials);
       dispatch({type: LOGIN_SUCCESS, payload});
       history.push('/settings');
     } catch (err) {
@@ -47,5 +50,23 @@ export const signupShop = shop => {
     } catch (err) {
       dispatch({type: SIGNUP_SHOP_FAILURE, payload: err});
     }
+  };
+};
+
+export const signupUser = (user, shop_id, history) => {
+  return async dispatch => {
+    try {
+      const payload = await Auth.signupUser(user, shop_id);
+      dispatch({type: SIGNUP_USER_SUCCESS, payload});
+      history.push('/login');
+    } catch (err) {
+      dispatch({type: SIGNUP_USER_FAILURE, payload: err});
+    }
+  };
+};
+
+export const signupReset = () => {
+  return dispatch => {
+    dispatch({type: SIGNUP_RESET});
   };
 };

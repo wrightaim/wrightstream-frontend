@@ -18,17 +18,15 @@ class Auth {
     return token.data;
   };
 
-  static signupShop = async newShop => {
-    const shop = await request('/shops', 'post', newShop);
-    return shop.data.data[0].id;
+  static signupShop = async shop => {
+    const newShop = await request('/shops', 'post', shop);
+    return newShop.data.data[0].id;
   };
 
-  // static signupUser = async (newUser) => {
-  //   const addShop = await request('/shops', 'post', newShop);
-  //   const shop_id = addShop.data.data[0].id;
-  //   const newStaff = await request(`/shops/${shop_id}/staff`, 'post', newUser);
-  //   return newStaff.data;
-  // };
+  static signupUser = async (user, shop_id) => {
+    const newUser = await request(`/shops/${shop_id}/staff`, 'post', user);
+    return newUser.data;
+  };
 };
 
 export default Auth;

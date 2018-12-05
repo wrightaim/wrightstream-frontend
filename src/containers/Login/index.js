@@ -20,7 +20,9 @@ class Login extends React.Component {
 
   login = event => {
     event.preventDefault();
-    this.props.login(this.state, this.props.history);
+    const { shop_username, email, password } = this.state;
+    const credentials = { shop_username, email, password };
+    this.props.login(credentials, this.props.history);
   };
 
   render () {
