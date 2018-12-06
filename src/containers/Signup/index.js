@@ -61,7 +61,7 @@ class Signup extends React.Component {
                   <div className="card">
                     <div className="card-content">
                       {
-                        this.props.signupUserStep ? (
+                        !this.props.signupUserStep ? (
                           <form onSubmit={this.signupShop}>
                             <div>
                               <span className="subtitle-alt">Step 1</span>

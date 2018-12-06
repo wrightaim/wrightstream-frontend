@@ -11,11 +11,11 @@ import Header from './components/Header';
 // CONTAINERS
 import Login from './containers/Login';
 import Signup from './containers/Signup';
+import Settings from './containers/Settings';
 // import Products from './containers/Products';
 // import Inventory from './containers/Inventory';
 // import WorkStream from './containers/WorkStream';
 // import MyStream from './containers/MyStream';
-// import Settings from './containers/Settings';
 // import Profile from './containers/Profile';
 // import Admin from './containers/Admin';
 
@@ -31,8 +31,8 @@ class App extends React.Component {
               <Route exact path="/" component={() => <Redirect to="/login" />} />
               <Route path="/login" component={Login} />
               <Route path="/signup" component={Signup} />
-              {/* <Route path="/settings" component={Settings} />
-              <Route path="/profile" component={Profile} />
+              <Route path="/settings" component={Settings} />
+              {/* <Route path="/profile" component={Profile} />
               <Route path="/products" component={Products} />
               <Route path="/inventory" component={Inventory} />
               <Route path="/workstream" component={WorkStream} />
