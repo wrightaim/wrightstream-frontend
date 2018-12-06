@@ -15,18 +15,11 @@ class Settings extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      loginUrl: ''
     };
-  };
-
-  handleEtsyAuthClick = () => {
-    window.location = this.state.loginUrl;
   };
 
   componentDidMount = async () => {
     this.props.getShop();
-    const response = await request('/auth/etsy/loginUrl');
-    this.setState({loginUrl: response.data.loginUrl});
   };
 
   render () {
@@ -76,11 +69,7 @@ class Settings extends React.Component {
               <div className="card">
                 <div className="card-content">
                   <h1 className="title is-5">Store Integrations</h1>
-                  <button
-                    className="button"
-                    disabled={!this.state.loginUrl}
-                    onClick={this.handleEtsyAuthClick}
-                  >
+                  <button className="button">
                     Link Etsy
                   </button>
                   <button className="button">
