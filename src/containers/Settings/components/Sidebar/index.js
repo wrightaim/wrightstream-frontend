@@ -14,9 +14,9 @@ class Sidebar extends React.Component {
           Settings
         </p>
         <ul className="menu-list">
-          <li><Link to="/products">Shop</Link></li>
-          <li><Link to="/products/items">Staff</Link></li>
-          <li><Link to="/products/bundles">Platforms</Link></li>
+          <li><Link to="/settings">Shop</Link></li>
+          <li><Link to="/settings/staff">Staff</Link></li>
+          <li><Link to="/settings/platforms">Platforms</Link></li>
         </ul>
       </aside>
     );
