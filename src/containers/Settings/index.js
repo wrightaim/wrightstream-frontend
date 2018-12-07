@@ -21,12 +21,6 @@ const moment = require('moment');
 // ==========
 
 class Settings extends React.Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-    };
-  };
-
   componentDidMount = async () => {
     this.props.getShop();
   };
@@ -56,7 +50,6 @@ class Settings extends React.Component {
                     </div>
                   </div>       
                 </div>
-
                 <Switch>
                   <Route exact path="/settings" render={(props) => <Shop shop={this.props.shop} {...props}/>} />
                   {/* <Route path="/settings/staff" component={Staff} />
