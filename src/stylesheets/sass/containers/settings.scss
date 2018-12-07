@@ -1,47 +1,46 @@
-.settings {
-  padding: 3rem;
+.content-container {
+  padding: 4rem;
+}
 
-  figure {
-    margin: 1rem auto;
+.shop {
+  padding: 0 3rem;
+
+  .column {
+    padding: 1.5rem 0;
   }
 
-  img {
-    display: block;
-    margin: auto;
-    border-radius: 50%;
-    object-fit: cover;
-
-    &.shop-img {
-      width: 175px;
-      height: 175px;
-      border: 5px solid darken($slate, 5%);
-    }
-
-    &.profile-img {
-      width: 125px;
-      height: 125px;
-    }
-  }
-
-  .menu-label {
-    color: $quartz;
-  }
-
-  li {
-    line-height: 1.8rem;
-  }
-
-  .fa-icon {
+  .column:first-child {
     color: $grey-light;
-    display: inline-block;
-    margin: 0 5px;
-    text-align: center;
-    width: 20px;
+    text-align: right;
+    padding-right: 2rem;
   }
 
-  .profile-bio {
-    font-size: .85rem;
-    margin-top: .5rem;
-    text-align: justify;
+  .column:last-child { 
+    border-bottom: 1px solid $slate;
+  }
+
+  .columns:last-child .column {
+    border-bottom: 0;
+  }
+
+  .button:first-child {
+    margin-bottom: .5rem;
+  }
+}
+
+img {
+  display: block;
+  object-fit: cover;
+  
+  &.logo {
+    width: 175px;
+    height: 175px;
+  }
+
+  &.logo-small {
+    width: 70px;
+    height: 70px;
+    border: 5px solid darken($slate, 5%);
+    margin-right: .75rem;
   }
 }

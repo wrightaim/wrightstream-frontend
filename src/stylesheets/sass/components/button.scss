@@ -14,4 +14,8 @@
       border-color: lighten($quartz, 15%);
     }
   }
+
+  &.is-small {
+    border-radius: 0;
+  }
 }

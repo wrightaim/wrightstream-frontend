@@ -29,7 +29,10 @@
 }
 
 @import 'containers/products';
-@import 'containers/settings';
+
+#settings {
+  @import 'containers/settings';
+}
 
 #signup {
   @import 'containers/signup';

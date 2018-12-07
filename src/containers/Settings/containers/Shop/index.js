@@ -1,64 +1,78 @@
 // REACT
 import React from 'react';
 
-// REDUX
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { getShop } from '../../../../state/actions/shop';
-
 // ==========
 
 class Shop extends React.Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-    };
-  };
-
-  componentDidMount = async () => {
-    this.props.getShop();
-  };
-
   render () {
     return (
       <div className="card">
         <div className="card-content">
-          <h1 className="title is-5">Shop</h1>
-          <figure className="image">
-            <img className="shop-img" src={this.props.shop.logo} alt={this.props.shop.shop_name} />
-          </figure>
-          <aside className="menu">
-            <ul className="menu-list">
-              <li>
-                <span className="fa-icon">
-                  <i className="fas fa-envelope"></i>
-                </span>
-                {this.props.shop.shop_name}
-              </li>
-              <li>
-                <span className="fa-icon">
-                  <i className="fas fa-user"></i>
-                </span>
-                {this.props.shop.name}
-              </li>
-              <li>
-                <span className="fa-icon">
-                  <i className="fas fa-envelope"></i>
-                </span>
-                {this.props.shop.email}
-              </li>    
-              <li>
-                <span className="fa-icon">
-                  <i className="fas fa-envelope"></i>
-                </span>
-                {this.props.shop.created_at}
-              </li>          
-            </ul>
-          </aside>
+          <div className="level">
+            <div className="level-left">
+              <div className="level-item">
+               <h1 className="title">Shop</h1>
+              </div>  
+            </div>
+            <div className="level-right">
+              <div className="level-item">
+               <button className="button is-primary is-outlined is-fullwidth">Edit</button>
+              </div>
+            </div>
+          </div>
           <hr />
-          <button className="button is-primary is-outlined is-fullwidth">Edit Shop</button>
-          <br />
-          <button className="button is-danger is-fullwidth">Delete Shop</button>
+          <div className="shop">
+            <div className="columns">
+              <div className="column is-4">
+                Shop Logo
+              </div>
+              <div className="column is-8">
+                <div className="level">
+                  <div className="level-left">
+                    <div className="level-item">
+                      <figure className="image">
+                        <img className="logo" src={this.props.shop.logo} alt={this.props.shop.shop_name} />
+                      </figure>
+                    </div>
+                    <div className="level-item">
+                      <div>
+                        <button className="button is-small is-fullwidth">Change</button>
+                        <button className="button is-small is-fullwidth is-danger">Delete</button>
+                      </div>  
+                    </div>
+                  </div>
+                </div>           
+              </div>
+            </div>
+            <div className="columns">
+              <div className="column is-4">
+                Shop Name
+              </div>
+              <div className="column is-8">
+                {this.props.shop.shop_name}
+              </div>
+            </div>
+            <div className="columns">
+              <div className="column is-4">
+                Shop Username
+              </div>
+              <div className="column is-8">
+                {this.props.shop.name}
+              </div>
+            </div>
+            <div className="columns">
+              <div className="column is-4">
+                Shop Email
+              </div>
+              <div className="column is-8">
+                {this.props.shop.email}
+              </div>
+            </div>
+          </div>
+          <hr />
+          <p className="has-text-right">
+            <a href="/" className="menu-label has-text-danger">Delete shop</a>
+          </p>     
         </div>
         {/* <div className="card">
               <div className="card-content">
@@ -76,12 +90,4 @@ class Shop extends React.Component {
   };
 };
 
-const mapStateToProps = state => ({
-  shop: state.shop.shop
-});
-
-const mapDispatchToProps = dispatch => bindActionCreators({
-  getShop
-}, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)(Shop);
+export default Shop;
