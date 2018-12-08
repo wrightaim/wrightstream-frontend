@@ -6,17 +6,41 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { editShop } from '../../../../state/actions/shop';
 
+// COMPONENTS
+import DeleteShop from './components/DeleteShop';
+import EditShopLogo from './components/EditShopLogo';
+import DeleteShopLogo from './components/DeleteShopLogo';
+
 // ==========
 
 class Shop extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
+      modal: false,
+      modalClasses: 'modal',
+      action: '',
       edit: false,
       shop_name: '',
       shop_username: '',
-      shop_email: ''
+      shop_email: '',
     };
+  };
+
+  toggle = event => {
+    if (!this.state.modal) {
+      this.setState({
+        modal: true,
+        modalClasses: this.state.modalClasses + ' is-active',
+        action: event.target.id
+      });
+    } else {
+      this.setState({
+        modal: false,
+        modalClasses: 'modal',
+        action: ''
+      });
+    }
   };
 
   editShop = async event => {
@@ -79,8 +103,16 @@ class Shop extends React.Component {
                         </div>
                         <div className="level-item">
                           <div>
-                            <button className="button is-small is-fullwidth">Change</button>
-                            <button className="button is-small is-fullwidth is-danger">Delete</button>
+                            <p 
+                              id="edit-shop-logo" 
+                              className="button is-small is-fullwidth"
+                              onClick={this.toggle}
+                            >Change</p>
+                            <p 
+                              id="delete-shop-logo" 
+                              className="button is-small is-fullwidth is-danger"
+                              onClick={this.toggle}
+                            >Delete</p>
                           </div>  
                         </div>
                       </div>
@@ -175,7 +207,11 @@ class Shop extends React.Component {
               ) : null
             }
             <p className="has-text-right">
-              <a href="/" className="menu-label has-text-danger">Delete Shop</a>
+              <span 
+                id="delete-shop" 
+                className="menu-label has-text-danger pointer"
+                onClick={this.toggle}
+              >Delete Shop</span>
             </p>
           </div>
           {/* <div className="card">
@@ -190,7 +226,28 @@ class Shop extends React.Component {
                 </div>
               </div> */}
         </div>
-        
+        <div className={this.state.modalClasses}>
+          <div className="modal-background" onClick={this.toggle}></div>
+          <div className="modal-content modal-form">
+            <div className="modal-container">
+              {
+                (() => {
+                  switch (this.state.action) {
+                    case 'delete-shop':
+                      return <DeleteShop toggle={this.toggle} />;
+                    case 'edit-shop-logo':
+                      return <EditShopLogo shop={this.props.shop} toggle={this.toggle} />;
+                    case 'delete-shop-logo':
+                      return <DeleteShopLogo toggle={this.toggle} />;
+                    default:
+                      break;
+                  }
+                })()
+              }
+            </div>
+          </div>
+          <button className="modal-close is-large" onClick={this.toggle}></button>
+        </div>
       </div>
     );
   };

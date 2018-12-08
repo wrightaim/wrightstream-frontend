@@ -41,6 +41,9 @@ img {
   &.logo {
     width: 175px;
     height: 175px;
+    border: 3px solid $white;
+    outline: 1px solid $grey-lighter;
+    margin-left: 1px;
   }
 
   &.logo-small {
@@ -48,5 +51,12 @@ img {
     height: 70px;
     border: 5px solid darken($slate, 5%);
     margin-right: .75rem;
+  }
+
+  &.logo-large {
+    width: 200px;
+    height: 200px;
+    border: 5px solid darken($slate, 5%);
+    margin: auto;
   }
 }

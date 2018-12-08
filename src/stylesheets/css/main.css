@@ -7567,10 +7567,10 @@ body {
   cursor: pointer; }
 
 .has-padding-top {
-  padding-top: 1rem; }
+  padding-top: 1.5rem; }
 
 .has-padding-bottom {
-  padding-bottom: 1rem; }
+  padding-bottom: 1.5rem; }
 
 .button {
   text-transform: uppercase;
@@ -8034,12 +8034,20 @@ nav {
   object-fit: cover; }
   #settings img.logo {
     width: 175px;
-    height: 175px; }
+    height: 175px;
+    border: 3px solid white;
+    outline: 1px solid #dbdbdb;
+    margin-left: 1px; }
   #settings img.logo-small {
     width: 70px;
     height: 70px;
     border: 5px solid #e0e2ec;
     margin-right: .75rem; }
+  #settings img.logo-large {
+    width: 200px;
+    height: 200px;
+    border: 5px solid #e0e2ec;
+    margin: auto; }
 
 #signup .hero {
   min-height: calc(100vh - 5rem); }
