@@ -4,34 +4,31 @@ import React from 'react';
 // REDUX
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-//import { deleteItem } from '../../../../state/actions/products';
+//import { editShop } from '../../../../../../state/actions/shop';
 
 // ==========
 
-class ItemDelete extends React.Component {
-  handleSubmit = event => {
-    this.props.deleteItem(this.props.item.id);
+class DeleteShop extends React.Component {
+  deleteShop = event => {
+    event.preventDefault();
+//    this.props.editShop();
     this.props.toggle();
-    this.props.toggleParent();
   };
 
   render () {
     return (
-      <form className="has-text-centered" onSubmit={this.handleSubmit}>
-        Are you sure you want to delete
-        <br />
-        <small>jjjj</small>?
-        <br /><br />
+      <form className="has-text-centered" onSubmit={this.deleteShop}>
+        <p className="has-padding-bottom">Are you sure you want to delete your shop?</p>
         <div className="control has-text-centered">
           <button className="button is-danger">Delete</button>
         </div>
-      </form>
+      </form>     
     );
   };
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-
+//  editShop
 }, dispatch);
 
-export default connect(null, mapDispatchToProps)(ItemDelete);
+export default connect(null, mapDispatchToProps)(DeleteShop);
