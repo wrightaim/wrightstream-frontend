@@ -14,6 +14,8 @@ import Sidebar from './components/Sidebar';
 
 // CONTAINERS
 import Shop from './containers/Shop';
+import Staff from './containers/Staff';
+import Platforms from './containers/Platforms';
 
 // HELPERS
 const moment = require('moment');
@@ -52,8 +54,8 @@ class Settings extends React.Component {
                 </div>
                 <Switch>
                   <Route exact path="/settings" render={(props) => <Shop shop={this.props.shop} {...props}/>} />
-                  {/* <Route path="/settings/staff" component={Staff} />
-                  <Route path="/settings/platforms" component={Platforms} /> */}
+                  <Route path="/settings/staff" component={Staff} />
+                  <Route path="/settings/platforms" component={Platforms} />
                 </Switch>                          
               </div>
             </div>

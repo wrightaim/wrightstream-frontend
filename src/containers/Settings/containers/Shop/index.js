@@ -126,7 +126,7 @@ class Shop extends React.Component {
                   <div className="column is-8">
                     {
                       !this.state.edit ? (
-                        <span>{this.state.shop_name}</span>
+                        <span>{this.props.shop.shop_name}</span>
                       ) : (
                         <div className="field">
                           <p className="control">
@@ -151,7 +151,7 @@ class Shop extends React.Component {
                   <div className="column is-8">
                     {
                       !this.state.edit ? (
-                        <span>{this.state.shop_username}</span>
+                        <span>{this.props.shop.name}</span>
                       ) : (
                         <div>
                           <div className="field">
@@ -178,7 +178,7 @@ class Shop extends React.Component {
                   <div className="column is-8">
                     {
                       !this.state.edit ? (
-                        <span>{this.state.shop_email}</span>
+                        <span>{this.props.shop.email}</span>
                       ) : (
                         <div className="field">
                           <p className="control">
