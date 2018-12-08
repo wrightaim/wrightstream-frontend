@@ -77,7 +77,7 @@ class Login extends React.Component {
                         </div>
                         {
                           this.props.loginError ? (
-                            <p id="error" className="help is-danger">
+                            <p className="help is-danger">
                               Shop username, email, or password is incorrect.
                             </p>
                           ) : null

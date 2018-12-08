@@ -108,7 +108,7 @@ class Signup extends React.Component {
                             </div>
                             {
                               this.props.signupShopError ? (
-                                <p id="error" className="help is-danger">
+                                <p className="help is-danger">
                                   Shop creation failed.
                                 </p>
                               ) : null
@@ -198,14 +198,14 @@ class Signup extends React.Component {
                             </div>
                             {
                               this.state.signupUserError ? (
-                                <p id="error" className="help is-danger">
+                                <p className="help is-danger">
                                   Owner creation failed.
                                 </p>
                               ) : null
                             }
                             {
                               this.state.passwordError ? (
-                                <p id="error" className="help is-danger">
+                                <p className="help is-danger">
                                   Passwords do not match.
                                 </p>
                               ) : null
