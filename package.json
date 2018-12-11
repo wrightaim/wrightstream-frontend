@@ -14,13 +14,12 @@
     "bulma",
     "axios"
   ],
-  "author": [
+  "contributors": [
     "Claudia Ligidakis <claudialigidakis@gmail.com>",
     "Vikanda Gonzales <vikanda.gonzales@gmail.com>"
   ],
   "license": "MIT",
   "dependencies": {
-    "@fortawesome/fontawesome": "^1.1.8",
     "autoprefixer": "^9.3.1",
     "axios": "^0.18.0",
     "bulma": "^0.7.2",

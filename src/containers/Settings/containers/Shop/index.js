@@ -44,7 +44,7 @@ class Shop extends React.Component {
   };
 
   editShop = async event => {
-    event.preventDefault();
+    event.preventDefault();  
     if (this.state.edit) {
       const { shop_name, shop_username, shop_email } = this.state;
       const shop = {shop_name: shop_name, name: shop_username, email: shop_email};
@@ -68,6 +68,12 @@ class Shop extends React.Component {
   };
 
   render () {
+    const shop = {
+      name: this.props.shop.shop_name,
+      username: this.props.shop.name,
+      email: this.props.shop.email,
+      logo: this.props.shop.logo
+    };
     return (
       <div>
         <div className="card">
@@ -98,7 +104,7 @@ class Shop extends React.Component {
                       <div className="level-left">
                         <div className="level-item">
                           <figure className="image">
-                            <img className="logo" src={this.props.shop.logo} alt={this.props.shop.shop_name} />
+                            <img className="logo" src={shop.logo} alt={shop.name} />
                           </figure>
                         </div>
                         <div className="level-item">
@@ -126,7 +132,7 @@ class Shop extends React.Component {
                   <div className="column is-8">
                     {
                       !this.state.edit ? (
-                        <span>{this.props.shop.shop_name}</span>
+                        <span>{shop.name}</span>
                       ) : (
                         <div className="field">
                           <p className="control">
@@ -151,7 +157,7 @@ class Shop extends React.Component {
                   <div className="column is-8">
                     {
                       !this.state.edit ? (
-                        <span>{this.props.shop.name}</span>
+                        <span>{shop.username}</span>
                       ) : (
                         <div>
                           <div className="field">
@@ -178,7 +184,7 @@ class Shop extends React.Component {
                   <div className="column is-8">
                     {
                       !this.state.edit ? (
-                        <span>{this.props.shop.email}</span>
+                        <span>{shop.email}</span>
                       ) : (
                         <div className="field">
                           <p className="control">
