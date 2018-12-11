@@ -94,7 +94,7 @@ class Shop extends React.Component {
                 </div>
               </div>
               <hr />
-              <div className="shop">
+              <div id="shop">
                 <div className="columns">
                   <div className="column is-4">
                     <span>Shop Logo</span>

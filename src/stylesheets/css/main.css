@@ -7587,9 +7587,11 @@ body {
   .button.is-small {
     border-radius: 0; }
 
-.card-content {
-  padding: 2.5rem;
+.card {
   border-bottom: 2px solid #e2e4f0; }
+
+.card-content {
+  padding: 2.5rem; }
 
 .input,
 .textarea {
@@ -8010,24 +8012,42 @@ nav {
 #settings .content-container {
   padding: 4rem; }
 
-#settings .shop {
+#settings #shop {
   padding: 0 3rem; }
-  #settings .shop .column {
+  #settings #shop .column {
     padding: 1.5rem 0; }
-    #settings .shop .column span {
+    #settings #shop .column span {
       display: inline-flex;
       align-items: center;
       height: 2rem; }
-  #settings .shop .column:first-child {
+  #settings #shop .column:first-child {
     color: #b5b5b5;
     text-align: right;
     padding-right: 2rem; }
-  #settings .shop .column:last-child {
+  #settings #shop .column:last-child {
     border-bottom: 1px solid #f0f1f6; }
-  #settings .shop .columns:last-child .column {
+  #settings #shop .columns:last-child .column {
     border-bottom: 0; }
-  #settings .shop .button:first-child {
+  #settings #shop .button:first-child {
     margin-bottom: .5rem; }
+
+#settings #platforms .columns {
+  display: flex;
+  flex-wrap: wrap; }
+
+#settings #platforms img {
+  object-fit: contain;
+  height: 75px; }
+
+#settings #platforms .card-content {
+  background-color: orange; }
+
+#settings #platforms .card-footer a {
+  background-color: #f0f1f6;
+  color: #9295a5; }
+  #settings #platforms .card-footer a:hover {
+    background-color: #eaebf2;
+    color: #9295a5; }
 
 #settings img {
   display: block;

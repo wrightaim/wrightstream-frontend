@@ -2,7 +2,7 @@
   padding: 4rem;
 }
 
-.shop {
+#shop {
   padding: 0 3rem;
 
   .column {
@@ -31,6 +31,32 @@
 
   .button:first-child {
     margin-bottom: .5rem;
+  }
+}
+
+#platforms {
+  .columns {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  img {
+    object-fit: contain;
+    height: 75px;  
+  }
+
+  .card-content {
+    background-color: orange;
+  }
+
+  .card-footer a {
+    background-color: $slate;
+    color: $quartz;
+
+    &:hover {
+      background-color: darken($slate, 2%);
+      color: $quartz;
+    }
   }
 }
 

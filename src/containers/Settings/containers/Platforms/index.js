@@ -26,12 +26,38 @@ class Platforms extends React.Component {
           <div className="card-content">
             <h1 className="title">Platforms</h1>
             <hr />
-            <button className="button">
-              Link Etsy
-            </button>
-            <button className="button">
-              Link Shopify
-            </button>
+            <div id="platforms">
+              <div className="columns">
+                <div className="column is-4">
+                  <div className="card">
+                    <div className="card-content">
+                      <figure className="image">
+                        <img src="https://cdn.freebiesupply.com/logos/large/2x/etsy-logo-black-and-white.png" alt="Etsy" />
+                      </figure>
+                    </div>
+                    <footer className="card-footer">
+                      <a className="card-footer-item">
+                        Link Etsy
+                    </a>
+                    </footer>
+                  </div>
+                </div>
+                <div className="column is-4">
+                  <div className="card">
+                    <div className="card-content">
+                      <figure className="image">
+                        <img src="http://pluspng.com/img-png/shopify-logo-png-shopify-logo-300.png" alt="Shopify" />
+                      </figure>
+                    </div>
+                    <footer className="card-footer">
+                      <a className="card-footer-item">
+                        Link Shopify
+                    </a>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>    
