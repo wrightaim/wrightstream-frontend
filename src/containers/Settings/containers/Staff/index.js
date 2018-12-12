@@ -4,19 +4,16 @@ import React from 'react';
 // REDUX
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { getStaffs } from '../../../../state/actions/shop';
 
 // COMPONENTS
-//import DeleteShop from './components/DeleteShop';
-//import EditShopLogo from './components/EditShopLogo';
-//import DeleteShopLogo from './components/DeleteShopLogo';
+import Staff from './components/Staff';
 
 // ==========
 
-class Staff extends React.Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-    };
+class Staffs extends React.Component {
+  componentDidMount () {
+    this.props.getStaffs();
   };
 
   render () {
@@ -26,6 +23,15 @@ class Staff extends React.Component {
           <div className="card-content">
             <h1 className="title">Staff</h1>
             <hr />
+            <div className="columns">
+              {
+                this.props.staffs.map((staff, i) => {
+                  return (
+                    <Staff key={i} staff={staff} />
+                  );
+                })
+              }
+            </div>
           </div>
         </div>
       </div>    
@@ -34,12 +40,12 @@ class Staff extends React.Component {
 };
 
 const mapStateToProps = state => ({
-//  shop: state.shop.shop,
-//  editShopError: state.shop.editShopError
+  staffs: state.shop.staffs,
+  editStaffError: state.shop.editStaffError
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-//  editShop
+  getStaffs
 }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Staff);
+export default connect(mapStateToProps, mapDispatchToProps)(Staffs);

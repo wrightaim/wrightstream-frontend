@@ -4,6 +4,7 @@ export const GET_SHOP = 'GET_SHOP';
 export const EDIT_SHOP_SUCCESS = 'EDIT_SHOP_SUCCESS';
 export const EDIT_SHOP_FAILURE = 'EDIT_SHOP_FAILURE';
 export const GET_PLATFORMS = 'GET_PLATFORMS';
+export const GET_STAFFS = 'GET_STAFFS';
 
 export const getShop = () => {
   return async dispatch => {
@@ -20,6 +21,13 @@ export const editShop = (shop) => {
     } catch (err) {
       dispatch({type: EDIT_SHOP_FAILURE, payload: err});
     }
+  };
+};
+
+export const getStaffs = () => {
+  return async dispatch => {
+    const payload = await Shop.getStaffs();
+    dispatch({ type: GET_STAFFS, payload });
   };
 };
 

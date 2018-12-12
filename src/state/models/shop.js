@@ -14,10 +14,10 @@ class Shop {
     return Shop.getShop();
   };
   
-  static getStaff = async () => {
+  static getStaffs = async () => {
     const shop_id = await Auth._authenticatedRequest();
-    const staff = await request(`/shops/${shop_id}/staff`);
-    return staff.data.data;
+    const staffs = await request(`/shops/${shop_id}/staff`);
+    return staffs.data.data;
   };
 
   static getPlatforms = async () => {
