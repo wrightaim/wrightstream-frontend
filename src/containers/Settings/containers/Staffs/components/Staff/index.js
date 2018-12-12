@@ -21,11 +21,10 @@ class Staff extends React.Component {
             </figure>
           </header>
           <div className="card-content">
-            <ul>
-              <li><span className="lnr lnr-user"></span>{staff.first_name} {staff.last_name}</li>
-              <li><span className="lnr lnr-star"></span>{staff.role}</li>
-              <li><span className="lnr lnr-envelope"></span>{staff.email}</li>
-            </ul>
+            <div className="has-text-centered">
+              <p className="title is-5 is-marginless">{staff.first_name} {staff.last_name}</p>
+              <p className="subtitle is-7">{staff.role}</p>
+            </div>      
             <div className="buttons">
               <span className="button is-small">Edit</span>
               <span className="button is-small is-danger">Delete</span>

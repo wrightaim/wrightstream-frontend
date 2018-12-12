@@ -8072,9 +8072,11 @@ nav {
   box-shadow: none; }
 
 #settings #staff .card-content {
-  font-size: .9rem;
   background-color: #f6f7fa;
   padding: 3.5rem 1.5rem 1rem; }
+
+#settings #staff li {
+  font-size: .9rem; }
 
 #settings #staff .lnr {
   color: #9295a5;

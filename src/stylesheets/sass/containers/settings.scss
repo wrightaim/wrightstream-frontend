@@ -90,9 +90,12 @@
   }
 
   .card-content {
-    font-size: .9rem;
     background-color: lighten($slate, 2%);
     padding: 3.5rem 1.5rem 1rem;
+  }
+
+  li {
+    font-size: .9rem;
   }
 
   .lnr {
