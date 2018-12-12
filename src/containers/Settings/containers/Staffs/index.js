@@ -21,7 +21,20 @@ class Staffs extends React.Component {
       <div>
         <div className="card">
           <div className="card-content">
-            <h1 className="title">Staff</h1>
+            <div className="level">
+              <div className="level-left">
+                <div className="level-item">
+                  <h1 className="title">Staff</h1>
+                </div>
+              </div>
+              <div className="level-right">
+                <div className="level-item">
+                  <form onSubmit={this.addStaff}>
+                  <button className="button is-primary is-outlined">Add</button>
+                  </form>
+                </div>
+              </div>
+            </div>
             <hr />
             <div id="staff">
               <div className="columns">

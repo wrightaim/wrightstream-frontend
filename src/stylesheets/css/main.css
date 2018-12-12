@@ -8080,6 +8080,10 @@ nav {
   color: #9295a5;
   margin-right: .5rem; }
 
+#settings #staff .buttons {
+  justify-content: center;
+  margin-top: 1rem; }
+
 #settings img {
   display: block;
   object-fit: cover; }
