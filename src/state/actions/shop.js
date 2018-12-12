@@ -3,6 +3,7 @@ import Shop from '../models/shop';
 export const GET_SHOP = 'GET_SHOP';
 export const EDIT_SHOP_SUCCESS = 'EDIT_SHOP_SUCCESS';
 export const EDIT_SHOP_FAILURE = 'EDIT_SHOP_FAILURE';
+export const GET_PLATFORMS = 'GET_PLATFORMS';
 
 export const getShop = () => {
   return async dispatch => {
@@ -19,5 +20,12 @@ export const editShop = (shop) => {
     } catch (err) {
       dispatch({type: EDIT_SHOP_FAILURE, payload: err});
     }
+  };
+};
+
+export const getPlatforms = () => {
+  return async dispatch => {
+    const payload = await Shop.getPlatforms();
+    dispatch({ type: GET_PLATFORMS, payload });
   };
 };

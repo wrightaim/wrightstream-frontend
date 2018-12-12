@@ -8039,8 +8039,11 @@ nav {
   object-fit: contain;
   height: 75px; }
 
-#settings #platforms .card-content {
-  background-color: orange; }
+#settings #platforms .card {
+  border-bottom: 0; }
+
+#settings #platforms .card-footer {
+  border-top: 0; }
 
 #settings #platforms .card-footer a {
   background-color: #f0f1f6;

@@ -19,6 +19,11 @@ class Shop {
     const staff = await request(`/shops/${shop_id}/staff`);
     return staff.data.data;
   };
+
+  static getPlatforms = async () => {
+    const platforms = await request(`/platforms`);
+    return platforms.data.data;
+  };
 };
 
 export default Shop;

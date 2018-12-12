@@ -4,19 +4,16 @@ import React from 'react';
 // REDUX
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { getPlatforms } from '../../../../state/actions/shop';
 
 // COMPONENTS
-//import DeleteShop from './components/DeleteShop';
-//import EditShopLogo from './components/EditShopLogo';
-//import DeleteShopLogo from './components/DeleteShopLogo';
+import Platform from './components/Platform';
 
 // ==========
 
 class Platforms extends React.Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-    };
+  componentDidMount () {
+    this.props.getPlatforms();
   };
 
   render () {
@@ -28,34 +25,13 @@ class Platforms extends React.Component {
             <hr />
             <div id="platforms">
               <div className="columns">
-                <div className="column is-4">
-                  <div className="card">
-                    <div className="card-content">
-                      <figure className="image">
-                        <img src="https://cdn.freebiesupply.com/logos/large/2x/etsy-logo-black-and-white.png" alt="Etsy" />
-                      </figure>
-                    </div>
-                    <footer className="card-footer">
-                      <a className="card-footer-item">
-                        Link Etsy
-                    </a>
-                    </footer>
-                  </div>
-                </div>
-                <div className="column is-4">
-                  <div className="card">
-                    <div className="card-content">
-                      <figure className="image">
-                        <img src="http://pluspng.com/img-png/shopify-logo-png-shopify-logo-300.png" alt="Shopify" />
-                      </figure>
-                    </div>
-                    <footer className="card-footer">
-                      <a className="card-footer-item">
-                        Link Shopify
-                    </a>
-                    </footer>
-                  </div>
-                </div>
+                {
+                  this.props.platforms.map((platform, i) => {
+                    return (
+                      <Platform key={i} platform={platform} />
+                    );
+                  })
+                }
               </div>
             </div>
           </div>
@@ -66,12 +42,11 @@ class Platforms extends React.Component {
 };
 
 const mapStateToProps = state => ({
-//  shop: state.shop.shop,
-//  editShopError: state.shop.editShopError
+  platforms: state.shop.platforms
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-//  editShop
+  getPlatforms
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Platforms);
