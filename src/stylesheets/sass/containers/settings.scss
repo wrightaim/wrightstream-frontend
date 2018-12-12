@@ -64,6 +64,43 @@
   }
 }
 
+#staff {
+  .columns {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .image {
+    margin: 1.5rem auto -40px;
+  }
+
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid $slate;
+  }
+
+  .card {
+    border-bottom: 5px solid $indigo;
+  }
+
+  .card-header {
+    box-shadow: none;
+  }
+
+  .card-content {
+    font-size: .9rem;
+    background-color: lighten($slate, 2%);
+    padding: 3.5rem 1.5rem 1rem;
+  }
+
+  .lnr {
+    color: $quartz;
+    margin-right: .5rem;
+  }
+}
+
 img {
   display: block;
   object-fit: cover;

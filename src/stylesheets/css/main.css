@@ -8052,6 +8052,34 @@ nav {
     background-color: #eaebf2;
     color: #9295a5; }
 
+#settings #staff .columns {
+  display: flex;
+  flex-wrap: wrap; }
+
+#settings #staff .image {
+  margin: 1.5rem auto -40px; }
+
+#settings #staff img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #f0f1f6; }
+
+#settings #staff .card {
+  border-bottom: 5px solid #636fa6; }
+
+#settings #staff .card-header {
+  box-shadow: none; }
+
+#settings #staff .card-content {
+  font-size: .9rem;
+  background-color: #f6f7fa;
+  padding: 3.5rem 1.5rem 1rem; }
+
+#settings #staff .lnr {
+  color: #9295a5;
+  margin-right: .5rem; }
+
 #settings img {
   display: block;
   object-fit: cover; }

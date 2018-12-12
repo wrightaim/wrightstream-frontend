@@ -15,9 +15,9 @@ class Staff extends React.Component {
           </header>
           <div className="card-content">
             <ul>
-              <li>{this.props.staff.first_name} {this.props.staff.last_name}</li>
-              <li>{this.props.staff.role_id}</li>
-              <li>{this.props.staff.email}</li>
+              <li><span className="lnr lnr-user"></span>{this.props.staff.first_name} {this.props.staff.last_name}</li>
+              <li><span className="lnr lnr-star"></span>{this.props.staff.role_id}</li>
+              <li><span className="lnr lnr-envelope"></span>{this.props.staff.email}</li>
             </ul>
           </div>
         </div>

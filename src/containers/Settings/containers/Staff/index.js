@@ -23,14 +23,16 @@ class Staffs extends React.Component {
           <div className="card-content">
             <h1 className="title">Staff</h1>
             <hr />
-            <div className="columns">
-              {
-                this.props.staffs.map((staff, i) => {
-                  return (
-                    <Staff key={i} staff={staff} />
-                  );
-                })
-              }
+            <div id="staff">
+              <div className="columns">
+                {
+                  this.props.staffs.map((staff, i) => {
+                    return (
+                      <Staff key={i} staff={staff} />
+                    );
+                  })
+                }
+              </div>
             </div>
           </div>
         </div>
