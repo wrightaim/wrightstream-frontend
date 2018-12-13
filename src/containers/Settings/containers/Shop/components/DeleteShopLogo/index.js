@@ -19,8 +19,9 @@ class DeleteShopLogo extends React.Component {
   render () {
     return (
       <form className="has-text-centered" onSubmit={this.deleteShopLogo}>
-        <p className="has-padding-bottom">Are you sure you want to delete your shop logo?</p>
-        <div className="control has-text-centered">
+        <p>Are you sure you want to delete your shop logo?</p>
+        <div className="buttons">
+          <span className="button" onClick={this.props.toggle}>Cancel</span>
           <button className="button is-danger">Delete</button>
         </div>
       </form>     

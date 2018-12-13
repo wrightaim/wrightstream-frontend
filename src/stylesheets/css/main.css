@@ -7572,18 +7572,23 @@ body {
 .has-padding-bottom {
   padding-bottom: 1.5rem; }
 
+.buttons {
+  justify-content: center;
+  margin-top: 1rem; }
+
 .button {
+  color: #9295a5;
   text-transform: uppercase;
-  font-weight: 500; }
+  font-weight: 500;
+  border: 1px solid #9295a5; }
+  .button:hover {
+    color: #bcbec8;
+    border-color: #bcbec8; }
   .button.is-main {
-    color: #9295a5;
-    border: 2px solid #9295a5;
+    border-width: 2px;
     margin-top: 1.5rem;
     padding: .5rem 2rem;
     height: inherit; }
-    .button.is-main:hover {
-      color: #bcbec8;
-      border-color: #bcbec8; }
   .button.is-small {
     border-radius: 0; }
 
@@ -8090,10 +8095,6 @@ nav {
 #settings #staff .lnr {
   color: #9295a5;
   margin-right: .5rem; }
-
-#settings #staff .buttons {
-  justify-content: center;
-  margin-top: 1rem; }
 
 #settings img {
   display: block;

@@ -1,18 +1,24 @@
+.buttons {
+  justify-content: center;
+  margin-top: 1rem;
+}
+  
 .button {
+  color: $quartz;
   text-transform: uppercase;
   font-weight: 500;
+  border: 1px solid $quartz;
 
-  &.is-main {
-    color: $quartz;
-    border: 2px solid $quartz;
+  &:hover {
+    color: lighten($quartz, 15%);
+    border-color: lighten($quartz, 15%);
+  }
+
+  &.is-main {  
+    border-width: 2px;
     margin-top: 1.5rem;
     padding: .5rem 2rem;
     height: inherit;
-
-    &:hover {
-      color: lighten($quartz, 15%);
-      border-color: lighten($quartz, 15%);
-    }
   }
 
   &.is-small {

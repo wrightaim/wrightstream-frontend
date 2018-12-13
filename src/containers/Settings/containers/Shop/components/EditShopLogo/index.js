@@ -45,8 +45,9 @@ class EditShopLogo extends React.Component {
                 />
               </p>
             </div>
-            <div className="control has-text-centered">
-              <button className="button is-main">Save</button>
+            <div className="buttons">
+              <span className="button" onClick={this.props.toggle}>Cancel</span>
+              <button className="button is-success">Save</button>
             </div>
           </form>
         </div>
