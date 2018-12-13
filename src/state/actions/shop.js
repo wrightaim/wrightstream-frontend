@@ -5,6 +5,7 @@ export const EDIT_SHOP_SUCCESS = 'EDIT_SHOP_SUCCESS';
 export const EDIT_SHOP_FAILURE = 'EDIT_SHOP_FAILURE';
 export const GET_PLATFORMS = 'GET_PLATFORMS';
 export const GET_STAFFS = 'GET_STAFFS';
+export const GET_ROLES = 'GET_ROLES';
 
 export const getShop = () => {
   return async dispatch => {
@@ -28,6 +29,13 @@ export const getStaffs = () => {
   return async dispatch => {
     const payload = await Shop.getStaffs();
     dispatch({ type: GET_STAFFS, payload });
+  };
+};
+
+export const getRoles = () => {
+  return async dispatch => {
+    const payload = await Shop.getRoles();
+    dispatch({ type: GET_ROLES, payload });
   };
 };
 

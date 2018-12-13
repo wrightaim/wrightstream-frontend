@@ -8066,7 +8066,13 @@ nav {
   border: 2px solid #f0f1f6; }
 
 #settings #staff .card {
-  border-bottom: 5px solid #636fa6; }
+  border-bottom: 5px solid #e2e4f0; }
+  #settings #staff .card.role-1 {
+    border-bottom-color: #ebcd6f; }
+  #settings #staff .card.role-2 {
+    border-bottom-color: #83bf8a; }
+  #settings #staff .card.role-3 {
+    border-bottom-color: #bbc3dd; }
 
 #settings #staff .card-header {
   box-shadow: none; }

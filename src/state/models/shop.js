@@ -20,6 +20,11 @@ class Shop {
     return staffs.data.data;
   };
 
+  static getRoles = async () => {
+    const roles = await request(`/roles`);
+    return roles.data.data;
+  };
+
   static getPlatforms = async () => {
     const platforms = await request(`/platforms`);
     return platforms.data.data;

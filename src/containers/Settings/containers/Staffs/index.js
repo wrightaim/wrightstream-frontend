@@ -4,7 +4,7 @@ import React from 'react';
 // REDUX
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { getStaffs } from '../../../../state/actions/shop';
+import { getStaffs, getRoles } from '../../../../state/actions/shop';
 
 // COMPONENTS
 import Staff from './components/Staff';
@@ -14,6 +14,7 @@ import Staff from './components/Staff';
 class Staffs extends React.Component {
   componentDidMount () {
     this.props.getStaffs();
+    this.props.getRoles();
   };
 
   render () {
@@ -41,7 +42,7 @@ class Staffs extends React.Component {
                 {
                   this.props.staffs.map((staff, i) => {
                     return (
-                      <Staff key={i} staff={staff} />
+                      <Staff key={i} staff={staff} roles={this.props.roles} />
                     );
                   })
                 }
@@ -56,11 +57,13 @@ class Staffs extends React.Component {
 
 const mapStateToProps = state => ({
   staffs: state.shop.staffs,
-  editStaffError: state.shop.editStaffError
+  editStaffError: state.shop.editStaffError,
+  roles: state.shop.roles
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  getStaffs
+  getStaffs,
+  getRoles
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Staffs);

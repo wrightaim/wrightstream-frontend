@@ -82,7 +82,19 @@
   }
 
   .card {
-    border-bottom: 5px solid $indigo;
+    border-bottom: 5px solid $mist;
+
+    &.role-1 {
+      border-bottom-color: $yellow;
+    }
+
+    &.role-2 {
+      border-bottom-color: $green;
+    }
+
+    &.role-3 {
+      border-bottom-color: $periwinkle;
+    }
   }
 
   .card-header {

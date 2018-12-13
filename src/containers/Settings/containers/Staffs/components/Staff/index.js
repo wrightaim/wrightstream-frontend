@@ -4,17 +4,31 @@ import React from 'react';
 // ==========
 
 class Staff extends React.Component {
+  getRoleColor = () => {
+    switch (this.props.staff.role_id) {
+      case 1:
+        return 'card role-1';
+      case 2:
+        return 'card role-2';
+      case 3:
+        return 'card role-3';
+      default:
+        return 'card';
+    }
+  };
+
   render () {
     const staff = {
       first_name: this.props.staff.first_name,
       last_name: this.props.staff.last_name,
-      role: this.props.staff.role_id,
+      role_id: this.props.staff.role_id,
+      role: this.props.roles.find(role => role.id === this.props.staff.role_id).name,
       email: this.props.staff.email,
       photo: this.props.staff.photo
     };
     return (
       <div className="column is-4">
-        <div className="card">
+        <div className={this.getRoleColor()}>
           <header className="card-header">
             <figure className="image">
               <img src={staff.photo} alt={`${staff.first_name} ${staff.last_name}`} />
