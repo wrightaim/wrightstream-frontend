@@ -5,3 +5,7 @@
 .hero-body {
   @include vertical-align-center;
 }
+
+.card-content {
+  padding: 2.5rem;
+}

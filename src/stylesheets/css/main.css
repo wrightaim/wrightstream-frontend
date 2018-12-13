@@ -7595,9 +7595,6 @@ body {
 .card {
   border-bottom: 2px solid #e2e4f0; }
 
-.card-content {
-  padding: 2.5rem; }
-
 .input,
 .textarea {
   background-color: #f0f1f6;
@@ -7874,6 +7871,9 @@ nav {
   display: flex;
   align-items: center; }
 
+#login .card-content {
+  padding: 2.5rem; }
+
 .supply-qty {
   text-align: right;
   margin-right: .25rem;
@@ -8043,22 +8043,32 @@ nav {
   display: flex;
   flex-wrap: wrap; }
 
-#settings #platforms img {
-  object-fit: contain;
-  height: 75px; }
-
 #settings #platforms .card {
-  border-bottom: 0; }
-
-#settings #platforms .card-footer {
-  border-top: 0; }
-
-#settings #platforms .card-footer a {
   background-color: #f0f1f6;
-  color: #9295a5; }
-  #settings #platforms .card-footer a:hover {
-    background-color: #eaebf2;
-    color: #9295a5; }
+  border-radius: 1rem;
+  border: 0;
+  height: 50px; }
+
+#settings #platforms .card-content {
+  padding: 0;
+  height: 100%; }
+  #settings #platforms .card-content .columns {
+    margin: 0;
+    height: 100%; }
+  #settings #platforms .card-content .column {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    height: 100%; }
+  #settings #platforms .card-content a {
+    line-height: 1; }
+  #settings #platforms .card-content .fa, #settings #platforms .card-content .far, #settings #platforms .card-content .fas {
+    font-size: 1.2rem; }
+  #settings #platforms .card-content img {
+    width: 25px;
+    height: 25px; }
 
 #settings #staff .columns {
   display: flex;
@@ -8122,6 +8132,9 @@ nav {
 #signup .hero-body {
   display: flex;
   align-items: center; }
+
+#signup .card-content {
+  padding: 2.5rem; }
 
 .workstream {
   min-height: calc(100vh - 5rem);

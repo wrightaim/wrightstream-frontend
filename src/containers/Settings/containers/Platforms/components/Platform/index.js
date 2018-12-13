@@ -14,18 +14,23 @@ class Platform extends React.Component {
     return (
       <div className="column is-4">
         <div className="card">
-          <a href={platform.url} target="_blank">
-            <div className="card-content" style={{backgroundColor: platform.color}}>
-              <figure className="image">
-                <img src={platform.logo} alt={platform.name} />
-              </figure>
+          <div className="card-content">
+            <div className="columns">
+              <div className="column is-3">
+                <figure className="image">
+                  <img src={platform.logo} alt={platform.name} />
+                </figure>
+              </div>
+              <div className="column is-6" style={{backgroundColor: platform.color}}>
+                {platform.name}
+              </div>
+              <div className="column is-3">
+                <a href={platform.url} target="_blank">
+                  <i className="fas fa-toggle-off"></i>
+                </a>      
+              </div>
             </div>
-          </a>
-          <footer className="card-footer">
-            <a className="card-footer-item">
-              Link {platform.name}
-            </a>
-          </footer>
+          </div>
         </div>
       </div>
     );
