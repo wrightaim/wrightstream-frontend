@@ -7737,6 +7737,9 @@ nav {
   border: 2px solid #f0f1f6;
   border-radius: 50%; }
 
+.menu .lnr {
+  margin-right: .75rem; }
+
 .admin-container {
   padding: 3rem; }
   .admin-container .card {
