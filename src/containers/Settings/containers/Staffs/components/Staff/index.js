@@ -17,6 +17,10 @@ class Staff extends React.Component {
     }
   };
 
+  handleStaff = event => {
+    this.props.toggle(event.target.id, this.props.staff);
+  };
+
   render () {
     const staff = {
       first_name: this.props.staff.first_name,
@@ -40,8 +44,8 @@ class Staff extends React.Component {
               <p className="subtitle is-7">{staff.role}</p>
             </div>      
             <div className="buttons">
-              <span className="button is-small">Edit</span>
-              <span className="button is-small is-danger">Delete</span>
+              <span className="button is-small" id="edit-staff" onClick={this.handleStaff}>Edit</span>
+              <span className="button is-small is-danger" id="delete-staff" onClick={this.handleStaff}>Delete</span>
             </div>
           </div>
         </div>
