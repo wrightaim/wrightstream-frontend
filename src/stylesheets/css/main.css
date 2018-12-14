@@ -8063,8 +8063,12 @@ nav {
     padding: 0;
     height: 100%; }
   #settings #platforms .card-content a {
+    color: white;
     line-height: 1; }
+    #settings #platforms .card-content a:hover {
+      color: #f0f1f6; }
   #settings #platforms .card-content .fa, #settings #platforms .card-content .far, #settings #platforms .card-content .fas {
+    color: #636fa6;
     font-size: 1.2rem; }
   #settings #platforms .card-content img {
     width: 25px;

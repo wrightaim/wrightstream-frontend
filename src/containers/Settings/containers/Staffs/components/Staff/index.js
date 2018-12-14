@@ -18,7 +18,7 @@ class Staff extends React.Component {
   };
 
   handleStaff = event => {
-    this.props.toggle(event.target.id, this.props.staff);
+    this.props.toggle(event, this.props.staff);
   };
 
   render () {

@@ -152,10 +152,10 @@ class Header extends React.Component {
                   {this.props.user.role_id !== 3 ? <Link className={this.state.adminClasses} to="/admin" onClick={() => {this.toggle('admin')}}>Admin</Link> : null}
                 </div>
                 <div className="navbar-item has-dropdown is-hoverable">
-                  <a className="navbar-link is-hidden-touch">
+                  <span className="navbar-link is-hidden-touch">
                     <img className="profile" src={this.props.user.photo} alt={`${this.props.user.first_name} ${this.props.user.last_name}`} />
                     <span>{this.props.user.first_name}</span>
-                  </a>
+                  </span>
                   <div className="navbar-dropdown is-right">
                     <Link className="navbar-item" to="/profile">
                       Profile

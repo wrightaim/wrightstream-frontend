@@ -22,12 +22,12 @@ class Platform extends React.Component {
                 </figure>
               </div>
               <div className="column is-6" style={{backgroundColor: platform.color}}>
-                {platform.name}
+                <a href={platform.url} target="_blank" rel="noopener noreferrer">
+                  {platform.name}
+                </a>
               </div>
               <div className="column is-3">
-                <a href={platform.url} target="_blank">
                   <i className="fas fa-toggle-off"></i>
-                </a>      
               </div>
             </div>
           </div>
