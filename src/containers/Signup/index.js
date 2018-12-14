@@ -2,9 +2,9 @@
 import React from 'react';
 
 // REDUX
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { signupShop, signupUser, signupReset } from '../../state/actions/auth';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {signupShop, signupUser, signupReset} from '../../state/actions/auth';
 
 // ==========
 
@@ -27,21 +27,21 @@ class Signup extends React.Component {
 
   signupShop = event => {
     event.preventDefault();
-    const { shop_name, shop_username, shop_email } = this.state;
-    const shop = { shop_name, shop_username, shop_email };
+    const {shop_name, shop_username, shop_email} = this.state;
+    const shop = {shop_name, shop_username, shop_email};
     this.props.signupShop(shop);
   };
 
   signupUser = event => {
     event.preventDefault();
-    const { first_name, last_name, email, password, verify_password } = this.state;
+    const {first_name, last_name, email, password, verify_password} = this.state;
     if (password !== verify_password) {
       this.setState({
         passwordClasses: this.state.passwordClasses + ' is-danger',
         passwordError: true
       });
     } else {
-      const user = { first_name, last_name, email, password };
+      const user = {first_name, last_name, email, password};
       this.props.signupUser(user, this.props.shop_id, this.props.history);
     }
   };

@@ -2,12 +2,12 @@
 import React from 'react';
 
 // ROUTER
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
 // REDUX
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { getUser, logout } from '../../state/actions/auth';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {getUser, logout} from '../../state/actions/auth';
 
 // ==========
 
@@ -134,11 +134,11 @@ class Header extends React.Component {
           <Link className="navbar-item" to="/">
             <img src="../assets/wrightstream-logo-horizontal.svg" alt="WrightStream" />
           </Link>
-          <a role="button" className="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+          <span role="button" className="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
-          </a>
+          </span>
         </div>
         <div className="navbar-menu" id="navMenu">
           {

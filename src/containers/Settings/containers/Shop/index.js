@@ -2,9 +2,9 @@
 import React from 'react';
 
 // REDUX
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { editShop } from '../../../../state/actions/shop';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {editShop} from '../../../../state/actions/shop';
 
 // COMPONENTS
 import DeleteShop from './components/DeleteShop';
@@ -46,7 +46,7 @@ class Shop extends React.Component {
   editShop = async event => {
     event.preventDefault();  
     if (this.state.edit) {
-      const { shop_name, shop_username, shop_email } = this.state;
+      const {shop_name, shop_username, shop_email} = this.state;
       const shop = {shop_name: shop_name, name: shop_username, email: shop_email};
       await this.props.editShop(shop);
       if (!this.props.editShopError) {

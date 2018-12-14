@@ -2,12 +2,12 @@
 import React from 'react';
 
 // ROUTER
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 // REDUX
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { getShop } from '../../state/actions/shop';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {getShop} from '../../state/actions/shop';
 
 // COMPONENTS
 import Sidebar from './components/Sidebar';

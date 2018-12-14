@@ -28,20 +28,20 @@ export const editShop = (shop) => {
 export const getStaffs = () => {
   return async dispatch => {
     const payload = await Shop.getStaffs();
-    dispatch({ type: GET_STAFFS, payload });
+    dispatch({type: GET_STAFFS, payload});
   };
 };
 
 export const getRoles = () => {
   return async dispatch => {
     const payload = await Shop.getRoles();
-    dispatch({ type: GET_ROLES, payload });
+    dispatch({type: GET_ROLES, payload});
   };
 };
 
 export const getPlatforms = () => {
   return async dispatch => {
     const payload = await Shop.getPlatforms();
-    dispatch({ type: GET_PLATFORMS, payload });
+    dispatch({type: GET_PLATFORMS, payload});
   };
 };

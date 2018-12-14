@@ -2,9 +2,9 @@
 import React from 'react';
 
 // REDUX
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { editShop } from '../../../../../../state/actions/shop';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {editShop} from '../../../../../../state/actions/shop';
 
 // ==========
 
@@ -18,7 +18,7 @@ class EditShopLogo extends React.Component {
 
   editShopLogo = event => {
     event.preventDefault();
-    const { shop_logo } = this.state;
+    const {shop_logo} = this.state;
     const shop = {logo: shop_logo};
     this.props.editShop(shop);
     this.props.toggle();

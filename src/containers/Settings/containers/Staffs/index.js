@@ -2,9 +2,9 @@
 import React from 'react';
 
 // REDUX
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { getStaffs, getRoles } from '../../../../state/actions/shop';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {getStaffs, getRoles} from '../../../../state/actions/shop';
 
 // COMPONENTS
 import Staff from './components/Staff';
