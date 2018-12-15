@@ -4,7 +4,7 @@ import React from 'react';
 // REDUX
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {addStaff} from '../../../../../../../../state/actions/shop';
+import {editStaff} from '../../../../../../../../state/actions/shop';
 
 // ==========
 
@@ -38,8 +38,8 @@ class EditStaff extends React.Component {
         passwordError: false
       });
       const staff = {first_name, last_name, role_id, email, password, photo};
-      await this.props.addStaff(staff);
-      if (!this.props.addStaffError) {
+      await this.props.editStaff(staff, this.props.staff.id);
+      if (!this.props.editStaffError) {
         this.props.toggle();
       }
     }
@@ -155,7 +155,7 @@ class EditStaff extends React.Component {
               </p>
             </div>
             {
-              this.props.addStaffError ? (
+              this.props.editStaffError ? (
                 <p className="help is-danger">
                   Staff edit failed.
                 </p>
@@ -185,7 +185,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  addStaff
+  editStaff
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditStaff);

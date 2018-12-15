@@ -8,6 +8,8 @@ export const GET_PLATFORMS = 'GET_PLATFORMS';
 export const GET_STAFFS = 'GET_STAFFS';
 export const ADD_STAFF_SUCCESS = 'ADD_STAFF_SUCCESS';
 export const ADD_STAFF_FAILURE = 'ADD_STAFF_FAILURE';
+export const EDIT_STAFF_SUCCESS = 'EDIT_STAFF_SUCCESS';
+export const EDIT_STAFF_FAILURE = 'EDIT_STAFF_FAILURE';
 export const GET_ROLES = 'GET_ROLES';
 
 export const getShop = () => {
@@ -50,6 +52,17 @@ export const addStaff = staff => {
     } catch (err) {
       dispatch({type: ADD_STAFF_FAILURE, payload: err});
     }    
+  };
+};
+
+export const editStaff = (staff, staff_id) => {
+  return async dispatch => {
+    try {
+      const payload = await Shop.editStaff(staff, staff_id);
+      dispatch({type: EDIT_STAFF_SUCCESS, payload});
+    } catch (err) {
+      dispatch({type: EDIT_STAFF_FAILURE, payload: err});
+    }
   };
 };
 
