@@ -89,7 +89,7 @@ class Staffs extends React.Component {
                     case 'add-staff':
                       return <AddStaff toggle={this.toggle} roles={this.props.roles} />;
                     case 'edit-staff':
-                      return <EditStaff toggle={this.toggle} staff={this.state.staff} />;
+                      return <EditStaff toggle={this.toggle} roles={this.props.roles} staff={this.state.staff} />;
                     case 'delete-staff':
                       return <DeleteStaff toggle={this.toggle} staff={this.state.staff} />;
                     default:
