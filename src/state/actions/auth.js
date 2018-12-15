@@ -10,6 +10,7 @@ export const SIGNUP_SHOP_FAILURE = 'SIGNUP_SHOP_FAILURE';
 export const SIGNUP_USER_SUCCESS = 'SIGNUP_USER_SUCCESS';
 export const SIGNUP_USER_FAILURE = 'SIGNUP_USER_FAILURE';
 export const SIGNUP_RESET = 'SIGNUP_RESET';
+export const ARCHIVE_SHOP = 'ARCHIVE_SHOP'
 
 export const getUser = () => {
   return async dispatch => {

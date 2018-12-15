@@ -167,7 +167,7 @@ class Header extends React.Component {
                       Help
                     </Link>
                     <hr className="navbar-divider" />
-                    <Link className="navbar-item is-active" to="/" onClick={() => {this.props.logout()}}>
+                    <Link className="navbar-item is-active" to="/" onClick={this.props.logout}>
                       Log Out
                     </Link>
                   </div>

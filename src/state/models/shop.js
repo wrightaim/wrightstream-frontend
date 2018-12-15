@@ -13,6 +13,12 @@ class Shop {
     await request(`/shops/${shop_id}`, 'put', shop);
     return Shop.getShop();
   };
+
+  static archiveShop = async () => {
+    const shop_id = await Auth._authenticatedRequest();
+    await request(`/shops/${shop_id}`, 'put', {archived: true});
+    return Shop.getShop();
+  };
   
   static getStaffs = async () => {
     const shop_id = await Auth._authenticatedRequest();

@@ -1,35 +1,44 @@
 // REACT
 import React from 'react';
 
+// ROUTER
+import {Link} from 'react-router-dom';
+
 // REDUX
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-//import { editShop } from '../../../../../../state/actions/shop';
+import {archiveShop} from '../../../../../../state/actions/shop';
+import {logout} from '../../../../../../state/actions/auth';
 
 // ==========
 
 class DeleteShop extends React.Component {
-  deleteShop = event => {
-    event.preventDefault();
-//    this.props.editShop();
-    this.props.toggle();
+  deleteShop = async () => {
+    await this.props.archiveShop();
+    this.props.logout();
   };
 
   render () {
     return (
-      <form className="has-text-centered" onSubmit={this.deleteShop}>
+      <div className="has-text-centered">
         <p>Are you sure you want to delete your shop?</p>
         <div className="buttons">
           <span className="button" onClick={this.props.toggle}>Cancel</span>
-          <button className="button is-danger">Delete</button>
+          <Link className="button is-danger" to="/" onClick={this.deleteShop}>Delete</Link>
         </div>
-      </form>     
+      </div>     
     );
   };
 };
 
+const mapStateToProps = state => ({
+  shop: state.shop.shop,
+  authorized: state.auth.authorized
+});
+
 const mapDispatchToProps = dispatch => bindActionCreators({
-//  editShop
+  archiveShop,
+  logout
 }, dispatch);
 
-export default connect(null, mapDispatchToProps)(DeleteShop);
+export default connect(mapStateToProps, mapDispatchToProps)(DeleteShop);
