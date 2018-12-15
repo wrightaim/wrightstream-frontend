@@ -1,9 +1,4 @@
-.buttons {
-  justify-content: center;
-  margin-top: 1rem;
-}
-  
-.button {
+ .button {
   color: $quartz;
   text-transform: uppercase;
   font-weight: 500;
@@ -23,5 +18,14 @@
 
   &.is-small {
     border-radius: 0;
+  }
+}
+
+.buttons {
+  justify-content: center;
+  margin-top: 1.5rem;
+
+  .button:not(.is-small) {
+    min-width: 100px;
   }
 }

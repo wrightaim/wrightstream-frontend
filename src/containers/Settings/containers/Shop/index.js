@@ -2,11 +2,10 @@
 import React from 'react';
 
 // REDUX
-import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {editShop} from '../../../../state/actions/shop';
 
 // COMPONENTS
+import EditShop from './components/EditShop';
 import DeleteShop from './components/DeleteShop';
 import EditShopLogo from './components/EditShopLogo';
 import DeleteShopLogo from './components/DeleteShopLogo';
@@ -19,11 +18,7 @@ class Shop extends React.Component {
     this.state = {
       modal: false,
       modalClasses: 'modal',
-      action: '',
-      edit: false,
-      shop_name: '',
-      shop_username: '',
-      shop_email: '',
+      action: ''
     };
   };
 
@@ -43,30 +38,6 @@ class Shop extends React.Component {
     }
   };
 
-  editShop = async event => {
-    event.preventDefault();  
-    if (this.state.edit) {
-      const {shop_name, shop_username, shop_email} = this.state;
-      const shop = {shop_name: shop_name, name: shop_username, email: shop_email};
-      await this.props.editShop(shop);
-      if (!this.props.editShopError) {
-        this.setState({edit: false});
-      }
-    } else {
-      this.setState({edit: true});
-    }  
-  };
-
-  componentDidUpdate(prevProps, prevState) {
-    if (!prevState.shop_name) {
-      this.setState({
-        shop_name: this.props.shop.shop_name,
-        shop_username: this.props.shop.name,
-        shop_email: this.props.shop.email
-      });
-    }
-  };
-
   render () {
     const shop = {
       name: this.props.shop.shop_name,
@@ -78,159 +49,72 @@ class Shop extends React.Component {
       <div>
         <div className="card">
           <div className="card-content">
-            <form onSubmit={this.editShop}>
-              <div className="level">
-                <div className="level-left">
-                  <div className="level-item">
-                  <h1 className="title">Shop</h1>
-                  </div>  
-                </div>
-                <div className="level-right">
-                  <div className="level-item">
-                    <button className="button is-primary is-outlined">
-                      {!this.state.edit ? 'Edit' : 'Save'}
-                    </button>
-                  </div>
+            <div className="level">
+              <div className="level-left">
+                <div className="level-item">
+                <h1 className="title">Shop</h1>
+                </div>  
+              </div>
+              <div className="level-right">
+                <div className="level-item">
+                  <span className="button is-primary is-outlined" id="edit-shop" onClick={this.toggle}>Edit</span>
                 </div>
               </div>
-              <hr />
-              <div id="shop">
-                <div className="columns">
-                  <div className="column is-4">
-                    <span>Shop Logo</span>
-                  </div>
-                  <div className="column is-8">
-                    <div className="level">
-                      <div className="level-left">
-                        <div className="level-item">
-                          <figure className="image">
-                            <img className="logo" src={shop.logo} alt={shop.name} />
-                          </figure>
-                        </div>
-                        <div className="level-item">
-                          <div>
-                            <p 
-                              id="edit-shop-logo" 
-                              className="button is-small is-fullwidth"
-                              onClick={this.toggle}
-                            >Change</p>
-                            <p 
-                              id="delete-shop-logo" 
-                              className="button is-small is-fullwidth is-danger"
-                              onClick={this.toggle}
-                            >Delete</p>
-                          </div>  
-                        </div>
-                      </div>
-                    </div>           
-                  </div>
-                </div>
-                <div className="columns">
-                  <div className="column is-4">
-                    <span>Shop Name</span>
-                  </div>
-                  <div className="column is-8">
-                    {
-                      !this.state.edit ? (
-                        <span>{shop.name}</span>
-                      ) : (
-                        <div className="field">
-                          <p className="control">
-                            <input
-                              className="input"
-                              type="text"
-                              id="shop_name"
-                              value={this.state.shop_name}
-                              onChange={event => this.setState({shop_name: event.target.value})}
-                              required
-                            />
-                          </p>
-                        </div>
-                      )
-                    }
-                  </div>
-                </div>
-                <div className="columns">
-                  <div className="column is-4">
-                    <span>Shop Username</span>
-                  </div>
-                  <div className="column is-8">
-                    {
-                      !this.state.edit ? (
-                        <span>{shop.username}</span>
-                      ) : (
-                        <div>
-                          <div className="field">
-                            <p className="control">
-                              <input
-                                className="input"
-                                type="text"
-                                id="shop_username"
-                                value={this.state.shop_username}
-                                onChange={event => this.setState({shop_username: event.target.value})}
-                                required
-                              />
-                            </p>
-                          </div>                       
-                        </div>
-                      )
-                    }
-                  </div>
-                </div>
-                <div className="columns">
-                  <div className="column is-4">
-                    <span>Shop Email</span>
-                  </div>
-                  <div className="column is-8">
-                    {
-                      !this.state.edit ? (
-                        <span>{shop.email}</span>
-                      ) : (
-                        <div className="field">
-                          <p className="control">
-                            <input
-                              className="input"
-                              type="text"
-                              id="shop_username"
-                              value={this.state.shop_email}
-                              onChange={event => this.setState({shop_email: event.target.value})}
-                              required
-                            />
-                          </p>
-                        </div>
-                      )
-                    }
-                  </div>
-                </div>
-              </div>
-            </form>
+            </div>
             <hr />
-            {
-              this.props.editShopError ? (
-                <p className="help is-danger has-text-centered has-padding-bottom">
-                  Shop username or email already exists.
-                </p>
-              ) : null
-            }
+            <div id="shop">
+              <div className="columns">
+                <div className="column is-4">
+                  <span>Shop Logo</span>
+                </div>
+                <div className="column is-8">
+                  <div className="level">
+                    <div className="level-left">
+                      <div className="level-item">
+                        <figure className="image">
+                          <img className="logo" src={shop.logo} alt={shop.name} />
+                        </figure>
+                      </div>
+                      <div className="level-item">
+                        <div>
+                          <span className="button is-small is-fullwidth" id="edit-shop-logo" onClick={this.toggle}>Change</span>
+                          <span className="button is-small is-fullwidth is-danger" id="delete-shop-logo" onClick={this.toggle}>Delete</span>
+                        </div>  
+                      </div>
+                    </div>
+                  </div>           
+                </div>
+              </div>
+              <div className="columns">
+                <div className="column is-4">
+                  <span>Shop Name</span>
+                </div>
+                <div className="column is-8">
+                  <span>{shop.name}</span>
+                </div>
+              </div>
+              <div className="columns">
+                <div className="column is-4">
+                  <span>Shop Username</span>
+                </div>
+                <div className="column is-8">
+                  <span>{shop.username}</span>
+                </div>
+              </div>
+              <div className="columns">
+                <div className="column is-4">
+                  <span>Shop Email</span>
+                </div>
+                <div className="column is-8">
+                  <span>{shop.email}</span>
+                </div>
+              </div>
+            </div>
+            <hr />           
             <p className="has-text-right">
-              <span 
-                id="delete-shop" 
-                className="menu-label has-text-danger pointer"
-                onClick={this.toggle}
-              >Delete Shop</span>
+              <span className="menu-label has-text-danger pointer" id="delete-shop" onClick={this.toggle}>Delete Shop</span>
             </p>
           </div>
-          {/* <div className="card">
-                <div className="card-content">
-                  <h1 className="title is-5">Store Integrations</h1>
-                  <button className="button">
-                    Link Etsy
-                  </button>
-                  <button className="button">
-                    Link Shopify
-                  </button>
-                </div>
-              </div> */}
         </div>
         <div className={this.state.modalClasses}>
           <div className="modal-background" onClick={this.toggle}></div>
@@ -239,6 +123,8 @@ class Shop extends React.Component {
               {
                 (() => {
                   switch (this.state.action) {
+                    case 'edit-shop':
+                      return <EditShop shop={this.props.shop} toggle={this.toggle} />;
                     case 'delete-shop':
                       return <DeleteShop toggle={this.toggle} />;
                     case 'edit-shop-logo':
@@ -260,12 +146,7 @@ class Shop extends React.Component {
 };
 
 const mapStateToProps = state => ({
-  shop: state.shop.shop,
-  editShopError: state.shop.editShopError
+  shop: state.shop.shop
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-  editShop
-}, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)(Shop);
+export default connect(mapStateToProps, null)(Shop);

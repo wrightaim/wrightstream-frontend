@@ -7572,10 +7572,6 @@ body {
 .has-padding-bottom {
   padding-bottom: 1.5rem; }
 
-.buttons {
-  justify-content: center;
-  margin-top: 1rem; }
-
 .button {
   color: #9295a5;
   text-transform: uppercase;
@@ -7591,6 +7587,12 @@ body {
     height: inherit; }
   .button.is-small {
     border-radius: 0; }
+
+.buttons {
+  justify-content: center;
+  margin-top: 1.5rem; }
+  .buttons .button:not(.is-small) {
+    min-width: 100px; }
 
 .card {
   border-bottom: 2px solid #e2e4f0; }
