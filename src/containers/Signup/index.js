@@ -32,7 +32,7 @@ class Signup extends React.Component {
     this.props.signupShop(shop);
   };
 
-  signupUser = event => {
+  signupUser = async event => {
     event.preventDefault();
     const {first_name, last_name, email, password, verify_password} = this.state;
     if (password !== verify_password) {
@@ -41,6 +41,10 @@ class Signup extends React.Component {
         passwordError: true
       });
     } else {
+      await this.setState({
+        passwordClasses: 'input',
+        passwordError: false
+      });
       const user = {first_name, last_name, email, password};
       this.props.signupUser(user, this.props.shop_id, this.props.history);
     }
@@ -197,7 +201,7 @@ class Signup extends React.Component {
                               </div>
                             </div>
                             {
-                              this.state.signupUserError ? (
+                              this.props.signupUserError ? (
                                 <p className="help is-danger">
                                   Owner creation failed.
                                 </p>
