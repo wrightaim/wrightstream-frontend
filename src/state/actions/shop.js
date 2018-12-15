@@ -6,7 +6,8 @@ export const EDIT_SHOP_FAILURE = 'EDIT_SHOP_FAILURE';
 export const ARCHIVE_SHOP = 'ARCHIVE_SHOP';
 export const GET_PLATFORMS = 'GET_PLATFORMS';
 export const GET_STAFFS = 'GET_STAFFS';
-export const ADD_STAFF = 'ADD_STAFFS';
+export const ADD_STAFF_SUCCESS = 'ADD_STAFF_SUCCESS';
+export const ADD_STAFF_FAILURE = 'ADD_STAFF_FAILURE';
 export const GET_ROLES = 'GET_ROLES';
 
 export const getShop = () => {
@@ -41,10 +42,14 @@ export const getStaffs = () => {
   };
 };
 
-export const addStaff = () => {
+export const addStaff = staff => {
   return async dispatch => {
-    const payload = await Shop.addStaff();
-    dispatch({type: ADD_STAFF, payload});
+    try {
+      const payload = await Shop.addStaff(staff);
+      dispatch({type: ADD_STAFF_SUCCESS, payload});
+    } catch (err) {
+      dispatch({type: ADD_STAFF_FAILURE, payload: err});
+    }    
   };
 };
 

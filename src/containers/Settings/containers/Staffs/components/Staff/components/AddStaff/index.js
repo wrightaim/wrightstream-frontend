@@ -4,17 +4,17 @@ import React from 'react';
 // REDUX
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-//import { editShop } from '../../../../../../state/actions/shop';
+import {addStaff} from '../../../../../../../../state/actions/shop';
 
 // ==========
 
-class DeleteStaff extends React.Component {
+class AddStaff extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
       first_name: '',
       last_name: '',
-      role_id: 'Role *',
+      role_id: '',
       email: '',
       password: '',
       verify_password: '',
@@ -24,17 +24,32 @@ class DeleteStaff extends React.Component {
     };
   };
 
-  deleteStaff = event => {
+  addStaff = async event => {
     event.preventDefault();
-    //    this.props.editShop();
-    this.props.toggle();
+    const {first_name, last_name, role_id, email, password, verify_password, photo} = this.state;
+    if (password !== verify_password) {
+      this.setState({
+        passwordClasses: this.state.passwordClasses + ' is-danger',
+        passwordError: true
+      });
+    } else {
+      await this.setState({
+        passwordClasses: 'input',
+        passwordError: false
+      });
+      const staff = {first_name, last_name, role_id, email, password, photo};
+      await this.props.addStaff(staff);
+      if (!this.props.addStaffError) {
+        this.props.toggle();
+      }
+    }
   };
 
   render () {
     return (
       <div className="columns">
         <div className="column is-8 is-offset-2">
-          <form className="has-text-centered" onSubmit={this.deleteStaff}>
+          <form className="has-text-centered" onSubmit={this.addStaff}>
             <div className="field is-horizontal">
               <div className="field-body">
                 <div className="field">
@@ -74,7 +89,7 @@ class DeleteStaff extends React.Component {
                     onChange={event => this.setState({role_id: event.target.value})}
                     required
                   >
-                    <option disabled>Role *</option>
+                    <option value="" disabled>Role *</option>
                     {
                       this.props.roles.map((role, i) => {
                         return (
@@ -142,9 +157,9 @@ class DeleteStaff extends React.Component {
               </p>
             </div>
             {
-              this.state.signupUserError ? (
+              this.props.addStaffError ? (
                 <p className="help is-danger">
-                  Owner creation failed.
+                  Staff creation failed.
                 </p>
               ) : null
             }
@@ -167,11 +182,12 @@ class DeleteStaff extends React.Component {
 };
 
 const mapStateToProps = state => ({
-  signupUserError: state.auth.signupUserError
+  staffs: state.shop.staffs,
+  addStaffError: state.shop.addStaffError
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  //  editShop
+  addStaff
 }, dispatch);
 
-export default connect(null, mapDispatchToProps)(DeleteStaff);
+export default connect(mapStateToProps, mapDispatchToProps)(AddStaff);
