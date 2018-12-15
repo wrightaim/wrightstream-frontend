@@ -73,7 +73,7 @@ class Signup extends React.Component {
                                   className="input"
                                   type="text"                                  
                                   id="shop_name"
-                                  placeholder="Shop Name"
+                                  placeholder="Shop Name *"
                                   value={this.state.shop_name}
                                   onChange={event => this.setState({shop_name: event.target.value})}
                                   required
@@ -86,7 +86,7 @@ class Signup extends React.Component {
                                   className="input"
                                   type="text"                                  
                                   id="shop_username"
-                                  placeholder="Shop Username"
+                                  placeholder="Shop Username *"
                                   value={this.state.shop_username}
                                   onChange={event => this.setState({shop_username: event.target.value})}
                                   required
@@ -99,7 +99,7 @@ class Signup extends React.Component {
                                   className="input"
                                   type="email"                               
                                   id="shop_email"
-                                  placeholder="Shop Email"
+                                  placeholder="Shop Email *"
                                   value={this.state.shop_email}
                                   onChange={event => this.setState({shop_email: event.target.value})}
                                   required
@@ -131,7 +131,7 @@ class Signup extends React.Component {
                                       className="input"
                                       type="text"                                   
                                       id="first_name"
-                                      placeholder="First Name"
+                                      placeholder="First Name *"
                                       value={this.state.first_name}
                                       onChange={event => this.setState({first_name: event.target.value})}
                                       required
@@ -144,7 +144,7 @@ class Signup extends React.Component {
                                       className="input"
                                       type="text"
                                       id="last_name"
-                                      placeholder="Last Name"
+                                      placeholder="Last Name *"
                                       value={this.state.last_name}
                                       onChange={event => this.setState({last_name: event.target.value})}
                                       required
@@ -159,7 +159,7 @@ class Signup extends React.Component {
                                   className="input"
                                   type="email"                                  
                                   id="email"
-                                  placeholder="Email"
+                                  placeholder="Email *"
                                   value={this.state.email}
                                   onChange={event => this.setState({email: event.target.value})}
                                   required
@@ -174,7 +174,7 @@ class Signup extends React.Component {
                                       className={this.state.passwordClasses}
                                       type="password"                                      
                                       id="password"
-                                      placeholder="Password"
+                                      placeholder="Password *"
                                       value={this.state.password}
                                       onChange={event => this.setState({password: event.target.value})}
                                       required
@@ -187,7 +187,7 @@ class Signup extends React.Component {
                                       className={this.state.passwordClasses}
                                       type="password"                                     
                                       id="verify_password"
-                                      placeholder="Verify Password"
+                                      placeholder="Verify Password *"
                                       value={this.state.verify_password}
                                       onChange={event => this.setState({verify_password: event.target.value})}
                                       required

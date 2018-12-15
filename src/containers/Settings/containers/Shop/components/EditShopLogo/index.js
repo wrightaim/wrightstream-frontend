@@ -25,12 +25,16 @@ class EditShopLogo extends React.Component {
   };
 
   render () {
+    const shop = {
+      name: this.props.shop.shop_name,
+      logo: this.props.shop.logo
+    };
     return (
       <div className="columns">
         <div className="column is-8 is-offset-2">
           <form className="has-text-centered" onSubmit={this.editShopLogo}>
             <figure className="image has-padding-bottom">
-              <img className="logo-large" src={this.props.shop.logo} alt={this.props.shop.shop_name} />
+              <img className="logo-large" src={shop.logo} alt={shop.name} />
             </figure>
             <div className="field">
               <p className="control">
@@ -39,7 +43,7 @@ class EditShopLogo extends React.Component {
                   type="text"
                   id="shop_logo"
                   placeholder="Logo URL"
-                  value={this.state.shop_logo}
+                  value={this.state.logo}
                   onChange={event => this.setState({shop_logo: event.target.value})}
                   required
                 />

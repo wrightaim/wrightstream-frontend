@@ -29,3 +29,8 @@
     min-width: 100px;
   }
 }
+
+.buttons-small {
+  @extend .buttons;
+  margin-top: 1rem;
+}

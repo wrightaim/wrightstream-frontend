@@ -6,6 +6,7 @@ export const EDIT_SHOP_FAILURE = 'EDIT_SHOP_FAILURE';
 export const ARCHIVE_SHOP = 'ARCHIVE_SHOP';
 export const GET_PLATFORMS = 'GET_PLATFORMS';
 export const GET_STAFFS = 'GET_STAFFS';
+export const ADD_STAFF = 'ADD_STAFFS';
 export const GET_ROLES = 'GET_ROLES';
 
 export const getShop = () => {
@@ -37,6 +38,13 @@ export const getStaffs = () => {
   return async dispatch => {
     const payload = await Shop.getStaffs();
     dispatch({type: GET_STAFFS, payload});
+  };
+};
+
+export const addStaff = () => {
+  return async dispatch => {
+    const payload = await Shop.addStaff();
+    dispatch({type: ADD_STAFF, payload});
   };
 };
 

@@ -43,7 +43,7 @@ class Staff extends React.Component {
               <p className="title is-5 is-marginless">{staff.first_name} {staff.last_name}</p>
               <p className="subtitle is-7">{staff.role}</p>
             </div>      
-            <div className="buttons">
+            <div className="buttons-small">
               <span className="button is-small" id="edit-staff" onClick={this.handleStaff}>Edit</span>
               <span className="button is-small is-danger" id="delete-staff" onClick={this.handleStaff}>Delete</span>
             </div>

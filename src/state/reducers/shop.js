@@ -4,6 +4,7 @@ import {
   EDIT_SHOP_FAILURE,
   ARCHIVE_SHOP,
   GET_STAFFS,
+  ADD_STAFF,
   GET_ROLES,
   GET_PLATFORMS
 } from '../actions/shop';
@@ -28,6 +29,8 @@ export default (state = initial, action) => {
     case ARCHIVE_SHOP:
       return {...state, shop: action.payload};
     case GET_STAFFS:
+      return {...state, staffs: action.payload};
+    case ADD_STAFF:
       return {...state, staffs: action.payload};
     case GET_ROLES:
       return {...state, roles: action.payload};

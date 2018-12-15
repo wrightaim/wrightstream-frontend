@@ -1793,39 +1793,39 @@ a.box:active {
     padding-left: 1em;
     padding-right: 1em; }
 
-.buttons {
+.buttons, .buttons-small {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start; }
-  .buttons .button {
+  .buttons .button, .buttons-small .button {
     margin-bottom: 0.5rem; }
-    .buttons .button:not(:last-child):not(.is-fullwidth) {
+    .buttons .button:not(:last-child):not(.is-fullwidth), .buttons-small .button:not(:last-child):not(.is-fullwidth) {
       margin-right: 0.5rem; }
-  .buttons:last-child {
+  .buttons:last-child, .buttons-small:last-child {
     margin-bottom: -0.5rem; }
-  .buttons:not(:last-child) {
+  .buttons:not(:last-child), .buttons-small:not(:last-child) {
     margin-bottom: 1rem; }
-  .buttons.has-addons .button:not(:first-child) {
+  .buttons.has-addons .button:not(:first-child), .has-addons.buttons-small .button:not(:first-child) {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0; }
-  .buttons.has-addons .button:not(:last-child) {
+  .buttons.has-addons .button:not(:last-child), .has-addons.buttons-small .button:not(:last-child) {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
     margin-right: -1px; }
-  .buttons.has-addons .button:last-child {
+  .buttons.has-addons .button:last-child, .has-addons.buttons-small .button:last-child {
     margin-right: 0; }
-  .buttons.has-addons .button:hover, .buttons.has-addons .button.is-hovered {
+  .buttons.has-addons .button:hover, .has-addons.buttons-small .button:hover, .buttons.has-addons .button.is-hovered, .has-addons.buttons-small .button.is-hovered {
     z-index: 2; }
-  .buttons.has-addons .button:focus, .buttons.has-addons .button.is-focused, .buttons.has-addons .button:active, .buttons.has-addons .button.is-active, .buttons.has-addons .button.is-selected {
+  .buttons.has-addons .button:focus, .has-addons.buttons-small .button:focus, .buttons.has-addons .button.is-focused, .has-addons.buttons-small .button.is-focused, .buttons.has-addons .button:active, .has-addons.buttons-small .button:active, .buttons.has-addons .button.is-active, .has-addons.buttons-small .button.is-active, .buttons.has-addons .button.is-selected, .has-addons.buttons-small .button.is-selected {
     z-index: 3; }
-    .buttons.has-addons .button:focus:hover, .buttons.has-addons .button.is-focused:hover, .buttons.has-addons .button:active:hover, .buttons.has-addons .button.is-active:hover, .buttons.has-addons .button.is-selected:hover {
+    .buttons.has-addons .button:focus:hover, .has-addons.buttons-small .button:focus:hover, .buttons.has-addons .button.is-focused:hover, .has-addons.buttons-small .button.is-focused:hover, .buttons.has-addons .button:active:hover, .has-addons.buttons-small .button:active:hover, .buttons.has-addons .button.is-active:hover, .has-addons.buttons-small .button.is-active:hover, .buttons.has-addons .button.is-selected:hover, .has-addons.buttons-small .button.is-selected:hover {
       z-index: 4; }
-  .buttons.has-addons .button.is-expanded {
+  .buttons.has-addons .button.is-expanded, .has-addons.buttons-small .button.is-expanded {
     flex-grow: 1; }
-  .buttons.is-centered {
+  .buttons.is-centered, .is-centered.buttons-small {
     justify-content: center; }
-  .buttons.is-right {
+  .buttons.is-right, .is-right.buttons-small {
     justify-content: flex-end; }
 
 .container {
@@ -7588,32 +7588,37 @@ body {
   .button.is-small {
     border-radius: 0; }
 
-.buttons {
+.buttons, .buttons-small {
   justify-content: center;
   margin-top: 1.5rem; }
-  .buttons .button:not(.is-small) {
+  .buttons .button:not(.is-small), .buttons-small .button:not(.is-small) {
     min-width: 100px; }
+
+.buttons-small {
+  margin-top: 1rem; }
 
 .card {
   border-bottom: 2px solid #e2e4f0; }
 
-.input,
-.textarea {
+.input, .textarea, .select select {
   background-color: #f0f1f6;
   color: #9295a5;
   border-color: #f0f1f6;
   box-shadow: none;
   height: 2rem;
   font-size: .85rem; }
-  .input::placeholder, .textarea::placeholder {
+  .input::placeholder, .textarea::placeholder, .select select::placeholder {
     color: #bcbec8; }
-  .input:hover, .textarea:hover {
+  .input:hover, .textarea:hover, .select select:hover {
     border-color: #d9def1; }
-  .input:focus, .textarea:focus {
+  .input:focus, .textarea:focus, .select select:focus {
     border-color: #636fa6; }
 
 .select, select {
   width: 100%; }
+
+.select:not(.is-multiple) {
+  height: 2rem; }
 
 nav {
   border-bottom: solid 2px rgba(226, 228, 240, 0.3); }

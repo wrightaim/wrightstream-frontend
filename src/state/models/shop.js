@@ -26,6 +26,12 @@ class Shop {
     return staffs.data.data;
   };
 
+  static addStaff = async staff => {
+    const shop_id = await Auth._authenticatedRequest();
+    await request(`/shops/${shop_id}/staff`, 'post', staff);
+    return Shop.getStaffs();
+  };
+
   static getRoles = async () => {
     const roles = await request(`/roles`);
     return roles.data.data;

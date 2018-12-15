@@ -1,4 +1,4 @@
-.input, .textarea {
+.input, .textarea, .select select {
   background-color: $slate;
   color: $quartz;
   border-color: $slate;
@@ -21,4 +21,8 @@
 
 .select, select {
   width: 100%;
+}
+
+.select:not(.is-multiple) {
+  height: 2rem;
 }

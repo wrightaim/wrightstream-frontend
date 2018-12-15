@@ -87,7 +87,7 @@ class Staffs extends React.Component {
                 (() => {
                   switch (this.state.action) {
                     case 'add-staff':
-                      return <AddStaff toggle={this.toggle} />;
+                      return <AddStaff toggle={this.toggle} roles={this.props.roles} />;
                     case 'edit-staff':
                       return <EditStaff toggle={this.toggle} staff={this.state.staff} />;
                     case 'delete-staff':
