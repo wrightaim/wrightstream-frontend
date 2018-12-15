@@ -77,8 +77,8 @@ class Shop extends React.Component {
                       </div>
                       <div className="level-item">
                         <div>
-                          <span className="button is-small is-fullwidth" id="edit-shop-logo" onClick={this.toggle}>Change</span>
-                          <span className="button is-small is-fullwidth is-danger" id="delete-shop-logo" onClick={this.toggle}>Delete</span>
+                          <p className="button is-small is-fullwidth" id="edit-shop-logo" onClick={this.toggle}>Change</p>
+                          <p className="button is-small is-fullwidth is-danger" id="delete-shop-logo" onClick={this.toggle}>Delete</p>
                         </div>  
                       </div>
                     </div>
@@ -138,7 +138,7 @@ class Shop extends React.Component {
               }
             </div>
           </div>
-          <button className="modal-close is-large" onClick={this.toggle}></button>
+          <span className="modal-close is-large" onClick={this.toggle}></span>
         </div>
       </div>
     );

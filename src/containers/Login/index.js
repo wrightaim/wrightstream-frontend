@@ -40,9 +40,9 @@ class Login extends React.Component {
                           <p className="control">
                             <input
                               className="input"
-                              type="text"
-                              placeholder="Shop Username"
+                              type="text"   
                               id="shop_username"
+                              placeholder="Shop Username"
                               value={this.state.shop_username}
                               onChange={event => this.setState({shop_username: event.target.value})}
                               required
@@ -53,9 +53,9 @@ class Login extends React.Component {
                           <p className="control">
                             <input
                               className="input"
-                              type="email"
-                              placeholder="Email"
+                              type="email"                              
                               id="email"
+                              placeholder="Email"
                               value={this.state.email}
                               onChange={event => this.setState({email: event.target.value})}
                               required
@@ -66,9 +66,9 @@ class Login extends React.Component {
                           <p className="control">
                             <input
                               className="input"
-                              type="password"
-                              placeholder="Password"
+                              type="password"                 
                               id="password"
+                              placeholder="Password"
                               value={this.state.password}
                               onChange={event => this.setState({password: event.target.value})}
                               required

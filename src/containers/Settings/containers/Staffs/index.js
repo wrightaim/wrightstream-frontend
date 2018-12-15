@@ -99,7 +99,7 @@ class Staffs extends React.Component {
               }
             </div>
           </div>
-          <button className="modal-close is-large" onClick={this.toggle}></button>
+          <span className="modal-close is-large" onClick={this.toggle}></span>
         </div>
       </div>    
     );
