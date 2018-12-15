@@ -4,6 +4,9 @@ import React from 'react';
 // ROUTER
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 
+// REDUX
+import {connect} from 'react-redux';
+
 // COMPONENTS
 import Header from './components/Header';
 // import CallbackEtsy from './components/CallbackEtsy';
@@ -25,25 +28,37 @@ class App extends React.Component {
   render () {
     return (
       <BrowserRouter>
-          <div>
-            <Header />
-            <Switch>
-              <Route exact path="/" component={() => <Redirect to="/login" />} />
-              <Route path="/login" component={Login} />
-              <Route path="/signup" component={Signup} />
-              <Route path="/settings" component={Settings} />
-              {/* <Route path="/profile" component={Profile} />
-              <Route path="/products" component={Products} />
-              <Route path="/inventory" component={Inventory} />
-              <Route path="/workstream" component={WorkStream} />
-              <Route path="/mystream" component={MyStream} />
-              <Route path="/admin" component={Admin} />
-              <Route path="/auth/callback/etsy" component={CallbackEtsy} /> */}
-            </Switch>
-          </div>
-        </BrowserRouter>
+        <div>
+          <Header />
+          {
+            this.props.authorized ? (
+              <Switch>
+                <Route path="/settings" component={Settings} />
+                {/* <Route path="/profile" component={Profile} />
+                <Route path="/products" component={Products} />
+                <Route path="/inventory" component={Inventory} />
+                <Route path="/workstream" component={WorkStream} />
+                <Route path="/mystream" component={MyStream} />
+                <Route path="/admin" component={Admin} />
+                <Route path="/auth/callback/etsy" component={CallbackEtsy} /> */}
+                <Route path="/" component={() => <Redirect to="/settings" />} />
+              </Switch>
+            ) : (
+              <Switch>
+                <Route path="/login" component={Login} />
+                <Route path="/signup" component={Signup} />
+                <Route path="/" component={() => <Redirect to="/login" />} />
+              </Switch>
+            )
+          }              
+        </div>
+      </BrowserRouter>
     );
   };
 };
 
-export default App;
+const mapStateToProps = state => ({
+  authorized: state.auth.authorized
+});
+
+export default connect(mapStateToProps, null)(App);
