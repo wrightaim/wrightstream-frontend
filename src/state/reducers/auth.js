@@ -28,17 +28,17 @@ export default (state = initial, action) => {
     case NOT_LOGGED_IN:
       return {...state, authorized: false};
     case LOGIN_SUCCESS:
-      return {...state, user: action.payload, authorized: true};
+      return {...state, user: action.payload, authorized: true, loginError: false};
     case LOGIN_FAILURE:
       return {...state, loginError: true};
     case LOGOUT:
       return {...state, user: {}, authorized: false};
     case SIGNUP_SHOP_SUCCESS:
-      return {...state, shop_id: action.payload, signupUserStep: true};
+      return {...state, shop_id: action.payload, signupUserStep: true, signupShopError: false};
     case SIGNUP_SHOP_FAILURE:
       return {...state, signupShopError: true};
     case SIGNUP_USER_SUCCESS:
-      return {...state};
+      return {...state, signupUserError: false};
     case SIGNUP_USER_FAILURE:
       return {...state, signupUserError: true};
     case SIGNUP_RESET:
