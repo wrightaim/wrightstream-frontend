@@ -8,6 +8,7 @@ import {
   ADD_STAFF_FAILURE,
   EDIT_STAFF_SUCCESS,
   EDIT_STAFF_FAILURE,
+  ARCHIVE_STAFF,
   GET_ROLES,
   GET_PLATFORMS
 } from '../actions/shop';
@@ -42,6 +43,8 @@ export default (state = initial, action) => {
       return {...state, staffs: action.payload, editStaffError: false};
     case EDIT_STAFF_FAILURE:
       return {...state, editStaffError: true};
+    case ARCHIVE_STAFF:
+      return {...state, staffs: action.payload};
     case GET_ROLES:
       return {...state, roles: action.payload};
     case GET_PLATFORMS:

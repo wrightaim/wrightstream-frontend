@@ -38,6 +38,12 @@ class Shop {
     return Shop.getStaffs();
   };
 
+  static archiveStaff = async staff_id => {
+    const shop_id = await Auth._authenticatedRequest();
+    await request(`/shops/${shop_id}/staff/${staff_id}`, 'put', {archived: true});
+    return Shop.getStaffs();
+  };
+
   static getRoles = async () => {
     const roles = await request(`/roles`);
     return roles.data.data;

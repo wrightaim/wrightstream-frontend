@@ -4,13 +4,14 @@ export const GET_SHOP = 'GET_SHOP';
 export const EDIT_SHOP_SUCCESS = 'EDIT_SHOP_SUCCESS';
 export const EDIT_SHOP_FAILURE = 'EDIT_SHOP_FAILURE';
 export const ARCHIVE_SHOP = 'ARCHIVE_SHOP';
-export const GET_PLATFORMS = 'GET_PLATFORMS';
 export const GET_STAFFS = 'GET_STAFFS';
 export const ADD_STAFF_SUCCESS = 'ADD_STAFF_SUCCESS';
 export const ADD_STAFF_FAILURE = 'ADD_STAFF_FAILURE';
 export const EDIT_STAFF_SUCCESS = 'EDIT_STAFF_SUCCESS';
 export const EDIT_STAFF_FAILURE = 'EDIT_STAFF_FAILURE';
+export const ARCHIVE_STAFF = 'ARCHIVE_STAFF';
 export const GET_ROLES = 'GET_ROLES';
+export const GET_PLATFORMS = 'GET_PLATFORMS';
 
 export const getShop = () => {
   return async dispatch => {
@@ -63,6 +64,13 @@ export const editStaff = (staff, staff_id) => {
     } catch (err) {
       dispatch({type: EDIT_STAFF_FAILURE, payload: err});
     }
+  };
+};
+
+export const archiveStaff = staff_id => {
+  return async dispatch => {
+    const payload = await Shop.archiveStaff(staff_id);
+    dispatch({type: ARCHIVE_STAFF, payload});
   };
 };
 
