@@ -53,7 +53,7 @@ class Settings extends React.Component {
                   </div>       
                 </div>
                 <Switch>
-                  <Route exact path="/settings" render={(props) => <Shop shop={this.props.shop} {...props}/>} />
+                  <Route exact path="/settings" render={(props) => <Shop shop={this.props.shop} {...props} />} />
                   <Route path="/settings/staff" component={Staffs} />
                   <Route path="/settings/platforms" component={Platforms} />
                 </Switch>                          

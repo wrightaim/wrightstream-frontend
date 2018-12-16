@@ -6,11 +6,13 @@ export const EDIT_SHOP_FAILURE = 'EDIT_SHOP_FAILURE';
 export const ARCHIVE_SHOP = 'ARCHIVE_SHOP';
 export const GET_ROLES = 'GET_ROLES';
 export const GET_STAFFS = 'GET_STAFFS';
+export const GET_STAFFS_ARCHIVED = 'GET_STAFFS_ARCHIVED';
 export const ADD_STAFF_SUCCESS = 'ADD_STAFF_SUCCESS';
 export const ADD_STAFF_FAILURE = 'ADD_STAFF_FAILURE';
 export const EDIT_STAFF_SUCCESS = 'EDIT_STAFF_SUCCESS';
 export const EDIT_STAFF_FAILURE = 'EDIT_STAFF_FAILURE';
 export const ARCHIVE_STAFF = 'ARCHIVE_STAFF';
+export const RESTORE_STAFF = 'RESTORE_STAFF';
 export const GET_PLATFORMS = 'GET_PLATFORMS';
 
 export const getShop = () => {
@@ -52,6 +54,13 @@ export const getStaffs = () => {
   };
 };
 
+export const getStaffsArchived = () => {
+  return async dispatch => {
+    const payload = await Shop.getStaffsArchived();
+    dispatch({type: GET_STAFFS_ARCHIVED, payload});
+  };
+};
+
 export const addStaff = staff => {
   return async dispatch => {
     try {
@@ -78,6 +87,13 @@ export const archiveStaff = staff_id => {
   return async dispatch => {
     const payload = await Shop.archiveStaff(staff_id);
     dispatch({type: ARCHIVE_STAFF, payload});
+  };
+};
+
+export const restoreStaff = staff_id => {
+  return async dispatch => {
+    const payload = await Shop.restoreStaff(staff_id);
+    dispatch({type: RESTORE_STAFF, payload});
   };
 };
 

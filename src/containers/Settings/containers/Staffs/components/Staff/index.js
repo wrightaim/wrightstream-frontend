@@ -28,7 +28,8 @@ class Staff extends React.Component {
       role_id: this.props.staff.role_id,
       role: this.props.roles.find(role => role.id === this.props.staff.role_id).name,
       email: this.props.staff.email,
-      photo: this.props.staff.photo
+      photo: this.props.staff.photo,
+      archived: this.props.staff.archived
     };
     return (
       <div className="column is-4">
@@ -44,8 +45,16 @@ class Staff extends React.Component {
               <p className="subtitle is-7">{staff.role}</p>
             </div>      
             <div className="buttons-small">
-              <span className="button is-small" id="edit-staff" onClick={this.handleStaff}>Edit</span>
-              <span className="button is-small is-danger" id="delete-staff" onClick={this.handleStaff}>Delete</span>
+              {
+                !staff.archived ? (
+                  <div>
+                    <span className="button is-small" id="edit-staff" onClick={this.handleStaff}>Edit</span>
+                    <span className="button is-small is-danger" id="delete-staff" onClick={this.handleStaff}>Delete</span>
+                  </div>                 
+                ) : (
+                  <span className="button is-small is-success" id="restore-staff" onClick={this.handleStaff}>Restore</span>                   
+                )
+              }            
             </div>
           </div>
         </div>

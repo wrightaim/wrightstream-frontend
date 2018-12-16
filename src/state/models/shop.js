@@ -34,6 +34,15 @@ class Shop {
     return staffsSortedByRole;
   };
 
+  static getStaffsArchived = async () => {
+    const shop_id = await Auth._authenticatedRequest();
+    const staffs = await request(`/shops/${shop_id}/staff`);
+    const staffsFiltered = await staffs.data.data.filter(staff => staff.archived);
+    const staffsSortedByName = await staffsFiltered.sort((a, b) => a.first_name.localeCompare(b.first_name));
+    const staffsSortedByRole = await staffsSortedByName.sort((a, b) => a.role_id.toString().localeCompare(b.role_id.toString()));
+    return staffsSortedByRole;
+  };
+
   static addStaff = async staff => {
     const shop_id = await Auth._authenticatedRequest();
     await request(`/shops/${shop_id}/staff`, 'post', staff);
@@ -49,6 +58,12 @@ class Shop {
   static archiveStaff = async staff_id => {
     const shop_id = await Auth._authenticatedRequest();
     await request(`/shops/${shop_id}/staff/${staff_id}`, 'put', {archived: true});
+    return Shop.getStaffs();
+  };
+
+  static restoreStaff = async staff_id => {
+    const shop_id = await Auth._authenticatedRequest();
+    await request(`/shops/${shop_id}/staff/${staff_id}`, 'put', {archived: false});
     return Shop.getStaffs();
   };
 

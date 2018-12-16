@@ -4,13 +4,14 @@ import React from 'react';
 // REDUX
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {getRoles, getStaffs} from '../../../../state/actions/shop';
+import {getRoles, getStaffs, getStaffsArchived} from '../../../../state/actions/shop';
 
 // COMPONENTS
 import Staff from './components/Staff';
 import AddStaff from './components/Staff/components/AddStaff';
 import EditStaff from './components/Staff/components/EditStaff';
 import DeleteStaff from './components/Staff/components/DeleteStaff';
+import RestoreStaff from './components/Staff/components/RestoreStaff';
 
 // ==========
 
@@ -21,7 +22,8 @@ class Staffs extends React.Component {
       modal: false,
       modalClasses: 'modal',
       action: '',
-      staff: null
+      staff: null,
+      staffArchived: false
     };
   };
 
@@ -43,12 +45,18 @@ class Staffs extends React.Component {
     }
   };
 
+  getStaffArchived = () => {
+    this.setState({staffArchived: !this.state.staffArchived});
+  };
+
   componentDidMount () {
     this.props.getRoles();
     this.props.getStaffs();
+    this.props.getStaffsArchived();
   };
 
   render () {
+    const staffs = !this.state.staffArchived ? this.props.staffs : this.props.staffs_archived;
     return (
       <div>
         <div className="card">
@@ -69,7 +77,7 @@ class Staffs extends React.Component {
             <div id="staff">
               <div className="columns">
                 {
-                  this.props.staffs.map((staff, i) => {
+                  staffs.map((staff, i) => {
                     return (
                       <Staff key={i} staff={staff} roles={this.props.roles} toggle={this.toggle} />
                     );
@@ -78,7 +86,13 @@ class Staffs extends React.Component {
               </div>
               <hr />
               <p className="has-text-right">
-                <span className="menu-label has-text-danger pointer">Archived Staff</span>
+                {
+                  !this.state.staffArchived ? (
+                    <span className="menu-label has-text-danger pointer" onClick={this.getStaffArchived}>Archived Staff</span>
+                  ) : (
+                    <span className="menu-label has-text-danger pointer" onClick={this.getStaffArchived}>Current Staff</span>
+                  )
+                }
               </p>
             </div>
           </div>
@@ -96,6 +110,8 @@ class Staffs extends React.Component {
                       return <EditStaff toggle={this.toggle} roles={this.props.roles} staff={this.state.staff} />;
                     case 'delete-staff':
                       return <DeleteStaff toggle={this.toggle} staff={this.state.staff} />;
+                    case 'restore-staff':
+                      return <RestoreStaff toggle={this.toggle} staff={this.state.staff} />;
                     default:
                       break;
                   }
@@ -112,13 +128,15 @@ class Staffs extends React.Component {
 
 const mapStateToProps = state => ({
   staffs: state.shop.staffs,
+  staffs_archived: state.shop.staffs_archived,
   editStaffError: state.shop.editStaffError,
   roles: state.shop.roles
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   getRoles,
-  getStaffs
+  getStaffs,
+  getStaffsArchived
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Staffs);
