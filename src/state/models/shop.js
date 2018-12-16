@@ -23,7 +23,10 @@ class Shop {
   static getStaffs = async () => {
     const shop_id = await Auth._authenticatedRequest();
     const staffs = await request(`/shops/${shop_id}/staff`);
-    return staffs.data.data;
+    const staffsFiltered = await staffs.data.data.filter(staff => !staff.archived);
+    const staffsSortedByName = await staffsFiltered.sort((a, b) => a.first_name.localeCompare(b.first_name));
+    const staffsSortedByRole = await staffsSortedByName.sort((a, b) => a.role_id.toString().localeCompare(b.role_id.toString()));
+    return staffsSortedByRole;
   };
 
   static addStaff = async staff => {
