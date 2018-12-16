@@ -4,6 +4,7 @@ import React from 'react';
 // REDUX
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import {getUser} from '../../../../../../../../state/actions/auth';
 import {editStaff} from '../../../../../../../../state/actions/shop';
 
 // ==========
@@ -40,6 +41,7 @@ class EditStaff extends React.Component {
       const staff = {first_name, last_name, role_id, email, password, photo};
       await this.props.editStaff(staff, this.props.staff.id);
       if (!this.props.editStaffError) {
+        if (this.props.staff.id === this.props.user.id) await this.props.getUser();
         this.props.toggle();
       }
     }
@@ -180,11 +182,13 @@ class EditStaff extends React.Component {
 };
 
 const mapStateToProps = state => ({
+  user: state.auth.user,
   staffs: state.shop.staffs,
   editStaffError: state.shop.editStaffError
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
+  getUser,
   editStaff
 }, dispatch);
 
