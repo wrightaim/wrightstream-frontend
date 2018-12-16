@@ -4,7 +4,7 @@ import React from 'react';
 // REDUX
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {getRoles, getStaffs, getStaffsArchived} from '../../../../state/actions/shop';
+import {getRoles, getStaffs} from '../../../../state/actions/shop';
 
 // COMPONENTS
 import Staff from './components/Staff';
@@ -52,11 +52,10 @@ class Staffs extends React.Component {
   componentDidMount () {
     this.props.getRoles();
     this.props.getStaffs();
-    this.props.getStaffsArchived();
   };
 
   render () {
-    const staffs = !this.state.staffArchived ? this.props.staffs : this.props.staffs_archived;
+    const staffs = !this.state.staffArchived ? this.props.staffs.filter(staff => !staff.archived) : this.props.staffs.filter(staff => staff.archived);
     return (
       <div>
         <div className="card">
@@ -84,7 +83,6 @@ class Staffs extends React.Component {
                   })
                 }
               </div>
-              <hr />
               <p className="has-text-right">
                 {
                   !this.state.staffArchived ? (
@@ -128,15 +126,13 @@ class Staffs extends React.Component {
 
 const mapStateToProps = state => ({
   staffs: state.shop.staffs,
-  staffs_archived: state.shop.staffs_archived,
   editStaffError: state.shop.editStaffError,
   roles: state.shop.roles
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   getRoles,
-  getStaffs,
-  getStaffsArchived
+  getStaffs
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Staffs);

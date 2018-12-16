@@ -5,7 +5,6 @@ import {
   ARCHIVE_SHOP,
   GET_ROLES,
   GET_STAFFS,
-  GET_STAFFS_ARCHIVED,
   ADD_STAFF_SUCCESS,
   ADD_STAFF_FAILURE,
   EDIT_STAFF_SUCCESS,
@@ -20,7 +19,6 @@ let initial = {
   editShopError: false,
   roles: [],
   staffs: [],
-  staffs_archived: [],
   addStaffError: false,
   editStaffError: false,
   platforms: []
@@ -40,8 +38,6 @@ export default (state = initial, action) => {
       return {...state, roles: action.payload};
     case GET_STAFFS:
       return {...state, staffs: action.payload};
-    case GET_STAFFS_ARCHIVED:
-      return {...state, staffs_archived: action.payload};
     case ADD_STAFF_SUCCESS:
       return {...state, staffs: action.payload, addStaffError: false};
     case ADD_STAFF_FAILURE:

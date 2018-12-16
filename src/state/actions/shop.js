@@ -54,13 +54,6 @@ export const getStaffs = () => {
   };
 };
 
-export const getStaffsArchived = () => {
-  return async dispatch => {
-    const payload = await Shop.getStaffsArchived();
-    dispatch({type: GET_STAFFS_ARCHIVED, payload});
-  };
-};
-
 export const addStaff = staff => {
   return async dispatch => {
     try {
