@@ -19,7 +19,12 @@ class Shop {
     await request(`/shops/${shop_id}`, 'put', {archived: true});
     return Shop.getShop();
   };
-  
+
+  static getRoles = async () => {
+    const roles = await request(`/roles`);
+    return roles.data.data;
+  };
+
   static getStaffs = async () => {
     const shop_id = await Auth._authenticatedRequest();
     const staffs = await request(`/shops/${shop_id}/staff`);
@@ -45,11 +50,6 @@ class Shop {
     const shop_id = await Auth._authenticatedRequest();
     await request(`/shops/${shop_id}/staff/${staff_id}`, 'put', {archived: true});
     return Shop.getStaffs();
-  };
-
-  static getRoles = async () => {
-    const roles = await request(`/roles`);
-    return roles.data.data;
   };
 
   static getPlatforms = async () => {

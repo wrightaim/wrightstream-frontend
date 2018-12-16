@@ -4,7 +4,7 @@ import React from 'react';
 // REDUX
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {getStaffs, getRoles} from '../../../../state/actions/shop';
+import {getRoles, getStaffs} from '../../../../state/actions/shop';
 
 // COMPONENTS
 import Staff from './components/Staff';
@@ -44,8 +44,8 @@ class Staffs extends React.Component {
   };
 
   componentDidMount () {
-    this.props.getStaffs();
     this.props.getRoles();
+    this.props.getStaffs();
   };
 
   render () {
@@ -76,6 +76,10 @@ class Staffs extends React.Component {
                   })
                 }
               </div>
+              <hr />
+              <p className="has-text-right">
+                <span className="menu-label has-text-danger pointer">Archived Staff</span>
+              </p>
             </div>
           </div>
         </div>
@@ -113,8 +117,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  getStaffs,
-  getRoles
+  getRoles,
+  getStaffs
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Staffs);
