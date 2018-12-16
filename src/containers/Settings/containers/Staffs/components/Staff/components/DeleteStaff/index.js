@@ -4,14 +4,14 @@ import React from 'react';
 // REDUX
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-//import { editShop } from '../../../../../../state/actions/shop';
+import {archiveStaff} from '../../../../../../../../state/actions/shop';
 
 // ==========
 
 class DeleteStaff extends React.Component {
-  deleteStaff = event => {
+  deleteStaff = async event => {
     event.preventDefault();
-    //    this.props.editShop();
+    await this.props.archiveStaff(this.props.staff.id);
     this.props.toggle();
   };
 
@@ -32,8 +32,12 @@ class DeleteStaff extends React.Component {
   };
 };
 
+const mapStateToProps = state => ({
+  staffs: state.shop.staffs
+});
+
 const mapDispatchToProps = dispatch => bindActionCreators({
-  //  editShop
+  archiveStaff
 }, dispatch);
 
-export default connect(null, mapDispatchToProps)(DeleteStaff);
+export default connect(mapStateToProps, mapDispatchToProps)(DeleteStaff);
