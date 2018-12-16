@@ -26,6 +26,7 @@ import Settings from './containers/Settings';
 
 class App extends React.Component {
   render () {
+    console.log(this.props.user);
     return (
       <BrowserRouter>
         <div>
@@ -33,7 +34,7 @@ class App extends React.Component {
           {
             this.props.authorized ? (
               <Switch>
-                <Route path="/settings" component={Settings} />
+                {this.props.user.role_id === 1 ? <Route path="/settings" component={Settings} /> : null}
                 {/* <Route path="/profile" component={Profile} />
                 <Route path="/products" component={Products} />
                 <Route path="/inventory" component={Inventory} />
@@ -41,7 +42,7 @@ class App extends React.Component {
                 <Route path="/mystream" component={MyStream} />
                 <Route path="/admin" component={Admin} />
                 <Route path="/auth/callback/etsy" component={CallbackEtsy} /> */}
-                <Route path="/" component={() => <Redirect to="/settings" />} />
+                <Route path="/" component={() => <Redirect to="/workstream" />} />
               </Switch>
             ) : (
               <Switch>
@@ -58,6 +59,7 @@ class App extends React.Component {
 };
 
 const mapStateToProps = state => ({
+  user: state.auth.user,
   authorized: state.auth.authorized
 });
 

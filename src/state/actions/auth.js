@@ -28,11 +28,10 @@ export const login = (credentials, history) => {
     try {
       const payload = await Auth.login(credentials);
       dispatch({type: LOGIN_SUCCESS, payload});
-      history.push('/settings');
     } catch (err) {
       dispatch({type: LOGIN_FAILURE, payload: err});
-      history.push('/login');
     }
+    history.push('/');
   };
 };
 
