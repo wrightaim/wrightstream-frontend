@@ -5,7 +5,7 @@ import React from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {getUser} from '../../../../../../../../state/actions/auth';
-import {editStaff} from '../../../../../../../../state/actions/shop';
+import {editStaff, editStaffReset} from '../../../../../../../../state/actions/shop';
 
 // ==========
 
@@ -45,6 +45,10 @@ class EditStaff extends React.Component {
         this.props.toggle();
       }
     }
+  };
+
+  componentDidMount () {
+    this.props.editStaffReset();
   };
 
   render () {
@@ -189,7 +193,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   getUser,
-  editStaff
+  editStaff,
+  editStaffReset
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditStaff);
