@@ -35,8 +35,14 @@ class Staff extends React.Component {
       <div className="column is-4">
         <div className={this.getRoleColor()}>
           <header className="card-header">
-            <figure className="image">
-              <img src={staff.photo} alt={`${staff.first_name} ${staff.last_name}`} />
+            <figure className="image profile">
+              {
+                staff.photo ? (
+                  <img src={staff.photo} alt={`${staff.first_name} ${staff.last_name}`} />
+                ) : (
+                  <span>{staff.first_name[0]}{staff.last_name[0]}</span>
+                )
+              }
             </figure>
           </header>
           <div className="card-content">

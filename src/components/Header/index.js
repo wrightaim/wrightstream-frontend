@@ -153,7 +153,15 @@ class Header extends React.Component {
                 </div>
                 <div className="navbar-item has-dropdown is-hoverable">
                   <span className="navbar-link is-hidden-touch">
-                    <img className="profile" src={this.props.user.photo} alt={`${this.props.user.first_name} ${this.props.user.last_name}`} />
+                    <figure className="image profile">
+                      {
+                        this.props.user.photo ? (
+                          <img src={this.props.user.photo} alt={`${this.props.user.first_name} ${this.props.user.last_name}`} />
+                        ) : (
+                          <span>{this.props.user.first_name[0]}{this.props.user.last_name[0]}</span>
+                        )
+                      }
+                    </figure>                  
                     <span>{this.props.user.first_name}</span>
                   </span>
                   <div className="navbar-dropdown is-right">

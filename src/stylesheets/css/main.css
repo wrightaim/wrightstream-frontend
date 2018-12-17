@@ -7739,13 +7739,24 @@ nav {
 .modal-content.modal-form {
   width: 600px; }
 
+img {
+  display: block;
+  object-fit: cover; }
+
 .profile {
-  width: 2.75rem;
-  height: 100%;
-  object-fit: cover;
+  background-color: #bbc3dd;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-right: .6rem;
-  border: 2px solid #f0f1f6;
-  border-radius: 50%; }
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 2px solid #f0f1f6; }
+  .profile img {
+    height: 100%;
+    border-radius: 50%; }
 
 .menu .lnr {
   margin-right: .75rem; }
@@ -8086,14 +8097,14 @@ nav {
   display: flex;
   flex-wrap: wrap; }
 
-#settings #staff .image {
-  margin: 1.5rem auto -40px; }
-
-#settings #staff img {
+#settings #staff .profile {
+  font-size: 1.75rem;
+  margin: 1.5rem auto -40px;
   width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 2px solid #f0f1f6; }
+  height: 80px; }
+  #settings #staff .profile img {
+    height: 100%;
+    border-radius: 50%; }
 
 #settings #staff .card {
   border-bottom: 5px solid #e2e4f0; }
@@ -8118,25 +8129,24 @@ nav {
   color: #9295a5;
   margin-right: .5rem; }
 
-#settings img {
-  display: block;
-  object-fit: cover; }
-  #settings img.logo {
-    width: 175px;
-    height: 175px;
-    border: 3px solid white;
-    outline: 1px solid #dbdbdb;
-    margin-left: 1px; }
-  #settings img.logo-small {
-    width: 70px;
-    height: 70px;
-    border: 5px solid #e0e2ec;
-    margin-right: .75rem; }
-  #settings img.logo-large {
-    width: 200px;
-    height: 200px;
-    border: 5px solid #e0e2ec;
-    margin: auto; }
+#settings img.logo {
+  width: 175px;
+  height: 175px;
+  border: 3px solid white;
+  outline: 1px solid #dbdbdb;
+  margin-left: 1px; }
+
+#settings img.logo-small {
+  width: 70px;
+  height: 70px;
+  border: 5px solid #e0e2ec;
+  margin-right: .75rem; }
+
+#settings img.logo-large {
+  width: 200px;
+  height: 200px;
+  border: 5px solid #e0e2ec;
+  margin: auto; }
 
 #signup .hero {
   min-height: calc(100vh - 5rem); }

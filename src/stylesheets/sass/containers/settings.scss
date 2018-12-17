@@ -92,15 +92,16 @@
     flex-wrap: wrap;
   }
 
-  .image {
+  .profile {
+    font-size: 1.75rem;
     margin: 1.5rem auto -40px;
-  }
-
-  img {
     width: 80px;
     height: 80px;
-    border-radius: 50%;
-    border: 2px solid $slate;
+
+    img {
+      height: 100%;
+      border-radius: 50%;
+    }
   }
 
   .card {
@@ -139,9 +140,6 @@
 }
 
 img {
-  display: block;
-  object-fit: cover;
-  
   &.logo {
     width: 175px;
     height: 175px;

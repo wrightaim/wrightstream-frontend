@@ -1,8 +1,23 @@
-.profile {
-  width: $navbar-item-img-max-height;
-  height: 100%;
+img {
+  display: block;
   object-fit: cover;
-  margin-right: .6rem;
-  border: 2px solid $slate;
-  border-radius: 50%;
 }
+
+.profile {
+  background-color: $periwinkle;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: .6rem;
+  width: $navbar-item-img-max-height;
+  height: $navbar-item-img-max-height;
+  border-radius: 50%;
+  border: 2px solid $slate;
+
+  img {
+    height: 100%;
+    border-radius: 50%;
+  }
+}
+
