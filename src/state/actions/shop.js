@@ -3,6 +3,7 @@ import Shop from '../models/shop';
 export const GET_SHOP = 'GET_SHOP';
 export const EDIT_SHOP_SUCCESS = 'EDIT_SHOP_SUCCESS';
 export const EDIT_SHOP_FAILURE = 'EDIT_SHOP_FAILURE';
+export const EDIT_SHOP_RESET = 'EDIT_SHOP_RESET';
 export const ARCHIVE_SHOP = 'ARCHIVE_SHOP';
 export const GET_ROLES = 'GET_ROLES';
 export const GET_STAFFS = 'GET_STAFFS';
@@ -34,6 +35,12 @@ export const editShop = shop => {
     } catch (err) {
       dispatch({type: EDIT_SHOP_FAILURE, payload: err});
     }
+  };
+};
+
+export const editShopReset = () => {
+  return dispatch => {
+    dispatch({type: EDIT_SHOP_RESET});
   };
 };
 

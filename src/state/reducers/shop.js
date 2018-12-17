@@ -2,6 +2,7 @@ import {
   GET_SHOP,
   EDIT_SHOP_SUCCESS,
   EDIT_SHOP_FAILURE,
+  EDIT_SHOP_RESET,
   ARCHIVE_SHOP,
   GET_ROLES,
   GET_STAFFS,
@@ -37,6 +38,8 @@ export default (state = initial, action) => {
       return {...state, shop: action.payload, editShopError: false};
     case EDIT_SHOP_FAILURE:
       return {...state, editShopError: true};
+    case EDIT_SHOP_RESET:
+      return {...state, editShopError: false};
     case ARCHIVE_SHOP:
       return {...state, shop: action.payload};
     case GET_ROLES:
