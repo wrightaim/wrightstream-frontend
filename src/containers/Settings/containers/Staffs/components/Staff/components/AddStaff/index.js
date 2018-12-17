@@ -4,7 +4,7 @@ import React from 'react';
 // REDUX
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {addStaff} from '../../../../../../../../state/actions/shop';
+import {addStaff, addStaffReset} from '../../../../../../../../state/actions/shop';
 
 // ==========
 
@@ -43,6 +43,10 @@ class AddStaff extends React.Component {
         this.props.toggle();
       }
     }
+  };
+
+  componentDidMount () {
+    this.props.addStaffReset();
   };
 
   render () {
@@ -187,7 +191,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  addStaff
+  addStaff,
+  addStaffReset
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddStaff);
