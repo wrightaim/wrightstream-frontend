@@ -4,7 +4,7 @@ import React from 'react';
 // REDUX
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {archiveStaff} from '../../../../../../../../state/actions/shop';
+import {archiveStaff, archiveStaffReset} from '../../../../../../../../state/actions/shop';
 
 // ==========
 
@@ -13,6 +13,10 @@ class DeleteStaff extends React.Component {
     event.preventDefault();
     await this.props.archiveStaff(this.props.staff.id);
     if (!this.props.archiveStaffError) this.props.toggle();
+  };
+
+  componentDidMount () {
+    this.props.archiveStaffReset();
   };
 
   render () {
@@ -45,7 +49,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  archiveStaff
+  archiveStaff,
+  archiveStaffReset
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeleteStaff);
