@@ -4,7 +4,7 @@ import React from 'react';
 // REDUX
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {restoreStaff} from '../../../../../../../../state/actions/shop';
+import {restoreStaff} from '../../../../../../../../state/actions/staff';
 
 // ==========
 
@@ -33,7 +33,7 @@ class RestoreStaff extends React.Component {
 };
 
 const mapStateToProps = state => ({
-  staffs: state.shop.staffs
+  staffs: state.staff.staffs
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({

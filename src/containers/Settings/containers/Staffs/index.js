@@ -4,7 +4,7 @@ import React from 'react';
 // REDUX
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {getRoles, getStaffs} from '../../../../state/actions/shop';
+import {getRoles, getStaffs} from '../../../../state/actions/staff';
 
 // COMPONENTS
 import Staff from './components/Staff';
@@ -125,9 +125,9 @@ class Staffs extends React.Component {
 };
 
 const mapStateToProps = state => ({
-  staffs: state.shop.staffs,
-  editStaffError: state.shop.editStaffError,
-  roles: state.shop.roles
+  staffs: state.staff.staffs,
+  editStaffError: state.staff.editStaffError,
+  roles: state.staff.roles
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({

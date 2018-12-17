@@ -5,7 +5,7 @@ import React from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {getUser} from '../../../../../../../../state/actions/auth';
-import {editStaff, editStaffReset} from '../../../../../../../../state/actions/shop';
+import {editStaff, editStaffReset} from '../../../../../../../../state/actions/staff';
 
 // ==========
 
@@ -187,8 +187,8 @@ class EditStaff extends React.Component {
 
 const mapStateToProps = state => ({
   user: state.auth.user,
-  staffs: state.shop.staffs,
-  editStaffError: state.shop.editStaffError
+  staffs: state.staff.staffs,
+  editStaffError: state.staff.editStaffError
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({

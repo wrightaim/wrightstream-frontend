@@ -4,7 +4,7 @@ import React from 'react';
 // REDUX
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {archiveStaff, archiveStaffReset} from '../../../../../../../../state/actions/shop';
+import {archiveStaff, archiveStaffReset} from '../../../../../../../../state/actions/staff';
 
 // ==========
 
@@ -44,8 +44,8 @@ class DeleteStaff extends React.Component {
 };
 
 const mapStateToProps = state => ({
-  staffs: state.shop.staffs,
-  archiveStaffError: state.shop.archiveStaffError
+  staffs: state.staff.staffs,
+  archiveStaffError: state.staff.archiveStaffError
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({

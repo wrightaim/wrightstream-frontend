@@ -16,11 +16,11 @@ class EditShopLogo extends React.Component {
     };
   };
 
-  editShopLogo = event => {
+  editShopLogo = async event => {
     event.preventDefault();
     const {shop_logo} = this.state;
     const shop = {logo: shop_logo};
-    this.props.editShop(shop);
+    await this.props.editShop(shop);
     this.props.toggle();
   };
 

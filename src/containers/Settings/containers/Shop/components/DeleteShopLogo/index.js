@@ -9,10 +9,10 @@ import {editShop} from '../../../../../../state/actions/shop';
 // ==========
 
 class DeleteShopLogo extends React.Component {
-  deleteShopLogo = event => {
+  deleteShopLogo = async event => {
     event.preventDefault();
     const shop = {logo: null};
-    this.props.editShop(shop);
+    await this.props.editShop(shop);
     this.props.toggle();
   };
 
