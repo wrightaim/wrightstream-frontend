@@ -18,25 +18,25 @@ class Staff {
   static addStaff = async staff => {
     const shop_id = await Auth._authenticatedRequest();
     await request(`/shops/${shop_id}/staff`, 'post', staff);
-    return Shop.getStaffs();
+    return Staff.getStaffs();
   };
 
   static editStaff = async (staff, staff_id) => {
     const shop_id = await Auth._authenticatedRequest();
     await request(`/shops/${shop_id}/staff/${staff_id}`, 'put', staff);
-    return Shop.getStaffs();
+    return Staff.getStaffs();
   };
 
   static archiveStaff = async staff_id => {
     const shop_id = await Auth._authenticatedRequest();
     await request(`/shops/${shop_id}/staff/${staff_id}`, 'put', {archived: true});
-    return Shop.getStaffs();
+    return Staff.getStaffs();
   };
 
   static restoreStaff = async staff_id => {
     const shop_id = await Auth._authenticatedRequest();
     await request(`/shops/${shop_id}/staff/${staff_id}`, 'put', {archived: false});
-    return Shop.getStaffs();
+    return Staff.getStaffs();
   };
 };
 
