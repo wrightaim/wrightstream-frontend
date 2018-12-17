@@ -145,11 +145,11 @@ class Header extends React.Component {
             this.props.authorized ? (
               <div className="navbar-end">
                 <div className="navbar-main">
-                  <Link className={this.state.productsClasses} to="/products" onClick={() => {this.toggle('products')}}>Products</Link>
-                  <Link className={this.state.inventoryClasses} to="/inventory" onClick={() => {this.toggle('inventory')}}>Inventory</Link>
-                  <Link className={this.state.workstreamClasses} to="/workstream" onClick={() => {this.toggle('workstream')}}>WorkStream</Link>
-                  <Link className={this.state.mystreamClasses} to="/mystream" onClick={() => {this.toggle('mystream')}}>MyStream</Link>
-                  {this.props.user.role_id !== 3 ? <Link className={this.state.adminClasses} to="/admin" onClick={() => {this.toggle('admin')}}>Admin</Link> : null}
+                  <Link className={this.state.productsClasses} to="/products" onClick={() => this.toggle('products')}>Products</Link>
+                  <Link className={this.state.inventoryClasses} to="/inventory" onClick={() => this.toggle('inventory')}>Inventory</Link>
+                  <Link className={this.state.workstreamClasses} to="/workstream" onClick={() => this.toggle('workstream')}>WorkStream</Link>
+                  <Link className={this.state.mystreamClasses} to="/mystream" onClick={() => this.toggle('mystream')}>MyStream</Link>
+                  {this.props.user.role_id <= 2 ? <Link className={this.state.adminClasses} to="/admin" onClick={() => this.toggle('admin')}>Admin</Link> : null}
                 </div>
                 <div className="navbar-item has-dropdown is-hoverable">
                   <span className="navbar-link is-hidden-touch">
@@ -157,31 +157,19 @@ class Header extends React.Component {
                     <span>{this.props.user.first_name}</span>
                   </span>
                   <div className="navbar-dropdown is-right">
-                    <Link className="navbar-item" to="/profile">
-                      Profile
-                    </Link>
-                    <Link className="navbar-item" to="/settings">
-                      Settings
-                    </Link>
-                    <Link className="navbar-item" to="/help">
-                      Help
-                    </Link>
+                    <Link className="navbar-item" to="/profile">Profile</Link>
+                    {this.props.user.role_id === 1 ? <Link className="navbar-item" to="/settings">Settings</Link> : null}
+                    <Link className="navbar-item" to="/help">Help</Link>
                     <hr className="navbar-divider" />
-                    <Link className="navbar-item is-active" to="/" onClick={this.props.logout}>
-                      Log Out
-                    </Link>
+                    <Link className="navbar-item is-active" to="/" onClick={this.props.logout}>Log Out</Link>
                   </div>
                 </div>
               </div>
             ) : (
               <div className="navbar-end">
                 <div className="navbar-main">
-                  <Link className="navbar-item" to="/login">
-                    Log In
-                  </Link>
-                  <Link className="navbar-item" to="/signup">
-                    Sign Up
-                  </Link>
+                  <Link className="navbar-item" to="/login">Log In</Link>
+                  <Link className="navbar-item" to="/signup">Sign Up</Link>
                 </div>
               </div>
             )
