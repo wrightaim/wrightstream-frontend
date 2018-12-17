@@ -4,7 +4,7 @@ import React from 'react';
 // REDUX
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {editShop} from '../../../../../../state/actions/shop';
+import {editShop, editShopReset} from '../../../../../../state/actions/shop';
 
 // ==========
 
@@ -23,9 +23,11 @@ class EditShop extends React.Component {
     const {shop_name, shop_username, shop_email} = this.state;
     const shop = {shop_name: shop_name, name: shop_username, email: shop_email};
     await this.props.editShop(shop);
-    if (!this.props.editShopError) {
-      this.props.toggle();
-    }
+    if (!this.props.editShopError) this.props.toggle();
+  };
+
+  componentDidMount () {
+    this.props.editShopReset();
   };
 
   render () {
@@ -96,7 +98,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  editShop
+  editShop,
+  editShopReset
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditShop);
