@@ -13,8 +13,10 @@ class DeleteStaff extends React.Component {
   deleteStaff = async event => {
     event.preventDefault();
     await this.props.archiveStaff(this.props.staff.id);
-    if (!this.props.archiveStaffError) this.props.toggle();
-    if (this.props.staff.id === this.props.user.id) this.props.logout();
+    if (!this.props.archiveStaffError) {
+      this.props.toggle();
+      if (this.props.staff.id === this.props.user.id) this.props.logout();
+    }    
   };
 
   componentDidMount () {
