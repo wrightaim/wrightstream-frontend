@@ -28,6 +28,11 @@ class Settings extends React.Component {
   };
 
   render () {
+    const shop = {
+      name: this.props.shop.shop_name,
+      logo: this.props.shop.logo,
+      created_at: this.props.shop.created_at
+    };
     return (
       <BrowserRouter>
         <div id="settings">
@@ -40,14 +45,20 @@ class Settings extends React.Component {
                 <div className="level">
                   <div className="level-left">
                     <div className="level-item">
-                      <figure className="image">
-                        <img className="logo-small" src={this.props.shop.logo} alt={this.props.shop.shop_name} />
+                      <figure className="image shop-logo-small">
+                        {
+                          shop.logo ? (
+                            <img src={shop.logo} alt={shop.name} />
+                          ) : (
+                            <span className="lnr lnr-store"></span>
+                          )
+                        }
                       </figure>
                     </div>
                     <div className="level-item">
                       <div>
-                        <h1 className="title-alt is-3">{this.props.shop.shop_name}</h1>
-                        <p className="subtitle-alt menu-label">Joined {moment(this.props.shop.created_at).format('MMMM D, YYYY')}</p>
+                        <h1 className="title-alt is-3">{shop.name}</h1>
+                        <p className="subtitle-alt menu-label">Joined {moment(shop.created_at).format('MMMM D, YYYY')}</p>
                       </div>
                     </div>
                   </div>       

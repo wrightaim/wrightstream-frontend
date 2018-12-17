@@ -33,8 +33,14 @@ class EditShopLogo extends React.Component {
       <div className="columns">
         <div className="column is-8 is-offset-2">
           <form className="has-text-centered" onSubmit={this.editShopLogo}>
-            <figure className="image has-padding-bottom">
-              <img className="logo-large" src={shop.logo} alt={shop.name} />
+            <figure className="image shop-logo-large">
+              {
+                shop.logo ? (
+                  <img src={shop.logo} alt={shop.name} />
+                ) : (
+                  <span className="lnr lnr-store"></span>
+                )
+              }
             </figure>
             <div className="field">
               <p className="control">

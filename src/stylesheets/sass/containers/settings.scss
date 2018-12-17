@@ -2,6 +2,19 @@
   padding: 4rem;
 }
 
+.shop-logo {
+  background-color: $mist;
+  margin-left: 1px;
+}
+
+.shop-logo-small {
+  margin-right: .75rem;
+}
+
+.shop-logo-large {
+  margin: 0 auto 1.5rem;
+}
+
 #shop {
   padding: 0 3rem;
 
@@ -31,58 +44,6 @@
 
   .button:first-child {
     margin-bottom: .5rem;
-  }
-}
-
-#platforms {
-  .columns {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .card {
-    background-color: $slate;
-    border-radius: 1rem;
-    border: 0;
-    height: 50px;
-  }
-
-  .card-content {  
-    padding: 0;
-    height: 100%;
-
-    .columns {
-      margin: 0;
-      height: 100%;
-    }
-
-    .column {
-      color: $white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
-      height: 100%;
-    }
-
-    a {
-      color: $white;
-      line-height: 1;
-
-      &:hover {
-        color: $slate;
-      }
-    }
-
-    .fa, .far, .fas {
-      color: $indigo;
-      font-size: 1.2rem;
-    }
-
-    img {
-      width: 25px;
-      height: 25px;
-    }
   }
 }
 
@@ -139,26 +100,54 @@
   }
 }
 
-img {
-  &.logo {
-    width: 175px;
-    height: 175px;
-    border: 3px solid $white;
-    outline: 1px solid $grey-lighter;
-    margin-left: 1px;
+#platforms {
+  .columns {
+    display: flex;
+    flex-wrap: wrap;
   }
 
-  &.logo-small {
-    width: 70px;
-    height: 70px;
-    border: 5px solid darken($slate, 5%);
-    margin-right: .75rem;
+  .card {
+    background-color: $slate;
+    border-radius: 1rem;
+    border: 0;
+    height: 50px;
   }
 
-  &.logo-large {
-    width: 200px;
-    height: 200px;
-    border: 5px solid darken($slate, 5%);
-    margin: auto;
+  .card-content {  
+    padding: 0;
+    height: 100%;
+
+    .columns {
+      margin: 0;
+      height: 100%;
+    }
+
+    .column {
+      color: $white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      height: 100%;
+    }
+
+    a {
+      color: $white;
+      line-height: 1;
+
+      &:hover {
+        color: $slate;
+      }
+    }
+
+    .fa, .far, .fas {
+      color: $indigo;
+      font-size: 1.2rem;
+    }
+
+    img {
+      width: 25px;
+      height: 25px;
+    }
   }
 }

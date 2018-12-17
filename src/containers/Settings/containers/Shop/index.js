@@ -71,8 +71,14 @@ class Shop extends React.Component {
                   <div className="level">
                     <div className="level-left">
                       <div className="level-item">
-                        <figure className="image">
-                          <img className="logo" src={shop.logo} alt={shop.name} />
+                        <figure className="image shop-logo">
+                          {
+                            shop.logo ? (
+                              <img src={shop.logo} alt={shop.name} />
+                            ) : (
+                              <span className="lnr lnr-store"></span>
+                            )
+                          }
                         </figure>
                       </div>
                       <div className="level-item">

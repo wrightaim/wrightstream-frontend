@@ -9,9 +9,9 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: .6rem;
-  width: $navbar-item-img-max-height;
-  height: $navbar-item-img-max-height;
+  margin-right: .6rem; //move to header
+  width: $navbar-item-img-max-height; //move to header
+  height: $navbar-item-img-max-height; //move to header
   border-radius: 50%;
   border: 2px solid $slate;
 
@@ -21,3 +21,35 @@ img {
   }
 }
 
+.shop-profile {
+  background-color: $periwinkle;   
+  color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-logo {
+  @extend .shop-profile;
+  font-size: 5rem;
+  width: 175px;
+  height: 175px;
+  border: 3px solid $white;
+  outline: 1px solid $grey-lighter;
+}
+
+.shop-logo-small {
+  @extend .shop-profile;
+  font-size: 2rem;
+  width: 70px;
+  height: 70px;
+  border: 5px solid darken($slate, 5%);
+}
+
+.shop-logo-large {
+  @extend .shop-profile;
+  font-size: 7rem;
+  width: 200px;
+  height: 200px;
+  border: 5px solid darken($slate, 5%);
+}
