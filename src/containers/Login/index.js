@@ -4,7 +4,7 @@ import React from 'react';
 // REDUX
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {login} from '../../state/actions/auth';
+import {login, loginReset} from '../../state/actions/auth';
 
 // ==========
 
@@ -23,6 +23,10 @@ class Login extends React.Component {
     const {shop_username, email, password} = this.state;
     const credentials = {shop_username, email, password};
     this.props.login(credentials, this.props.history);
+  };
+
+  componentDidMount () {
+    this.props.loginReset();
   };
 
   render () {
@@ -103,7 +107,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  login
+  login,
+  loginReset
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
