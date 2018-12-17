@@ -4,7 +4,7 @@ import React from 'react';
 // REDUX
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {signupShop, signupUser, signupReset} from '../../state/actions/auth';
+import {signupShop, signupShopReset, signupUser, signupUserReset, signupReset} from '../../state/actions/auth';
 
 // ==========
 
@@ -51,6 +51,8 @@ class Signup extends React.Component {
   };
 
   componentDidMount () {
+    this.props.signupShopReset();
+    this.props.signupUserReset();
     this.props.signupReset();
   };
 
@@ -241,7 +243,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   signupShop,
+  signupShopReset,
   signupUser,
+  signupUserReset,
   signupReset
 }, dispatch);
 
