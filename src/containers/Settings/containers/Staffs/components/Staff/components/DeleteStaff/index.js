@@ -5,6 +5,7 @@ import React from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {archiveStaff, archiveStaffReset} from '../../../../../../../../state/actions/staff';
+import {logout} from '../../../../../../../../state/actions/auth';
 
 // ==========
 
@@ -13,6 +14,7 @@ class DeleteStaff extends React.Component {
     event.preventDefault();
     await this.props.archiveStaff(this.props.staff.id);
     if (!this.props.archiveStaffError) this.props.toggle();
+    if (this.props.staff.id === this.props.user.id) this.props.logout();
   };
 
   componentDidMount () {
@@ -44,13 +46,15 @@ class DeleteStaff extends React.Component {
 };
 
 const mapStateToProps = state => ({
+  user: state.auth.user,
   staffs: state.staff.staffs,
   archiveStaffError: state.staff.archiveStaffError
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   archiveStaff,
-  archiveStaffReset
+  archiveStaffReset,
+  logout
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeleteStaff);
