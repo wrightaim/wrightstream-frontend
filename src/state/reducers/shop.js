@@ -9,7 +9,8 @@ import {
   ADD_STAFF_FAILURE,
   EDIT_STAFF_SUCCESS,
   EDIT_STAFF_FAILURE,
-  ARCHIVE_STAFF,
+  ARCHIVE_STAFF_SUCCESS,
+  ARCHIVE_STAFF_FAILURE,
   RESTORE_STAFF,
   GET_PLATFORMS
 } from '../actions/shop';
@@ -21,6 +22,7 @@ let initial = {
   staffs: [],
   addStaffError: false,
   editStaffError: false,
+  archiveStaffError: false,
   platforms: []
 };
 
@@ -46,8 +48,10 @@ export default (state = initial, action) => {
       return {...state, staffs: action.payload, editStaffError: false};
     case EDIT_STAFF_FAILURE:
       return {...state, editStaffError: true};
-    case ARCHIVE_STAFF:
-      return {...state, staffs: action.payload};
+    case ARCHIVE_STAFF_SUCCESS:
+      return {...state, staffs: action.payload, archiveStaffError: false};
+    case ARCHIVE_STAFF_FAILURE:
+      return {...state, archiveStaffError: true};
     case RESTORE_STAFF:
       return {...state, staffs: action.payload};
     case GET_PLATFORMS:

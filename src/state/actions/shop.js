@@ -11,7 +11,8 @@ export const ADD_STAFF_SUCCESS = 'ADD_STAFF_SUCCESS';
 export const ADD_STAFF_FAILURE = 'ADD_STAFF_FAILURE';
 export const EDIT_STAFF_SUCCESS = 'EDIT_STAFF_SUCCESS';
 export const EDIT_STAFF_FAILURE = 'EDIT_STAFF_FAILURE';
-export const ARCHIVE_STAFF = 'ARCHIVE_STAFF';
+export const ARCHIVE_STAFF_SUCCESS = 'ARCHIVE_STAFF_SUCCESS';
+export const ARCHIVE_STAFF_FAILURE = 'ARCHIVE_STAFF_FAILURE';
 export const RESTORE_STAFF = 'RESTORE_STAFF';
 export const GET_PLATFORMS = 'GET_PLATFORMS';
 
@@ -78,8 +79,12 @@ export const editStaff = (staff, staff_id) => {
 
 export const archiveStaff = staff_id => {
   return async dispatch => {
-    const payload = await Shop.archiveStaff(staff_id);
-    dispatch({type: ARCHIVE_STAFF, payload});
+    try {
+      const payload = await Shop.archiveStaff(staff_id);
+      dispatch({type: ARCHIVE_STAFF_SUCCESS, payload});
+    } catch (err) {
+      dispatch({type: ARCHIVE_STAFF_FAILURE, payload: err});
+    }
   };
 };
 

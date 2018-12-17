@@ -12,7 +12,7 @@ class DeleteStaff extends React.Component {
   deleteStaff = async event => {
     event.preventDefault();
     await this.props.archiveStaff(this.props.staff.id);
-    this.props.toggle();
+    if (!this.props.archiveStaffError) this.props.toggle();
   };
 
   render () {
@@ -23,6 +23,13 @@ class DeleteStaff extends React.Component {
     return (
       <form className="has-text-centered" onSubmit={this.deleteStaff}>
         <p>Are you sure you want to delete {staff.first_name} {staff.last_name}?</p>
+        {
+          this.props.archiveStaffError ? (
+            <p className="help is-danger">
+              Unable to delete only shop owner.
+            </p>
+          ) : null
+        }
         <div className="buttons">
           <span className="button" onClick={this.props.toggle}>Cancel</span>
           <button className="button is-danger">Delete</button>
@@ -33,7 +40,8 @@ class DeleteStaff extends React.Component {
 };
 
 const mapStateToProps = state => ({
-  staffs: state.shop.staffs
+  staffs: state.shop.staffs,
+  archiveStaffError: state.shop.archiveStaffError
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
