@@ -7572,16 +7572,6 @@ body {
 .has-padding-bottom {
   padding-bottom: 1.5rem; }
 
-.bar {
-  background-color: #21242d;
-  padding: 3rem; }
-  .bar .menu {
-    margin-bottom: 3rem; }
-  .bar .menu-label {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: .3rem; }
-
 .button {
   color: #9295a5;
   text-transform: uppercase;
@@ -7787,8 +7777,17 @@ img {
   height: 200px;
   border: 5px solid #e0e2ec; }
 
-.menu .lnr {
-  margin-right: .75rem; }
+.sidebar {
+  background-color: #21242d;
+  padding: 3rem; }
+  .sidebar .menu {
+    margin-bottom: 3rem; }
+  .sidebar .menu-label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: .3rem; }
+  .sidebar .lnr {
+    margin-right: .75rem; }
 
 .admin-container {
   padding: 3rem; }

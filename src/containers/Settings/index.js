@@ -38,7 +38,7 @@ class Settings extends React.Component {
         <div id="settings">
           <section>
             <div className="columns is-fullheight is-marginless">
-              <div className="column is-3 bar">
+              <div className="column is-3 sidebar">
                 <Sidebar />
               </div>
               <div className="column is-9 content-container">
