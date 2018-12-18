@@ -7632,11 +7632,8 @@ nav {
     letter-spacing: 1px;
     text-transform: uppercase; }
     nav .navbar-item:hover, nav .navbar-link:hover, nav .navbar-dropdown .navbar-item:hover {
+      background-color: #fafafa;
       color: #9295a5; }
-    nav .navbar-item.is-active, nav .navbar-link.is-active, nav .navbar-dropdown .navbar-item.is-active {
-      color: #636fa6; }
-    nav .navbar-item.is-active:hover, nav .navbar-link.is-active:hover, nav .navbar-dropdown .navbar-item.is-active:hover {
-      background-color: #f0f1f6; }
     nav .navbar-item .navbar-dropdown, nav .navbar-link .navbar-dropdown, nav .navbar-dropdown .navbar-item .navbar-dropdown {
       box-shadow: none;
       border: solid 1px rgba(226, 228, 240, 0.3); }

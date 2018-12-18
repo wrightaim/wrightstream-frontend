@@ -60,7 +60,7 @@ class Header extends React.Component {
                     <span>{user.first_name}</span>
                   </span>
                   <div className="navbar-dropdown is-right">
-                    <Link className="navbar-item" to="/profile">Profile</Link>
+                    <span className="navbar-item pointer" onClick={this.props.toggle}>Profile</span>
                     {user.role_id === 1 ? <Link className="navbar-item" to="/settings">Settings</Link> : null}
                     <Link className="navbar-item" to="/help">Help</Link>
                     <hr className="navbar-divider" />

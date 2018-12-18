@@ -25,11 +25,33 @@ import Settings from './containers/Settings';
 // ==========
 
 class App extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      modal: false,
+      modalClasses: 'modal'
+    };
+  };
+
+  toggle = () => {
+    if (!this.state.modal) {
+      this.setState({
+        modal: true,
+        modalClasses: this.state.modalClasses + ' is-active'
+      });
+    } else {
+      this.setState({
+        modal: false,
+        modalClasses: 'modal'
+      });
+    }
+  };
+
   render () {
     return (
       <BrowserRouter>
         <div>
-          <Header />
+          <Header toggle={this.toggle} />
           {
             this.props.authorized ? (
               <Switch>
@@ -50,7 +72,16 @@ class App extends React.Component {
                 <Route path="/" component={() => <Redirect to="/login" />} />
               </Switch>
             )
-          }              
+          }
+          <div className={this.state.modalClasses}>
+            <div className="modal-background" onClick={this.toggle}></div>
+            <div className="modal-content modal-form">
+              <div className="modal-container">
+                uh
+            </div>
+            </div>
+            <span className="modal-close is-large" onClick={this.toggle}></span>
+          </div>
         </div>
       </BrowserRouter>
     );
