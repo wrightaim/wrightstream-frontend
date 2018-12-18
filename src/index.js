@@ -10,6 +10,9 @@ import store from './store';
 import './stylesheets/css/main.css';
 import './stylesheets/css/linearicons.css';
 
+// JS
+import './helpers/theme.js';
+
 // COMPONENTS
 import App from './App';
 

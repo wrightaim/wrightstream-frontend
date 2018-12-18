@@ -26,7 +26,6 @@ import Settings from './containers/Settings';
 
 class App extends React.Component {
   render () {
-    console.log(this.props.user);
     return (
       <BrowserRouter>
         <div>
