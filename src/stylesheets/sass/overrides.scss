@@ -9,7 +9,8 @@ $navbar-dropdown-border-top: 2px solid $mist;
 $menu-label-color: $slate;
 $menu-item-color: $quartz;
 $menu-item-hover-color: $quartz;
-$menu-item-hover-background-color: lighten($koamaru, 5);
+$menu-item-hover-background-color: lighten($koamaru, 5%);
+$menu-item-active-background-color: lighten($koamaru, 10%);
 
 // TABS
 $tabs-border-bottom-color: $mist;

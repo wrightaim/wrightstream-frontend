@@ -2,7 +2,7 @@
 import React from 'react';
 
 // ROUTER
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 // ==========
 
@@ -14,9 +14,9 @@ class Sidebar extends React.Component {
           Settings
         </p>
         <ul className="menu-list">
-          <li><Link to="/settings"><span className="lnr lnr-store"></span>Shop</Link></li>
-          <li><Link to="/settings/staff"><span className="lnr lnr-users2"></span>Staff</Link></li>
-          <li><Link to="/settings/platforms"><span className="lnr lnr-layers"></span>Platforms</Link></li>
+          <li><NavLink activeClassName="is-active" exact to="/settings"><span className="lnr lnr-store"></span>Shop</NavLink></li>
+          <li><NavLink activeClassName="is-active" to="/settings/staff"><span className="lnr lnr-users2"></span>Staff</NavLink></li>
+          <li><NavLink activeClassName="is-active" to="/settings/platforms"><span className="lnr lnr-layers"></span>Platforms</NavLink></li>
         </ul>
       </aside>
     );
