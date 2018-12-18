@@ -7765,6 +7765,8 @@ img {
   display: flex;
   justify-content: center;
   align-items: center; }
+  .shop-profile img, .shop-logo img, .shop-logo-small img, .shop-logo-large img {
+    height: 100%; }
 
 .shop-logo {
   font-size: 5rem;
