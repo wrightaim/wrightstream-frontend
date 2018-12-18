@@ -7572,6 +7572,16 @@ body {
 .has-padding-bottom {
   padding-bottom: 1.5rem; }
 
+.bar {
+  background-color: #21242d;
+  padding: 3rem; }
+  .bar .menu {
+    margin-bottom: 3rem; }
+  .bar .menu-label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: .3rem; }
+
 .button {
   color: #9295a5;
   text-transform: uppercase;
@@ -7648,16 +7658,10 @@ nav {
     nav .navbar-main .navbar-item.is-active {
       background-color: #bbc3dd;
       color: white; }
-
-.bar {
-  background-color: #21242d;
-  padding: 3rem; }
-  .bar .menu {
-    margin-bottom: 3rem; }
-  .bar .menu-label {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: .3rem; }
+  nav .profile {
+    margin-right: .6rem;
+    width: 2.75rem;
+    height: 2.75rem; }
 
 .title, .title-alt {
   font-weight: 400; }
@@ -7749,9 +7753,6 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: .6rem;
-  width: 2.75rem;
-  height: 2.75rem;
   border-radius: 50%;
   border: 2px solid #f0f1f6; }
   .profile img {
