@@ -9,6 +9,7 @@ import {connect} from 'react-redux';
 
 // COMPONENTS
 import Header from './components/Header';
+import Profile from './components/Profile';
 // import CallbackEtsy from './components/CallbackEtsy';
 
 // CONTAINERS
@@ -19,7 +20,6 @@ import Settings from './containers/Settings';
 // import Inventory from './containers/Inventory';
 // import WorkStream from './containers/WorkStream';
 // import MyStream from './containers/MyStream';
-// import Profile from './containers/Profile';
 // import Admin from './containers/Admin';
 
 // ==========
@@ -29,7 +29,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       modal: false,
-      modalClasses: 'modal'
+      modalClasses: 'modal profile'
     };
   };
 
@@ -42,7 +42,7 @@ class App extends React.Component {
     } else {
       this.setState({
         modal: false,
-        modalClasses: 'modal'
+        modalClasses: 'modal profile'
       });
     }
   };
@@ -73,15 +73,7 @@ class App extends React.Component {
               </Switch>
             )
           }
-          <div className={this.state.modalClasses}>
-            <div className="modal-background" onClick={this.toggle}></div>
-            <div className="modal-content modal-form">
-              <div className="modal-container">
-                uh
-            </div>
-            </div>
-            <span className="modal-close is-large" onClick={this.toggle}></span>
-          </div>
+          <Profile modalClasses={this.state.modalClasses} toggle={this.toggle} />
         </div>
       </BrowserRouter>
     );

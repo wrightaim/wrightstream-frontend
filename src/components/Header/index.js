@@ -48,7 +48,7 @@ class Header extends React.Component {
                 </div>
                 <div className="navbar-item has-dropdown is-hoverable">
                   <span className="navbar-link is-hidden-touch">
-                    <figure className="image profile">
+                    <figure className="image staff-profile">
                       {
                         user.photo ? (
                           <img src={user.photo} alt={`${user.first_name} ${user.last_name}`} />

@@ -7645,7 +7645,7 @@ nav {
     nav .navbar-main .navbar-item.is-active {
       background-color: #bbc3dd;
       color: white; }
-  nav .profile {
+  nav .staff-profile {
     margin-right: .6rem;
     width: 2.75rem;
     height: 2.75rem; }
@@ -7734,7 +7734,7 @@ img {
   display: block;
   object-fit: cover; }
 
-.profile {
+.staff-profile {
   background-color: #bbc3dd;
   color: white;
   display: flex;
@@ -7742,7 +7742,7 @@ img {
   align-items: center;
   border-radius: 50%;
   border: 2px solid #f0f1f6; }
-  .profile img {
+  .staff-profile img {
     height: 100%;
     border-radius: 50%; }
 
@@ -7773,6 +7773,14 @@ img {
   width: 200px;
   height: 200px;
   border: 5px solid #e0e2ec; }
+
+.profile .modal-content {
+  background-color: #636fa6;
+  border: 0;
+  margin: 0 0 0 auto;
+  width: 300px;
+  height: 100vh;
+  max-height: 100vh; }
 
 .sidebar {
   background-color: #21242d;
@@ -8097,12 +8105,12 @@ img {
   display: flex;
   flex-wrap: wrap; }
 
-#settings #staff .profile {
+#settings #staff .staff-profile {
   font-size: 1.75rem;
   margin: 1.5rem auto -40px;
   width: 80px;
   height: 80px; }
-  #settings #staff .profile img {
+  #settings #staff .staff-profile img {
     height: 100%;
     border-radius: 50%; }
 
