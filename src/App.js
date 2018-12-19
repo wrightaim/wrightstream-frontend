@@ -5,7 +5,10 @@ import React from 'react';
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 
 // REDUX
+import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import {getRoles} from './state/actions/staff';
+import {getUser} from './state/actions/auth';
 
 // COMPONENTS
 import Header from './components/Header';
@@ -47,11 +50,16 @@ class App extends React.Component {
     }
   };
 
+  componentDidMount () {
+    this.props.getRoles();
+    this.props.getUser();
+  };
+
   render () {
     return (
       <BrowserRouter>
         <div>
-          <Header toggle={this.toggle} />
+          <Header toggle={this.toggle} user={this.props.user} />
           {
             this.props.authorized ? (
               <Switch>
@@ -73,7 +81,7 @@ class App extends React.Component {
               </Switch>
             )
           }
-          <Profile modalClasses={this.state.modalClasses} toggle={this.toggle} />
+          <Profile modalClasses={this.state.modalClasses} toggle={this.toggle} roles={this.props.roles} user={this.props.user} />
         </div>
       </BrowserRouter>
     );
@@ -82,7 +90,13 @@ class App extends React.Component {
 
 const mapStateToProps = state => ({
   user: state.auth.user,
-  authorized: state.auth.authorized
+  authorized: state.auth.authorized,
+  roles: state.staff.roles
 });
 
-export default connect(mapStateToProps, null)(App);
+const mapDispatchToProps = dispatch => bindActionCreators({
+  getRoles,
+  getUser
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

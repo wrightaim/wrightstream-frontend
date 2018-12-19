@@ -7,15 +7,11 @@ import {Link, NavLink, withRouter} from 'react-router-dom';
 // REDUX
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {getUser, logout} from '../../state/actions/auth';
+import {logout} from '../../state/actions/auth';
 
 // ==========
 
 class Header extends React.Component {
-  componentDidMount () {
-    this.props.getUser();
-  };
-
   render () {
     const user = {
       first_name: this.props.user.first_name,
@@ -84,12 +80,10 @@ class Header extends React.Component {
 };
 
 const mapStateToProps = state => ({
-  user: state.auth.user,
   authorized: state.auth.authorized
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  getUser,
   logout
 }, dispatch);
 

@@ -25,7 +25,6 @@ class Staff extends React.Component {
     const staff = {
       first_name: this.props.staff.first_name,
       last_name: this.props.staff.last_name,
-      role_id: this.props.staff.role_id,
       role: this.props.roles.find(role => role.id === this.props.staff.role_id).name,
       email: this.props.staff.email,
       photo: this.props.staff.photo,
