@@ -3,51 +3,25 @@
     background-color: $white;
     border: 0;
     margin: 0 0 0 auto;
-    width: 300px;
+    width: 350px;
     height: 100vh;
     max-height: 100vh;
   }
+
+  .staff-profile {
+    width: 175px;
+    margin: 0 auto 2rem;
+  }
+
+  li {
+    font-size: .9rem;
+    line-height: 1.5rem;
+  }
+
+  .fa {
+    color: $grey-light;
+    text-align: center;
+    margin-right: .5rem;
+    width: 20px;
+  }
 }
-
-// figure {
-//   margin: 1rem auto;
-// }
-
-// img {
-//   display: block;
-//   margin: auto;
-//   object-fit: cover;
-
-//   &.shop-img {
-//     width: 175px;
-//     height: 175px;
-//     border: 5px solid darken($slate, 5%);
-//   }
-
-//   &.profile-img {
-//     width: 125px;
-//     height: 125px;
-//   }
-// }
-
-// .menu-label {
-//   color: $quartz;
-// }
-
-// li {
-//   line-height: 1.8rem;
-// }
-
-// .fa-icon {
-//   color: $grey-light;
-//   display: inline-block;
-//   margin: 0 5px;
-//   text-align: center;
-//   width: 20px;
-// }
-
-// .profile-bio {
-//   font-size: .85rem;
-//   margin-top: .5rem;
-//   text-align: justify;
-// }

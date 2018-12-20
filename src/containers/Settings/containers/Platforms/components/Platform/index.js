@@ -27,7 +27,7 @@ class Platform extends React.Component {
                 </a>
               </div>
               <div className="column is-3">
-                  <i className="fas fa-toggle-off"></i>
+                <i className="fa fas fa-toggle-off"></i>
               </div>
             </div>
           </div>

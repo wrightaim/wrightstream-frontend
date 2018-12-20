@@ -21,18 +21,14 @@ class Profile extends React.Component {
               <img src={user.photo} alt={`${user.first_name} ${user.last_name}`} />
             </figure>
             <aside className="menu">
-              <h1 className="title is-4 has-text-centered">{user.first_name} {user.last_name}</h1>
-              <p className="subtitle menu-label has-text-centered">
-                {user.role}
-              </p>
+              <div className="has-text-centered">
+                <h1 className="title is-4">{user.first_name} {user.last_name}</h1>
+                <p className="subtitle menu-label">{user.role}</p>
+              </div>            
               <hr />
               <ul className="menu-list">
-                <li>
-                  <span className="fa-icon">
-                    <i className="fas fa-envelope"></i>
-                  </span>
-                  {user.email}
-                </li>
+                <li><i className="fa fas fa-user"></i>{user.first_name} {user.last_name}</li>
+                <li><i className="fa fas fa-envelope"></i>{user.email}</li>
               </ul>
             </aside>
             <hr />
