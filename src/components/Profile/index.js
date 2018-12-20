@@ -4,6 +4,28 @@ import React from 'react';
 // ==========
 
 class Profile extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      modal: false,
+      modalClasses: 'modal'
+    };
+  };
+
+  toggle = () => {
+    if (!this.state.modal) {
+      this.setState({
+        modal: true,
+        modalClasses: this.state.modalClasses + ' is-active'
+      });
+    } else {
+      this.setState({
+        modal: false,
+        modalClasses: 'modal profile'
+      });
+    }
+  };
+
   render () {
     const user = {
       first_name: this.props.user.first_name,
@@ -13,29 +35,40 @@ class Profile extends React.Component {
       role: this.props.roles.length !== 0 && Object.keys(this.props.user).length !== 0 ? this.props.roles.find(role => role.id === this.props.user.role_id).name : null
     };
     return (
-      <div className={this.props.modalClasses}>
-        <div className="modal-background" onClick={this.props.toggle}></div>
-        <div className="modal-content">
-          <div className="modal-container">
-            <figure className="image staff-profile">
-              <img src={user.photo} alt={`${user.first_name} ${user.last_name}`} />
-            </figure>
-            <aside className="menu">
-              <div className="has-text-centered">
-                <h1 className="title is-4">{user.first_name} {user.last_name}</h1>
-                <p className="subtitle menu-label">{user.role}</p>
-              </div>            
+      <div>
+        <div className={this.props.modalClasses}>
+          <div className="modal-background" onClick={this.props.toggle}></div>
+          <div className="modal-content">
+            <div className="modal-container">
+              <figure className="image staff-profile">
+                <img src={user.photo} alt={`${user.first_name} ${user.last_name}`} />
+              </figure>
+              <aside className="menu">
+                <div className="has-text-centered">
+                  <h1 className="title is-4">{user.first_name} {user.last_name}</h1>
+                  <p className="subtitle menu-label">{user.role}</p>
+                </div>
+                <hr />
+                <ul className="menu-list">
+                  <li><i className="fa fas fa-user"></i>{user.first_name} {user.last_name}</li>
+                  <li><i className="fa fas fa-envelope"></i>{user.email}</li>
+                </ul>
+              </aside>
               <hr />
-              <ul className="menu-list">
-                <li><i className="fa fas fa-user"></i>{user.first_name} {user.last_name}</li>
-                <li><i className="fa fas fa-envelope"></i>{user.email}</li>
-              </ul>
-            </aside>
-            <hr />
-            <button className="button is-primary is-outlined is-fullwidth">Edit Profile</button>
+              <button className="button is-primary is-outlined is-fullwidth" onClick={this.toggle}>Edit Profile</button>
+            </div>
           </div>
+          <span className="modal-close is-large" onClick={this.props.toggle}></span>
         </div>
-        <span className="modal-close is-large" onClick={this.props.toggle}></span>
+        <div className={this.state.modalClasses}>
+          <div className="modal-background" onClick={this.toggle}></div>
+          <div className="modal-content">
+            <div className="modal-container">
+              hi
+            </div>
+          </div>
+          <span className="modal-close is-large" onClick={this.toggle}></span>
+        </div>
       </div>
     );
   };
