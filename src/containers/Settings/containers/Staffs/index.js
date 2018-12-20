@@ -78,7 +78,7 @@ class Staffs extends React.Component {
                 {
                   staffs.map((staff, i) => {
                     return (
-                      <Staff key={i} staff={staff} roles={this.props.roles} toggle={this.toggle} />
+                      <Staff key={i} toggle={this.toggle} staff={staff} roles={this.props.roles} />
                     );
                   })
                 }
@@ -125,9 +125,9 @@ class Staffs extends React.Component {
 };
 
 const mapStateToProps = state => ({
+  roles: state.staff.roles,
   staffs: state.staff.staffs,
-  editStaffError: state.staff.editStaffError,
-  roles: state.staff.roles
+  editStaffError: state.staff.editStaffError
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
