@@ -7790,7 +7790,8 @@ img {
 
 .profile .staff-profile {
   width: 175px;
-  margin: 0 auto 2rem; }
+  margin: 0 auto 2rem;
+  border: 5px solid #e2e4f0; }
 
 .profile li {
   font-size: .9rem;
