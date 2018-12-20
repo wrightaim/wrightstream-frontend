@@ -1,6 +1,9 @@
 // REACT
 import React from 'react';
 
+// COMPONENTS
+import EditProfile from './components/EditProfile';
+
 // ==========
 
 class Profile extends React.Component {
@@ -64,7 +67,7 @@ class Profile extends React.Component {
           <div className="modal-background" onClick={this.toggle}></div>
           <div className="modal-content">
             <div className="modal-container">
-              hi
+              <EditProfile />
             </div>
           </div>
           <span className="modal-close is-large" onClick={this.toggle}></span>
