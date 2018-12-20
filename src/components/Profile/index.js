@@ -21,7 +21,7 @@ class Profile extends React.Component {
     } else {
       this.setState({
         modal: false,
-        modalClasses: 'modal profile'
+        modalClasses: 'modal'
       });
     }
   };

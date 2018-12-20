@@ -7782,6 +7782,12 @@ img {
   height: 100vh;
   max-height: 100vh; }
 
+.profile .modal-close::before, .profile .modal-close::after {
+  background-color: #e2e4f0; }
+
+.profile .modal-close:hover {
+  background-color: #f6f7fa; }
+
 .profile .staff-profile {
   width: 175px;
   margin: 0 auto 2rem; }

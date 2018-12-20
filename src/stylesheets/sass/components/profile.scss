@@ -8,6 +8,14 @@
     max-height: 100vh;
   }
 
+  .modal-close::before, .modal-close::after {
+    background-color: $mist;
+  }
+
+  .modal-close:hover {
+    background-color: lighten($slate, 2%);
+  }
+
   .staff-profile {
     width: 175px;
     margin: 0 auto 2rem;
