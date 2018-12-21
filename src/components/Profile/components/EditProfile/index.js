@@ -27,7 +27,8 @@ class EditProfile extends React.Component {
 
   editStaff = async event => {
     event.preventDefault();
-    const {first_name, last_name, role_id, email, password, new_password, verify_password, photo} = this.state;
+    this.props.editStaffReset();
+    const {first_name, last_name, email, password, new_password, verify_password, photo} = this.state;
     if (new_password !== verify_password) {
       this.setState({
         passwordClasses: this.state.passwordClasses + ' is-danger',
@@ -38,17 +39,13 @@ class EditProfile extends React.Component {
         passwordClasses: 'input',
         passwordError: false
       });
-      const staff = {first_name, last_name, role_id, email, password, new_password, photo};
+      const staff = {first_name, last_name, email, password, new_password, photo};
       await this.props.editStaff(staff, this.props.staff.id);
       if (!this.props.editStaffError) {
         await this.props.getUser();
         this.props.toggle();
       }
     }
-  };
-
-  componentDidMount () {
-    this.props.editStaffReset();
   };
 
   componentDidUpdate (prevProps) {
@@ -58,6 +55,16 @@ class EditProfile extends React.Component {
         last_name: this.props.staff.last_name,
         email: this.props.staff.email,
         photo: this.props.staff.photo,
+      });
+    }
+    if (this.props.modal !== prevProps.modal) {
+      this.props.editStaffReset();
+      this.setState({
+        password: '',
+        new_password: '',
+        verify_password: '',
+        passwordClasses: 'input',
+        passwordError: false
       });
     }
   }

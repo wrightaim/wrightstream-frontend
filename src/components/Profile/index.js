@@ -67,7 +67,7 @@ class Profile extends React.Component {
           <div className="modal-background" onClick={this.toggle}></div>
           <div className="modal-content">
             <div className="modal-container">
-              <EditProfile toggle={this.toggle} staff={this.props.user} />
+              <EditProfile toggle={this.toggle} modal={this.state.modal} staff={this.props.user} />
             </div>
           </div>
           <span className="modal-close is-large" onClick={this.toggle}></span>
