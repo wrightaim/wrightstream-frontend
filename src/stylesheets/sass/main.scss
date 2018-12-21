@@ -11,14 +11,16 @@
 @import 'theme';
 @import 'utility';
 
+// PARTS
+@import 'parts/button';
+@import 'parts/card';
+@import 'parts/form';
+@import 'parts/headings';
+@import 'parts/modal';
+@import 'parts/photo';
+
 // COMPONENTS
-@import 'components/button';
-@import 'components/card';
-@import 'components/form';
 @import 'components/header';
-@import 'components/headings';
-@import 'components/modal';
-@import 'components/photo';
 @import 'components/profile';
 @import 'components/sidebar';
 
