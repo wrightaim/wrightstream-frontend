@@ -17,7 +17,7 @@ class EditStaff extends React.Component {
       last_name: this.props.staff.last_name,
       role_id: this.props.staff.role_id,
       email: this.props.staff.email,
-      password: '',
+      new_password: '',
       verify_password: '',
       photo: this.props.staff.photo,
       passwordError: false,
@@ -27,8 +27,8 @@ class EditStaff extends React.Component {
 
   editStaff = async event => {
     event.preventDefault();
-    const {first_name, last_name, role_id, email, password, verify_password, photo} = this.state;
-    if (password !== verify_password) {
+    const {first_name, last_name, role_id, email, new_password, verify_password, photo} = this.state;
+    if (new_password !== verify_password) {
       this.setState({
         passwordClasses: this.state.passwordClasses + ' is-danger',
         passwordError: true
@@ -38,7 +38,7 @@ class EditStaff extends React.Component {
         passwordClasses: 'input',
         passwordError: false
       });
-      const staff = {first_name, last_name, role_id, email, password, photo};
+      const staff = {first_name, last_name, role_id, email, new_password, photo};
       await this.props.editStaff(staff, this.props.staff.id);
       if (!this.props.editStaffError) {
         if (this.props.staff.id === this.props.user.id) await this.props.getUser();
@@ -127,10 +127,10 @@ class EditStaff extends React.Component {
                     <input
                       className={this.state.passwordClasses}
                       type="password"
-                      id="password"
+                      id="new_password"
                       placeholder="New Password"
-                      value={this.state.password}
-                      onChange={event => this.setState({password: event.target.value})}
+                      value={this.state.new_password}
+                      onChange={event => this.setState({new_password: event.target.value})}
                     />
                   </p>
                 </div>
