@@ -74,7 +74,6 @@ class EditProfile extends React.Component {
                     <input
                       className="input"
                       type="text"
-                      id="first_name"
                       placeholder="First Name *"
                       value={this.state.first_name}
                       onChange={event => this.setState({first_name: event.target.value})}
@@ -87,7 +86,6 @@ class EditProfile extends React.Component {
                     <input
                       className="input"
                       type="text"
-                      id="last_name"
                       placeholder="Last Name *"
                       value={this.state.last_name}
                       onChange={event => this.setState({last_name: event.target.value})}
@@ -102,7 +100,6 @@ class EditProfile extends React.Component {
                 <input
                   className="input"
                   type="email"
-                  id="email"
                   placeholder="Email *"
                   value={this.state.email}
                   onChange={event => this.setState({email: event.target.value})}
@@ -115,7 +112,6 @@ class EditProfile extends React.Component {
                 <input
                   className="input"
                   type="password"
-                  id="current_password"
                   placeholder="Current Password *"
                   value={this.state.password}
                   onChange={event => this.setState({password: event.target.value})}
@@ -130,7 +126,6 @@ class EditProfile extends React.Component {
                     <input
                       className={this.state.passwordClasses}
                       type="password"
-                      id="new_password"
                       placeholder="New Password"
                       value={this.state.new_password}
                       onChange={event => this.setState({new_password: event.target.value})}
@@ -142,7 +137,6 @@ class EditProfile extends React.Component {
                     <input
                       className={this.state.passwordClasses}
                       type="password"
-                      id="verify_password"
                       placeholder="Verify Password"
                       value={this.state.verify_password}
                       onChange={event => this.setState({verify_password: event.target.value})}
@@ -156,7 +150,6 @@ class EditProfile extends React.Component {
                 <input
                   className="input"
                   type="text"
-                  id="photo"
                   placeholder="Photo"
                   value={this.state.photo}
                   onChange={event => this.setState({photo: event.target.value})}

@@ -77,8 +77,7 @@ class Signup extends React.Component {
                               <p className="control">
                                 <input
                                   className="input"
-                                  type="text"                                  
-                                  id="shop_name"
+                                  type="text"
                                   placeholder="Shop Name *"
                                   value={this.state.shop_name}
                                   onChange={event => this.setState({shop_name: event.target.value})}
@@ -90,8 +89,7 @@ class Signup extends React.Component {
                               <p className="control">
                                 <input
                                   className="input"
-                                  type="text"                                  
-                                  id="shop_username"
+                                  type="text"
                                   placeholder="Shop Username *"
                                   value={this.state.shop_username}
                                   onChange={event => this.setState({shop_username: event.target.value})}
@@ -103,8 +101,7 @@ class Signup extends React.Component {
                               <p className="control">
                                 <input
                                   className="input"
-                                  type="email"                               
-                                  id="shop_email"
+                                  type="email"
                                   placeholder="Shop Email *"
                                   value={this.state.shop_email}
                                   onChange={event => this.setState({shop_email: event.target.value})}
@@ -135,8 +132,7 @@ class Signup extends React.Component {
                                   <p className="control">
                                     <input
                                       className="input"
-                                      type="text"                                   
-                                      id="first_name"
+                                      type="text"
                                       placeholder="First Name *"
                                       value={this.state.first_name}
                                       onChange={event => this.setState({first_name: event.target.value})}
@@ -149,7 +145,6 @@ class Signup extends React.Component {
                                     <input
                                       className="input"
                                       type="text"
-                                      id="last_name"
                                       placeholder="Last Name *"
                                       value={this.state.last_name}
                                       onChange={event => this.setState({last_name: event.target.value})}
@@ -163,8 +158,7 @@ class Signup extends React.Component {
                               <p className="control">
                                 <input
                                   className="input"
-                                  type="email"                                  
-                                  id="email"
+                                  type="email"
                                   placeholder="Email *"
                                   value={this.state.email}
                                   onChange={event => this.setState({email: event.target.value})}
@@ -178,8 +172,7 @@ class Signup extends React.Component {
                                   <p className="control">
                                     <input
                                       className={this.state.passwordClasses}
-                                      type="password"                                      
-                                      id="password"
+                                      type="password"
                                       placeholder="Password *"
                                       value={this.state.password}
                                       onChange={event => this.setState({password: event.target.value})}
@@ -191,8 +184,7 @@ class Signup extends React.Component {
                                   <p className="control">
                                     <input
                                       className={this.state.passwordClasses}
-                                      type="password"                                     
-                                      id="verify_password"
+                                      type="password"
                                       placeholder="Verify Password *"
                                       value={this.state.verify_password}
                                       onChange={event => this.setState({verify_password: event.target.value})}

@@ -47,7 +47,6 @@ class EditShopLogo extends React.Component {
                 <input
                   className="input"
                   type="text"
-                  id="shop_logo"
                   placeholder="Logo URL"
                   value={this.state.logo}
                   onChange={event => this.setState({shop_logo: event.target.value})}

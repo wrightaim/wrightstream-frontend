@@ -40,7 +40,6 @@ class EditShop extends React.Component {
                 <input
                   className="input"
                   type="text"
-                  id="shop_name"
                   placeholder="Shop Name"
                   value={this.state.shop_name}
                   onChange={event => this.setState({shop_name: event.target.value})}
@@ -53,7 +52,6 @@ class EditShop extends React.Component {
                 <input
                   className="input"
                   type="text"
-                  id="shop_username"
                   placeholder="Shop Username"
                   value={this.state.shop_username}
                   onChange={event => this.setState({shop_username: event.target.value})}
@@ -66,7 +64,6 @@ class EditShop extends React.Component {
                 <input
                   className="input"
                   type="text"
-                  id="shop_email"
                   placeholder="Shop Email"
                   value={this.state.shop_email}
                   onChange={event => this.setState({shop_email: event.target.value})}
