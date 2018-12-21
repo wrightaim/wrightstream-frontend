@@ -13,13 +13,13 @@ class EditProfile extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      first_name: this.props.staff.first_name,
-      last_name: this.props.staff.last_name,
-      email: this.props.staff.email,
+      first_name: '',
+      last_name: '',
+      email: '',
       password: '',
       new_password: '',
       verify_password: '',
-      photo: this.props.staff.photo,
+      photo: '',
       passwordError: false,
       passwordClasses: 'input'
     };
@@ -51,8 +51,18 @@ class EditProfile extends React.Component {
     this.props.editStaffReset();
   };
 
+  componentDidUpdate (prevProps) {
+    if (this.props.staff !== prevProps.staff) {
+      this.setState({
+        first_name: this.props.staff.first_name,
+        last_name: this.props.staff.last_name,
+        email: this.props.staff.email,
+        photo: this.props.staff.photo,
+      });
+    }
+  }
+
   render () {
-    console.log(this.state.first_name, this.props.staff.first_name)
     return (
       <div className="columns">
         <div className="column is-8 is-offset-2">
