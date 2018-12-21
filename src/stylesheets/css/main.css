@@ -7535,6 +7535,9 @@ label.panel-block {
   border-color: #fff !important;
   background-color: #fff !important; }
 
+html {
+  overflow-y: auto; }
+
 body {
   background-color: #f0f1f6;
   min-height: 100vh;
