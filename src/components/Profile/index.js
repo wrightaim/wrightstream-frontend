@@ -33,6 +33,8 @@ class Profile extends React.Component {
     const user = {
       first_name: this.props.user.first_name,
       last_name: this.props.user.last_name,
+      first_initial: this.props.roles.length !== 0 && Object.keys(this.props.user).length !== 0 ? this.props.user.first_name[0] : null,
+      last_initial: this.props.roles.length !== 0 && Object.keys(this.props.user).length !== 0 ? this.props.user.last_name[0] : null,
       email: this.props.user.email,
       photo: this.props.user.photo,
       role: this.props.roles.length !== 0 && Object.keys(this.props.user).length !== 0 ? this.props.roles.find(role => role.id === this.props.user.role_id).name : null
@@ -44,7 +46,13 @@ class Profile extends React.Component {
           <div className="modal-content">
             <div className="modal-container">
               <figure className="image staff-profile">
-                <img src={user.photo} alt={`${user.first_name} ${user.last_name}`} />
+                {
+                  user.photo ? (
+                    <img src={user.photo} alt={`${user.first_name} ${user.last_name}`} />
+                  ) : (
+                    <span>{user.first_initial}{user.last_initial}</span>
+                  )
+                }
               </figure>
               <aside className="menu">
                 <div className="has-text-centered">
