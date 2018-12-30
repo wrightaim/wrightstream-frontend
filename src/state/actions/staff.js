@@ -2,7 +2,6 @@ import Staff from '../models/staff';
 
 export const GET_ROLES = 'GET_ROLES';
 export const GET_STAFFS = 'GET_STAFFS';
-export const GET_STAFFS_ARCHIVED = 'GET_STAFFS_ARCHIVED';
 export const ADD_STAFF_SUCCESS = 'ADD_STAFF_SUCCESS';
 export const ADD_STAFF_FAILURE = 'ADD_STAFF_FAILURE';
 export const ADD_STAFF_RESET = 'ADD_STAFF_RESET';

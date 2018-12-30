@@ -3,7 +3,7 @@
 // BULMA
 @import '../../../node_modules/bulma/sass/utilities/initial-variables';
 @import 'variables';
-@import 'overrides';
+@import 'custom';
 @import '../../../node_modules/bulma/bulma';
 @import '../../../node_modules/bulma-extensions/bulma-checkradio/dist/css/bulma-checkradio';
 
@@ -11,13 +11,13 @@
 @import 'theme';
 @import 'utility';
 
-// PARTS
-@import 'parts/button';
-@import 'parts/card';
-@import 'parts/form';
-@import 'parts/headings';
-@import 'parts/modal';
-@import 'parts/photo';
+// OVERRIDES
+@import 'overrides/button';
+@import 'overrides/card';
+@import 'overrides/form';
+@import 'overrides/headings';
+@import 'overrides/modal';
+@import 'overrides/photo';
 
 // COMPONENTS
 @import 'components/header';

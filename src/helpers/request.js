@@ -4,9 +4,7 @@ const request = (path, method = 'get', body = null) => {
   let bearerToken = '';
   const token = localStorage.getItem('token');
 
-  if (token) {
-    bearerToken = `Bearer ${token}`
-  }
+  if (token) bearerToken = `Bearer ${token}`;
 
   return axios(`${process.env.REACT_APP_BACKEND}${path}`, {
     method: method,

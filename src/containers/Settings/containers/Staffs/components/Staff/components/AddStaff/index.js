@@ -39,9 +39,7 @@ class AddStaff extends React.Component {
       });
       const staff = {first_name, last_name, role_id, email, password, photo};
       await this.props.addStaff(staff);
-      if (!this.props.addStaffError) {
-        this.props.toggle();
-      }
+      if (!this.props.addStaffError) this.props.toggle();
     }
   };
 

@@ -23,7 +23,7 @@ const moment = require('moment');
 // ==========
 
 class Settings extends React.Component {
-  componentDidMount = async () => {
+  componentDidMount = () => {
     this.props.getShop();
   };
 
