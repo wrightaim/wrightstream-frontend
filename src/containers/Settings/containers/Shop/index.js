@@ -22,12 +22,12 @@ class Shop extends React.Component {
     };
   };
 
-  toggle = event => {
+  toggle = action => {
     if (!this.state.modal) {
       this.setState({
         modal: true,
         modalClasses: this.state.modalClasses + ' is-active',
-        action: event.target.id
+        action
       });
     } else {
       this.setState({
@@ -57,7 +57,7 @@ class Shop extends React.Component {
               </div>
               <div className="level-right">
                 <div className="level-item">
-                  <span className="button is-primary is-outlined" id="edit-shop" onClick={this.toggle}>Edit</span>
+                  <span className="button is-primary is-outlined" onClick={() => this.toggle('edit-shop')}>Edit</span>
                 </div>
               </div>
             </div>
@@ -83,8 +83,8 @@ class Shop extends React.Component {
                       </div>
                       <div className="level-item">
                         <div>
-                          <p className="button is-small is-fullwidth" id="edit-shop-logo" onClick={this.toggle}>Change</p>
-                          <p className="button is-small is-fullwidth is-danger" id="delete-shop-logo" onClick={this.toggle}>Delete</p>
+                          <p className="button is-small is-fullwidth" onClick={() => this.toggle('edit-shop-logo')}>Change</p>
+                          <p className="button is-small is-fullwidth is-danger" onClick={() => this.toggle('delete-shop-logo')}>Delete</p>
                         </div>  
                       </div>
                     </div>
@@ -118,7 +118,7 @@ class Shop extends React.Component {
             </div>
             <hr />           
             <p className="has-text-right">
-              <span className="menu-label has-text-danger pointer" id="delete-shop" onClick={this.toggle}>Delete Shop</span>
+              <span className="menu-label has-text-danger pointer" onClick={() => this.toggle('delete-shop')}>Delete Shop</span>
             </p>
           </div>
         </div>
