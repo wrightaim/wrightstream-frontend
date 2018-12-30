@@ -2,44 +2,44 @@
 
 // BULMA
 @import '../../../node_modules/bulma/sass/utilities/initial-variables';
-@import 'variables';
-@import 'custom';
+@import './variables';
+@import './custom';
 @import '../../../node_modules/bulma/bulma';
 @import '../../../node_modules/bulma-extensions/bulma-checkradio/dist/css/bulma-checkradio';
 
 // THEME
-@import 'theme';
-@import 'utility';
+@import './theme';
+@import './utility';
 
 // OVERRIDES
-@import 'overrides/button';
-@import 'overrides/card';
-@import 'overrides/form';
-@import 'overrides/headings';
-@import 'overrides/modal';
-@import 'overrides/photo';
+@import './overrides/button';
+@import './overrides/card';
+@import './overrides/form';
+@import './overrides/headings';
+@import './overrides/modal';
+@import './overrides/photo';
 
 // COMPONENTS
-@import 'components/header';
-@import 'components/profile';
-@import 'components/sidebar';
+@import './components/header';
+@import './components/profile';
+@import './components/sidebar';
 
 // CONTAINERS
-@import 'containers/admin';
-@import 'containers/inventory';
+@import './containers/admin';
+@import './containers/inventory';
 
 #login {
-  @import 'containers/login';
+  @import './containers/login';
 }
 
-@import 'containers/products';
+@import './containers/products';
 
 #settings {
-  @import 'containers/settings';
+  @import './containers/settings';
 }
 
 #signup {
-  @import 'containers/signup';
+  @import './containers/signup';
 }
 
-@import 'containers/workstream';
+@import './containers/workstream';
