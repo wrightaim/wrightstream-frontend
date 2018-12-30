@@ -17,8 +17,8 @@ class Staff extends React.Component {
     }
   };
 
-  handleStaff = event => {
-    this.props.toggle(event, this.props.staff);
+  handleStaff = action => {
+    this.props.toggle(action, this.props.staff);
   };
 
   render () {
@@ -53,11 +53,11 @@ class Staff extends React.Component {
               {
                 !staff.archived ? (
                   <div>
-                    <span className="button is-small" id="edit-staff" onClick={this.handleStaff}>Edit</span>
-                    <span className="button is-small is-danger" id="delete-staff" onClick={this.handleStaff}>Delete</span>
+                    <span className="button is-small" onClick={() => this.handleStaff('edit-staff')}>Edit</span>
+                    <span className="button is-small is-danger" onClick={() => this.handleStaff('delete-staff')}>Delete</span>
                   </div>                 
                 ) : (
-                  <span className="button is-small is-success" id="restore-staff" onClick={this.handleStaff}>Restore</span>                   
+                    <span className="button is-small is-success" onClick={() => this.handleStaff('restore-staff')}>Restore</span>                   
                 )
               }            
             </div>

@@ -27,12 +27,12 @@ class Staffs extends React.Component {
     };
   };
 
-  toggle = (event, staff = null) => { 
+  toggle = (action = '', staff = null) => { 
     if (!this.state.modal) {
       this.setState({
         modal: true,
         modalClasses: this.state.modalClasses + ' is-active',
-        action: event.target.id,
+        action,
         staff
       });
     } else {
@@ -68,7 +68,7 @@ class Staffs extends React.Component {
               </div>
               <div className="level-right">
                 <div className="level-item">
-                  <span className="button is-primary is-outlined" id="add-staff" onClick={this.toggle}>Add</span>
+                  <span className="button is-primary is-outlined" onClick={() => this.toggle('add-staff')}>Add</span>
                 </div>
               </div>
             </div>
